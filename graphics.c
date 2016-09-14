@@ -2,7 +2,8 @@
  * CS 1550: Graphics library Skeleton code for Qemu VM
  * WARNING: This code is the minimal implementation of the project 1.
  *          It is not intended to serve as a reference implementation.
- *          A complete implementation for this project will contain ~300 lines.
+ *          Following project guidelines, a complete implementation
+ *          for this project will contain ~300 lines or more.
  * Compile: gcc -o graphics graphics.c
  * Execute: ./graphics
  * (C) Mohammad H. Mofrad, 2016
