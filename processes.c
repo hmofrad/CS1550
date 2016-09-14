@@ -1,7 +1,7 @@
 /*
  * CS 1550: Parent & child processes using fork()
  * Compile: gcc -o processes processes.c
- * Run: ./processes
+ * Execute: ./processes
  * (C) Mohammad H. Mofrad, 2016
  */
 #include <stdio.h>
