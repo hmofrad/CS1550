@@ -1,5 +1,5 @@
 /*
- * CS 1550: Graphics library Skeleton code for Qemu VM
+ * CS 1550: Graphics library skeleton code for Qemu VM
  * WARNING: This code is the minimal implementation of the project 1.
  *          It is not intended to serve as a reference implementation.
  *          Following project guidelines, a complete implementation
