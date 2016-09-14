@@ -1,7 +1,7 @@
 /*
  * CS 1550: Threading using pthread_create() & pthread_join()
  * Compile: gcc -o threads threads.c -pthread
- * Run: ./threads
+ * Execute: ./threads
  * (C) Mohammad H. Mofrad, 2016
  */
 
