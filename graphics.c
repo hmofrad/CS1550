@@ -65,7 +65,7 @@ int main(int argc, char *argv[])
     }
     else
     {
-        fprintf(stderr, "Error opening /dev/fb0\n");
+        fprintf(stderr, "Error closing /dev/fb0\n");
         exit(1);
     }
 }
