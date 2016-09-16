@@ -52,7 +52,7 @@ int main(int argc, char *argv[])
         //printf("Address(0x%08x), Color(0x%04x) B(0x%04x), G(0x%04x), R(0x%04x) \n", (address + pixel), *(address + pixel), BMASK(color), GMASK(color), RMASK(color));
     }
 
-    // Remove a memory mapping
+    // Remove the memory mapping
     if(munmap(address, size) == -1)
     {
         fprintf(stderr, "Error unmapping memory\n");
