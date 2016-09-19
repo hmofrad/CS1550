@@ -44,8 +44,8 @@ int main(int argc, char *argv[])
     }
 
     color_t colorb = 0x001F; // Some blue color
-    color_t colorg = 0x001F; // Some green color
-    color_t colorr = 0x001F; // Some red color
+    color_t colorg = 0x07E0; // Some green color
+    color_t colorr = 0xF800; // Some red color
     
     color_t pixel = 0;
     // Print a white line
