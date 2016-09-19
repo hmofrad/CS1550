@@ -48,7 +48,7 @@ int main(int argc, char *argv[])
     // Print a blue line
     for(pixel =0; pixel < size; pixel++)
     {
-        *(address + pixel) =RMASK(color) | GMASK(color) | BMASK(color);
+        *(address + pixel) = RMASK(color) | GMASK(color) | BMASK(color);
         //printf("Address(0x%08x), Color(0x%04x) B(0x%04x), G(0x%04x), R(0x%04x) \n", (address + pixel), *(address + pixel), BMASK(color), GMASK(color), RMASK(color));
     }
 
