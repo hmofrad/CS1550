@@ -47,12 +47,12 @@ int main(int argc, char *argv[])
     color_t colorg = 0x07E0; // Some green color
     color_t colorr = 0xF800; // Some red color
     
-    color_t pixel = 0;
+    color_t off_p = 0;
     // Print a white line
-    for(pixel =0; pixel < size; pixel++)
+    for(off_p =0; off_p < size; off_p++)
     {
-        *(address + pixel) = RMASK(colorr) | GMASK(colorg) | BMASK(colorb);
-        //printf("Address(0x%08x), Color(0x%04x) B(0x%04x), G(0x%04x), R(0x%04x) \n", (address + pixel), *(address + pixel), BMASK(colorb), GMASK(colorg), RMASK(colorr));
+        *(address + off_p) = RMASK(colorr) | GMASK(colorg) | BMASK(colorb);
+        //printf("Address(0x%08x), Color(0x%04x) B(0x%04x), G(0x%04x), R(0x%04x) \n", (address + off_p), *(address + off_p), BMASK(colorb), GMASK(colorg), RMASK(colorr));
     }
 
     // Remove the memory mapping
