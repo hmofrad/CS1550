@@ -32,7 +32,7 @@ int main(int argc, char *argv[])
         fprintf(stderr, "Error opening /dev/fb0\n");
         exit(1);
     }
-    size_t size = 640 * 10; // Horizontal resolution (10 rows)
+    size_t size = 640 * 1; // Horizontal resolution (1 row)
                             // Do not hardcode size in your implementation
     color_t *address;       // Pointer to the shared memory space with fb
     // Add a memory mapping
@@ -48,7 +48,7 @@ int main(int argc, char *argv[])
     color_t colorr = 0xF800; // Some red color
     
     color_t off_p = 0;
-    // Print 10 white lines
+    // Print 1 white lines
     for(off_p =0; off_p < size; off_p++)
     {
         *(address + off_p) = RMASK(colorr) | GMASK(colorg) | BMASK(colorb);
