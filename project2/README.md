@@ -5,11 +5,19 @@
 <ul style="list-style-type:none">
   <li>ssh PITT_ID@thoth.cs.pitt.edu</li>
 </ul>
+<p>Navigate to your working directory:</p>
 <ul>
-  <li>Navigate to your working directory: cd /u/OSLab/PITT_ID</li>
-  <li>Give execute permission to the script: chmod +x build.sh</li>
-  <li>Run the script: ./build.sh</li>
+  <li> cd /u/OSLab/PITT_ID</li>
 </ul>
+<p>Give execute permission to the script:</p>
+<ul>
+  <li> chmod +x build.sh</li>
+</ul>
+<p>Run the script:</p>
+<ul>
+  <li> ./build.sh</li>
+</ul>
+
 
 
 # 2. Fast Boot Script (boot.sh)
