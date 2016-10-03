@@ -40,7 +40,7 @@
 </ul>
 <p>Run the script:</p>
 <ul>
-  <li>./boot.sh PITT_ID (e.g. moh18)</li>
+  <li>./boot.sh PITT_ID (e.g. ./boot.sh moh18)</li>
 </ul>
 
 
