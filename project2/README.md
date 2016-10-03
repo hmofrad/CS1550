@@ -49,6 +49,10 @@
 <p>Select Linux (devel) from boot loader menu</p>
 <p>Run prodcons binary:</p>
 <ul>
+  <li>Hit enter</li>
+</ul>
+
+<ul>
   <li>./prodcons</li>
   <li>You will see a semaphore increment followed by a decrement</li>
 </ul>
