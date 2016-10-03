@@ -30,7 +30,7 @@
 <ul>
   <li>scp PITT_ID@thoth.cs.pitt.edu:/u/OSLab/PITT_ID/WORK_DIR/boot.sh .</li>
 </ul>
-<p>Within boot.sh change the scp target directory:</p>
+<p>Within boot.sh change the scp target directory based on your working directory on thoth:</p>
 <ul>
   <li>scp $1@thoth.cs.pitt.edu:/u/OSLab/$1/{CHANGE_WORK_DIR}/...</li>
 </ul>
