@@ -47,4 +47,5 @@
 <p>Run prodcons binary:</p>
 <ul>
   <li>./prodcons</li>
+  <li>You will see a semaphore increament followed by a decreament</li>
 </ul>
