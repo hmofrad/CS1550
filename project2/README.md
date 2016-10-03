@@ -1,7 +1,7 @@
 # 1. Fast Build Script (build.sh)
 <p>A script for adding syscalls to Linux (compatible with linux-2.6.23.1).</p>
-<p>See project detials at http://people.cs.pitt.edu/~jmisurda/teaching/cs1550/2171/cs1550-2171-project2.htm</p>
-<p>login to thoth:</p>
+<p>See project details at http://people.cs.pitt.edu/~jmisurda/teaching/cs1550/2171/cs1550-2171-project2.htm</p>
+<p>Login to thoth:</p>
 <ul>
   <li>ssh PITT_ID@thoth.cs.pitt.edu</li>
 </ul>
@@ -21,7 +21,7 @@
 
 
 # 2. Fast Boot Script (boot.sh)
-<p>login to Qemu VM:</p>
+<p>Login to Qemu VM:</p>
 <ul>
   <li>Username: root</li>
   <li>Password: root</li>
@@ -43,9 +43,9 @@
   <li>./boot.sh PITT_ID (e.g. ./boot.sh moh18)</li>
 </ul>
 <p>Reboot Qemu VM</p>
-<p>Select linux(devel) from boot loader menu</p>
+<p>Select Linux (devel) from boot loader menu</p>
 <p>Run prodcons binary:</p>
 <ul>
   <li>./prodcons</li>
-  <li>You will see a semaphore increament followed by a decreament</li>
+  <li>You will see a semaphore increment followed by a decrement</li>
 </ul>
