@@ -7,7 +7,7 @@
 </ul>
 <p>Navigate to your working directory:</p>
 <ul>
-  <li> cd /u/OSLab/PITT_ID</li>
+  <li> cd /u/OSLab/PITT_ID/WORK_DIR</li>
 </ul>
 <p>Give execute permission to the script:</p>
 <ul>
