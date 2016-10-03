@@ -42,7 +42,6 @@ else
      tar xjvf $KERNEL_SRC;
 fi
 
-
 # prodcons library
 cp ./src/prodcons.h      $KERNEL_DIR/include/linux/prodcons.h;
 # The file that should contain sys_cs1550_up and sys_cs1550_down implementation
