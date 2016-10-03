@@ -21,3 +21,13 @@
 
 
 # 2. Fast Boot Script (boot.sh)
+<p>login to Qemu VM:</p>
+<ul>
+  <li>Username: root</li>
+  <li>Password: root</li>
+</ul>
+<p>Copy fast boot script:</p>
+<ul>
+  <li>scp PITT_ID@thoth.cs.pitt.edu:/u/OSLab/PITT_ID/WORK_DIR/boot.sh .</li>
+</ul>
+
