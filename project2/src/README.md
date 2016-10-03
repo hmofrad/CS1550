@@ -1,4 +1,4 @@
-#Directory information:
+#Directory information
 
 <p><b>prodcons.c</b> is the skeleton source code for prodcons problem </p>
 <p><b>prodcons.h</b> is the skeleton source linrary for prodcons problem </p>
