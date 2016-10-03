@@ -56,3 +56,6 @@
   <li>./prodcons</li>
   <li>And you will see a semaphore increment followed by a decrement</li>
 </ul>
+
+
+<p>Report bugs to moh18@pitt.edu.</p>
