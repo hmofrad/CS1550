@@ -17,7 +17,7 @@ KERNEL_DIR="linux-2.6.23.1" # Kernel source directory
 # Check if you are at /u/OSLab/PITT_ID
 # If yes, continue
 # If not,  exit
-if [[ "$BASE" =~ ^/u/OSLab/[a-zA-Z]{3}[0-9]{2,3}/.*$ ]];
+if [[ "$BASE" =~ ^/u/OSLab/[a-zA-Z]{3}[0-9]{1,2,3}/.*$ ]];
 then
      echo "$BASE OK.";
      if [[ "$BASE" =~ (/u/OSLab/)([a-zA-Z]{3}[0-9]{2,3}) ]];
