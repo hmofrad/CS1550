@@ -58,4 +58,4 @@
 </ul>
 
 
-#Do not forget to report bugs to moh18@pitt.edu.
+##Don't forget to report bugs to moh18@pitt.edu.
