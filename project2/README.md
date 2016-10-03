@@ -7,15 +7,15 @@
 </ul>
 <p>Navigate to your working directory:</p>
 <ul>
-  <li> cd /u/OSLab/PITT_ID/WORK_DIR</li>
+  <li>cd /u/OSLab/PITT_ID/WORK_DIR</li>
 </ul>
 <p>Give execute permission to the script:</p>
 <ul>
-  <li> chmod +x build.sh</li>
+  <li>chmod +x build.sh</li>
 </ul>
 <p>Run the script:</p>
 <ul>
-  <li> ./build.sh</li>
+  <li>./build.sh</li>
 </ul>
 
 
@@ -30,4 +30,15 @@
 <ul>
   <li>scp PITT_ID@thoth.cs.pitt.edu:/u/OSLab/PITT_ID/WORK_DIR/boot.sh .</li>
 </ul>
+<p>Within boot.sh change the scp target directory:</p>
+<ul>
+  <li>scp $1@thoth.cs.pitt.edu:/u/OSLab/$1/{WORK_DIR}/...</li>
+</ul>
+<p>Give execute permission to the script:</p>
+<ul>
+  <li>chmod +x boot.sh</li>
+</ul>
+
+
+
 
