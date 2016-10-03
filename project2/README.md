@@ -42,5 +42,9 @@
 <ul>
   <li>./boot.sh PITT_ID (e.g. ./boot.sh moh18)</li>
 </ul>
-
-
+<p>Reboot Qemu VM</p>
+<p>Select linux(devel) from boot loader menu</p>
+<p>Run prodcons binary:</p>
+<ul>
+  <li>./prodcons</li>
+</ul>
