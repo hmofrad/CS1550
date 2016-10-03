@@ -6,15 +6,15 @@
   <li>ssh PITT_ID@thoth.cs.pitt.edu</li>
 </ul>
 <p>Navigate to your working directory:</p>
-<ul>
+<ul style="list-style-type:none">
   <li> cd /u/OSLab/PITT_ID</li>
 </ul>
 <p>Give execute permission to the script:</p>
-<ul>
+<ul style="list-style-type:none">
   <li> chmod +x build.sh</li>
 </ul>
 <p>Run the script:</p>
-<ul>
+<ul style="list-style-type:none">
   <li> ./build.sh</li>
 </ul>
 
