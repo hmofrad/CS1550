@@ -32,7 +32,7 @@
 </ul>
 <p>Within boot.sh change the scp target directory:</p>
 <ul>
-  <li>scp $1@thoth.cs.pitt.edu:/u/OSLab/$1/{WORK_DIR}/...</li>
+  <li>scp $1@thoth.cs.pitt.edu:/u/OSLab/$1/{CHANGE_WORK_DIR}/...</li>
 </ul>
 <p>Give execute permission to the script:</p>
 <ul>
