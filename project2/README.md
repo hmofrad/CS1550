@@ -38,7 +38,9 @@
 <ul>
   <li>chmod +x boot.sh</li>
 </ul>
-
-
+<p>Run the script:</p>
+<ul>
+  <li>./boot.sh PITT_ID (e.g. moh18)</li>
+</ul>
 
 
