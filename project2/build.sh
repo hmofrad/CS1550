@@ -74,7 +74,6 @@ cd ..;
 
 if [ -a "$KERNEL_DIR/System.map" ] && [ -a "$KERNEL_DIR/arch/i386/boot/bzImage" ];
 then
-
      # Copy kernel image to your working directory
      cp $KERNEL_DIR/arch/i386/boot/bzImage .; 
      # Copy kernel symbole table
