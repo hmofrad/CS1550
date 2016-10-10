@@ -20,7 +20,7 @@ KERNEL_DIR="linux-2.6.23.1" # Kernel source directory
 if [[ "$BASE" =~ ^/u/OSLab/[a-zA-Z]{3}[0-9]{1,2,3}/.*$ ]];
 then
      echo "$BASE OK.";
-     if [[ "$BASE" =~ (/u/OSLab/)([a-zA-Z]{3}[0-9]{1,2,3}) ]];
+     if [[ "$BASE" =~ (/u/OSLab/)([a-zA-Z]{3}[0-9]{1,2}) ]];
      then 
           PITT_ID=${BASH_REMATCH[2]}
           echo "Your PITT_ID $PITT_ID";
