@@ -17,6 +17,10 @@ if [ -f "/boot/System.map-devel" ]; then
      echo "Cleaning previous System.map"
 fi
 
+if [ -f "prodcons" ]; then
+     rm -rf prodcons
+     echo "Cleaning previous prodcons"
+fi
 
 # Change the directory based on your working directory on thoth
 scp $1@thoth.cs.pitt.edu:/u/OSLab/$1/project2/demo/\{bzImage,System.map,prodcons\} ./
