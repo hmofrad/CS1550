@@ -1,4 +1,4 @@
-# Virtual Memory Implementation in C
+# Incomplete skeleton code for Virtual Memory
 ##Install
 make install
 
@@ -9,6 +9,6 @@ make install
 make clean
 
 ##Files
-<p>vimsim.c:    Source file for Virtual Memory implementation</p>
-<p>vimsim.h:    Header file for Virtual Memory implementation</p>
+<p>vimsim.c:    Source file for Virtual Memory implementation in c</p>
+<p>vimsim.h:    Header file for Virtual Memory implementation in c</p>
 <p>Makefile: Makefile for building the vimsim binary</p>
