@@ -3,6 +3,5 @@
  * (C) Mohammad H. Mofrad, 2016
  */
  
-// TODO: Include necessary libraries 
-// TODO: Define page data structure
+//TODO: Implement the skeleton code 
 #include "vimsim.h"
