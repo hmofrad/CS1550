@@ -1,1 +1,1 @@
-# 1. Graphics Library skeleton code
+# Graphics Library skeleton code
