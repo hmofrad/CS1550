@@ -9,6 +9,6 @@ make install
 make clean
 
 ##Files
-<p>vimsim.c:    Source file for Virtual Memory implementation in C</p>
-<p>vimsim.h:    Header file for Virtual Memory implementation in C</p>
+<p>vimsim.c:    Source file for Virtual Memory implementation</p>
+<p>vimsim.h:    Header file for Virtual Memory implementation</p>
 <p>Makefile: Makefile for building the vimsim binary</p>
