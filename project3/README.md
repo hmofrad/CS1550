@@ -1,5 +1,6 @@
 # skeleton code for Virtual Memory
-<span style="color:red">Incomplete<span> 
+<p><span style="color:red">Incomplete</span> </p>
+
 ##Install
 make install
 
