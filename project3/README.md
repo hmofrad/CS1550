@@ -1,4 +1,5 @@
-# <span style="color:red">Incomplete<span> skeleton code for Virtual Memory
+# skeleton code for Virtual Memory
+<span style="color:red">Incomplete<span> 
 ##Install
 make install
 
