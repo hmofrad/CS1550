@@ -6,4 +6,7 @@
 #ifndef _VIMSIM_INCLUDED_H
 #define _VIMSIM_INCLUDED_H
 
+// TODO: Include necessary libraries 
+// TODO: Define page data structure
+
 #endif
