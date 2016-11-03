@@ -12,5 +12,6 @@
 #include <string.h>
 
 // TODO: Define page data structure
+#define PAGE_SIZE_4KB 4096
 
 #endif
