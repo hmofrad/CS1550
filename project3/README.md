@@ -4,7 +4,7 @@
 make
 
 ##Run
-./vimsim -n <numframes> -a <fifo> <tracefile>
+<p>./vimsim -n &lt;numframes&gt; -a &lt;fifo&gt; &lt;tracefile&gt; </p>
 
 ##Trace files
 <p>cd /u/OSLab/PITT_ID</p>
