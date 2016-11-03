@@ -1,10 +1,10 @@
 # Incomplete skeleton code for Virtual Memory
 
 ##Install
-make install
+make
 
 ##Run
-./vimsim
+./vimsim -n <numframes> -a <fifo> <tracefile>
 
 ##Trace files
 <p>cd /u/OSLab/PITT_ID</p>
