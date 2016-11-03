@@ -4,7 +4,7 @@
  * (e) hasanzadeh@cs.pitt.edu
  */
  
-#include "vimsim.h"
+#include "vmsim.h"
 
 int numframes;
 
