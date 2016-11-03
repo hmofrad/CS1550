@@ -6,7 +6,12 @@
 #ifndef _VIMSIM_INCLUDED_H
 #define _VIMSIM_INCLUDED_H
 
-// TODO: Include necessary libraries 
+#include <stdlib.h>
+#include <stdio.h>
+#include <stdint.h>
+#include <string.h>
+#include <errno.h>
+
 // TODO: Define page data structure
 
 #endif
