@@ -6,7 +6,5 @@
 OBJ=vmsim
 install:
 	gcc -o $(OBJ) $(OBJ).c
-run:
-	./$(OBJ)
 clean:
 	rm -rf $(OBJ)
