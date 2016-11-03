@@ -1,8 +1,9 @@
 #!/usr/bin/make
 # CS 1550: Make file
-# (C) Mohammad H. Mofrad, 2016
+# (c) Mohammad H. Mofrad, 2016
+# (e) hasanzadeh@cs.pitt.edu
 
-OBJ=vimsim
+OBJ=vmsim
 install:
 	gcc -o $(OBJ) $(OBJ).c
 run:
