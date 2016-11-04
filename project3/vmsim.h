@@ -17,4 +17,16 @@
 #define PAGE_SIZE_4KB   4096
 #define PAGE_SIZE_BYTES 4
 
+struct frame_struct
+{
+   int frame_number;
+};
+
+struct page_struct
+{
+   int page_number;
+};
+
+
+
 #endif
