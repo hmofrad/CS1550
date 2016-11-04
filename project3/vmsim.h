@@ -12,7 +12,9 @@
 #include <string.h>
 
 #define DEBUG
+#define ALL
 
-#define PAGE_SIZE_4KB 4096
+#define PAGE_SIZE_4KB   4096
+#define PAGE_SIZE_BYTES 4
 
 #endif
