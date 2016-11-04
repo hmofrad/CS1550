@@ -6,6 +6,10 @@
  
 #include "vmsim.h"
 
+#undef ALL
+
+int numframes;
+unsigned int *physical_memory;
 
 int main(int argc, char *argv[])
 {
@@ -15,7 +19,6 @@ int main(int argc, char *argv[])
    * and store it in an array
    */
    
-   int numframes;
    FILE *file;
    if((argc == 6) && (!strcmp(argv[1],"-n")) && (!strcmp(argv[3], "-a")) && (!strcmp(argv[4], "fifo")) \
                   && ((!strcmp(argv[5], "gcc.trace")) || (!strcmp(argv[5], "swim.trace"))))
@@ -55,19 +58,34 @@ int main(int argc, char *argv[])
    unsigned int addr_arr[len];
    unsigned char mode_arr[len];
    unsigned int i = 0;
+
    // Store the memory accesses 
    while(fscanf(file, "%x %c", &addr_arr[i], &mode_arr[i]) == 2)
    {
-      #ifdef DEBUG
+      #ifdef ALL
          printf("\'0x%08x %c\'\n", addr_arr[i], mode_arr[i]);
       #endif
       i++;
    }
 
-   //TOBECON
+   // Initialize the physical memory data structure
+   physical_memory = malloc(PAGE_SIZE_4KB * numframes);
+   if(!physical_memory)
+   {
+      fprintf(stderr, "Error on mallocing memory\n");
+   }
+   memset(physical_memory, 0, PAGE_SIZE_4KB * numframes);
 
+   #ifdef DEBUG
+      for(i = 0; i < numframes; i++)
+      {
+         printf("%10d: New chunk of memory at %ld(0x%08x)\n", i, physical_memory + \
+               (i * PAGE_SIZE_4KB)/PAGE_SIZE_BYTES, physical_memory + \
+               (i * PAGE_SIZE_4KB)/PAGE_SIZE_BYTES);
+      }
+   #endif
 
-
+   // Initialize the page table data structure
 
 
 
