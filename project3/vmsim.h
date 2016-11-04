@@ -20,6 +20,7 @@
 struct frame_struct
 {
    int frame_number;
+   unsigned int physical_address;
 };
 
 struct page_struct
