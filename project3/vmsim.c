@@ -9,7 +9,7 @@
 #undef ALL
 
 int numframes;
-unsigned int *physical_memory;
+unsigned int *frames;
 
 int main(int argc, char *argv[])
 {
@@ -68,24 +68,32 @@ int main(int argc, char *argv[])
       i++;
    }
 
-   // Initialize the physical memory data structure
-   physical_memory = malloc(PAGE_SIZE_4KB * numframes);
-   if(!physical_memory)
+   // Initialize the frame data structure (physical memory)
+   frames = malloc(PAGE_SIZE_4KB * numframes);
+   if(!frames)
    {
-      fprintf(stderr, "Error on mallocing memory\n");
+      fprintf(stderr, "Error on mallocing frames\n");
+      exit(1);
    }
-   memset(physical_memory, 0, PAGE_SIZE_4KB * numframes);
+   memset(frames, 0, PAGE_SIZE_4KB * numframes);
 
    #ifdef DEBUG
       for(i = 0; i < numframes; i++)
       {
-         printf("%10d: New chunk of memory at %ld(0x%08x)\n", i, physical_memory + \
-               (i * PAGE_SIZE_4KB)/PAGE_SIZE_BYTES, physical_memory + \
+         printf("%10d: New chunk of memory at %ld(0x%08x)\n", i, frames + \
+               (i * PAGE_SIZE_4KB)/PAGE_SIZE_BYTES, frames + \
                (i * PAGE_SIZE_4KB)/PAGE_SIZE_BYTES);
       }
    #endif
 
-   // Initialize the page table data structure
+   // Initialize the page table data structure (virtual memory)
+   struct page_struct *pages = malloc(sizeof(struct page_struct));
+   if(!pages)
+   {
+      fprintf(stderr, "Error on mallocing page struct\n");
+      exit(1);
+   }
+   memset(pages, 0, sizeof(struct page_struct));
 
 
 
