@@ -1,15 +1,27 @@
 /*
  * CS 1550: Source file for Virtual Memory skeleton code
+ * with a single level 32-Bit page table
  * (c) Mohammad H. Mofrad, 2016
  * (e) hasanzadeh@cs.pitt.edu
  */
  
 #include "vmsim.h"
 
+// Comment below to see logs
 #undef ALL
+#undef DEBUG
+#undef INFO
 
 int numframes;
 unsigned int *physical_frames;
+
+// Page Table
+unsigned int *page_table = NULL;
+// Page Table Entry
+struct pte_32 *pte = NULL;
+
+// Fifo page replacement current index
+int current_index = -1;
 
 int main(int argc, char *argv[])
 {
@@ -46,19 +58,19 @@ int main(int argc, char *argv[])
     * and write it into addr_arr and mode_arr arrays 
     */
 
-   unsigned int len = 0;
+   unsigned int numaccesses = 0;
    unsigned int addr = 0;
    unsigned char mode = NULL;
 
    // Calculate number of lines in the trace file
    while(fscanf(file, "%x %c", &addr, &mode) == 2)
    {
-      len++;
+      numaccesses++;
    }
    rewind(file);
 
-   unsigned int address_array[len];
-   unsigned char mode_array[len];
+   unsigned int address_array[numaccesses];
+   unsigned char mode_array[numaccesses];
    unsigned int i = 0;
 
    // Store the memory accesses 
@@ -79,9 +91,6 @@ int main(int argc, char *argv[])
       fprintf(stderr, "Error on closing the trace file\n");
       exit(1);
    }
-
-
-
 
    // Initialize the physical memory address space
    physical_frames = malloc(PAGE_SIZE_4KB * numframes);
@@ -104,14 +113,27 @@ int main(int argc, char *argv[])
    // Store the head of frames linked list
    struct frame_struct *head = frame;
 
+   struct frame_struct *curr;
+
+
+   // Initialize page table
+   page_table = malloc(PT_SIZE_1MB * PTE_SIZE_BYTES);
+   if(!page_table)
+   {
+      fprintf(stderr, "Error on mallocing page table\n");
+   }
+   memset(page_table, 0, PT_SIZE_1MB * PTE_SIZE_BYTES);
+
+   struct pte_32 *new_pte = NULL;
+
    // Initialize the frames linked list
    for(i = 0; i < numframes; i++)
    {
       frame->frame_number = i;
       frame->physical_address = physical_frames + (i * PAGE_SIZE_4KB) / PAGE_SIZE_BYTES;
-      frame->virtual_address = NULL;
+      frame->virtual_address = 0;
       frame->pte_pointer = NULL;
-      #ifdef DEBUG
+      #ifdef INFO
          printf("Frame#%d: Adding a new frame at memory address %ld(0x%08x)\n", i, frame->physical_address, frame->physical_address);
       #endif
       frame->next = malloc(sizeof(struct frame_struct));
@@ -121,9 +143,164 @@ int main(int argc, char *argv[])
    }
    
    unsigned int fault_address = 0;
+   unsigned int previous_fault_address = 0;
    unsigned char mode_type = NULL;
-   
-   // Main loop for processing memory Accesses
+   int hit = 0;
+   int page2evict = 0;
+   int numfaults = 0;
+   int numwrites = 0;
+   //numaccesses = 100;
+   // Main loop to process memory accesses
+   for(i = 0; i < numaccesses; i++)
+   {
+      fault_address = address_array[i];
+      mode_type = mode_array[i];
+      hit = 0;
+    
+      // Perform the page walk for the fault address
+      new_pte = (struct pte_32 *) handle_page_fault(fault_address);
+      
+      /*
+       * Traverse the frame linked list    
+       * to see if the requested page is present in
+       * the frames linked list.
+       */
+
+      curr = head;
+      while(curr->next)
+      {
+         if(curr->physical_address == new_pte->physical_address)
+         {
+            if(new_pte->present)
+            {
+               curr->virtual_address = fault_address;
+               hit = 1;
+            }
+            break;
+         }
+         else
+         {
+            curr = curr->next;
+         }
+
+      }
+
+      /* 
+       * if the requested page is not present in the
+       * frames linked list use the fifo page replacement
+       * to evict the victim frame and
+       * swap in the requested frame
+       */  
+
+      if(!hit)
+      {
+         // Fifo page replacement algorithm
+         if(!strcmp(argv[4], "fifo"))
+         {
+            page2evict = fifo();
+         }
+
+         /* Traverse the frames linked list to
+          * find the victim frame and swap it out
+          * Set the present, referenced, and dirty bits
+          * and collect some statistics
+          */
+
+         curr = head;
+         while(curr->next)
+         {
+            if(curr->frame_number == page2evict)
+            {
+
+               previous_fault_address = curr->virtual_address;
+               numfaults++;
+
+               if(curr->pte_pointer)
+               {
+                  curr->pte_pointer->present = 0;
+                  if(curr->pte_pointer->dirty)
+                  {
+                     curr->pte_pointer->dirty = 0;
+                     numwrites++; 
+                     #ifdef DEBUG
+                        printf("%5d: page fault – evict dirty(0x%08x)accessed(0x%08x)\n", i, previous_fault_address, fault_address);
+                     #endif 
+                  }
+                  else
+                  {
+                     #ifdef DEBUG
+                        printf("%5d: page fault – evict clean(0x%08x)accessed(0x%08x)\n", i, previous_fault_address, fault_address);
+                     #endif
+                  }
+               }
+                   
+               curr->pte_pointer = (struct pte_32 *) new_pte;
+               new_pte->physical_address = curr->physical_address;
+               new_pte->present = 1;
+               curr->virtual_address = fault_address;
+
+               if(mode_type == 'W')
+               {
+                  new_pte->dirty = 1;
+               }
+            }
+            curr = curr->next; 
+         }
+      }
+      else
+      {
+         #ifdef DEBUG
+            printf("%5d: page fault – no eviction(0x%08x)\n", i, fault_address);
+            printf("%5d: page hit   - keep page  (0x%08x)accessed(0x%08x)\n", i, new_pte->physical_address, curr->virtual_address);
+         #endif         
+
+
+      }
+   }
+
+   printf("Algorithm:             %s\n", argv[4]);
+   printf("Number of frames:      %d\n", numframes);
+   printf("Total memory accesses: %d\n", i);
+   printf("Total page faults:     %d\n", numfaults);
+   printf("Total writes to disk:  %d\n", numwrites);
 
    return(0);
 }
+
+struct frame_struct * handle_page_fault(unsigned int fault_address)
+{
+   pte = (struct pte_32 *) page_table[PTE32_INDEX(fault_address)];
+
+   if(!pte)
+   {
+      pte = malloc(sizeof(struct pte_32));
+      memset(pte, 0, sizeof(struct pte_32));
+      pte->present = 0;
+      pte->physical_address = NULL;
+      page_table[PTE32_INDEX(fault_address)] = (unsigned int) pte;
+   }
+
+   #ifdef INFO
+      printf("Page fault handler\n");
+      printf("Fault address %d(0x%08x)\n", (unsigned int) fault_address, fault_address);
+      printf("Page table base address %ld(0x%08x)\n", (unsigned int) page_table, page_table);
+      printf("PTE offset %ld(0x%03x)\n", PTE32_INDEX(fault_address), PTE32_INDEX(fault_address));
+      printf("PTE index %ld(0x%03x)\n",  PTE32_INDEX(fault_address) * PTE_SIZE_BYTES, PTE32_INDEX(fault_address) * PTE_SIZE_BYTES);
+      printf("PTE virtual address %ld(0x%08x)\n", (unsigned int) page_table + PTE32_INDEX(fault_address), page_table + PTE32_INDEX(fault_address));
+
+      printf("PAGE table base address %ld(0x%08x)\n", pte->physical_address, pte->physical_address);
+      printf("PAGE offset %ld(0x%08x)\n", FRAME_INDEX(fault_address), FRAME_INDEX(fault_address));
+      printf("PAGE index %ld(0x%08x)\n", FRAME_INDEX(fault_address) * PTE_SIZE_BYTES, FRAME_INDEX(fault_address) * PTE_SIZE_BYTES);
+      printf("PAGE physical address %ld(0x%08x)\n", pte->physical_address + FRAME_INDEX(fault_address), pte->physical_address  + FRAME_INDEX(fault_address));
+   #endif
+
+   return ((struct frame_struct *) pte);
+}
+
+int fifo()
+{
+   current_index++;
+   current_index = current_index % numframes;            
+   return (current_index);
+}
+
