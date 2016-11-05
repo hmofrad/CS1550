@@ -119,6 +119,7 @@ int main(int argc, char *argv[])
       frame->frame_number = i;
       frame->physical_address = physical_frames + (i * PAGE_SIZE_4KB) / PAGE_SIZE_BYTES;
       frame->virtual_address = NULL;
+      frame->pte_pointer = NULL;
       printf("Frame#%d: Adding a new frame at memory address %ld(0x%08x)\n", i, frame->physical_address, frame->physical_address);
 
       frame->next = malloc(sizeof(struct frame_struct));
@@ -127,8 +128,7 @@ int main(int argc, char *argv[])
 
    }
 
-
-
+  
 
 
    return(0);
