@@ -15,9 +15,9 @@ make
 make clean
 
 ##Log levels
-<p>The <b>All</b> log level will show the file I/O while reading the trace file</p>
-<p>The <b>DEBUG</b> log level will show the page walk operations</p>
-<p>The <b>INFO</b> log level will show the page fault sequence</p>
+<p>The <b>All</b> log level shows the file I/O while reading the trace file</p>
+<p>The <b>DEBUG</b> log level shows the page walk operations</p>
+<p>The <b>INFO</b> log level shows the page fault sequence</p>
 
 ##Files
 <p>vmsim.c: Source file for Virtual Memory implementation in c</p>
