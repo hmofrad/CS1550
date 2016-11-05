@@ -20,7 +20,9 @@
 struct frame_struct
 {
    int frame_number;
-   unsigned int physical_address;
+   unsigned int *physical_address;
+   unsigned int *virtual_address;
+   struct frame_struct *next;
 };
 
 struct page_struct
