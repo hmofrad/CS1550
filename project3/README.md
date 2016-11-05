@@ -15,7 +15,7 @@ make
 make clean
 
 ##Log levels
-<p>The <b>All</b> log level shows the file I/O while reading the trace file</p>
+<p>The <b>All</b> log level shows the trace file I/O</p>
 <p>The <b>DEBUG</b> log level shows the page walk operations</p>
 <p>The <b>INFO</b> log level shows the page fault sequence</p>
 
