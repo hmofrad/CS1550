@@ -9,7 +9,7 @@
 #undef ALL
 
 int numframes;
-unsigned int *frames;
+unsigned int *physical_frames;
 
 int main(int argc, char *argv[])
 {
@@ -31,12 +31,26 @@ int main(int argc, char *argv[])
          fprintf(stderr, "Error on opening the trace file\n");
          exit(1); 
       }
+
+      if(!fclose(file))
+      {
+         ; // Noop
+      }
+      else
+      {
+         fprintf(stderr, "Error on closing the trace file\n");
+         exit(1);
+      }
+
+
    }
    else
    {
       fprintf(stderr, "USAGE: %s -n <numframes> -a <fifo> <tracefile>\n", argv[0]);
       exit(1); 
    }
+
+
 
    /* 
     * Calculate the trace file's length
@@ -68,48 +82,51 @@ int main(int argc, char *argv[])
       i++;
    }
 
-   // Initialize the frame data structure (physical memory)
-   frames = malloc(PAGE_SIZE_4KB * numframes);
-   if(!frames)
+   // Initialize the physical memory address space
+   physical_frames = malloc(PAGE_SIZE_4KB * numframes);
+   if(!physical_frames)
    {
-      fprintf(stderr, "Error on mallocing frames\n");
+      fprintf(stderr, "Error on mallocing physical frames\n");
       exit(1);
    }
-   memset(frames, 0, PAGE_SIZE_4KB * numframes);
+   memset(physical_frames, 0, PAGE_SIZE_4KB * numframes);
 
+/*
    #ifdef DEBUG
       for(i = 0; i < numframes; i++)
       {
-         printf("%10d: New chunk of memory at %ld(0x%08x)\n", i, frames + \
-               (i * PAGE_SIZE_4KB)/PAGE_SIZE_BYTES, frames + \
+         printf("%10d: Adding new memory frame at %ld(0x%08x)\n", i, physical_frames + \
+               (i * PAGE_SIZE_4KB)/PAGE_SIZE_BYTES, physical_frames + \
                (i * PAGE_SIZE_4KB)/PAGE_SIZE_BYTES);
       }
    #endif
+*/
 
-   // Initialize the page table data structure (virtual memory)
-   struct page_struct *pages = malloc(sizeof(struct page_struct));
-   if(!pages)
+   // Initialize the frame data structure
+   struct frame_struct *frame = malloc(sizeof(struct frame_struct));
+   if(!frame)
    {
-      fprintf(stderr, "Error on mallocing page struct\n");
+      fprintf(stderr, "Error on mallocing frame struct\n");
       exit(1);
    }
-   memset(pages, 0, sizeof(struct page_struct));
+   memset(frame, 0, sizeof(struct frame_struct));
 
-
-
-
+   // Store the head of frames linked list
+   struct frame_struct *head = frame;
    
-
-
-   if(!fclose(file))
+   for(i = 0; i < numframes; i++)
    {
-      return(0);
+      frame->frame_number = i;
+      frame->physical_address = physical_frames + (i * PAGE_SIZE_4KB) / PAGE_SIZE_BYTES;
+      frame->virtual_address = NULL;
+      printf("Frame#%d: Adding a new frame at memory address %ld(0x%08x)\n", i, frame->physical_address, frame->physical_address);
+
+      frame->next = malloc(sizeof(struct frame_struct));
+      frame = frame->next;
+      memset(frame, 0, sizeof(struct frame_struct));
+
    }
-   else
-   { 
-      fprintf(stderr, "Error on closing the trace file\n");
-      exit(1);
-   }
+
 
 
 
