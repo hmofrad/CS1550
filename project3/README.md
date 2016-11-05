@@ -1,4 +1,4 @@
-# Incomplete skeleton code for Virtual Memory
+# Vitrual memory implementation with a single level 32-Bit page table
 
 ##Install
 make
@@ -13,6 +13,8 @@ make
 
 ##Uninstall
 make clean
+
+
 
 ##Files
 <p>vmsim.c: Source file for Virtual Memory implementation in c</p>
