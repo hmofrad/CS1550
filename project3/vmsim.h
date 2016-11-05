@@ -22,6 +22,7 @@ struct frame_struct
    int frame_number;
    unsigned int *physical_address;
    unsigned int *virtual_address;
+   struct pte_32 *pte_pointer;
    struct frame_struct *next;
 };
 
@@ -30,6 +31,12 @@ struct page_struct
    int page_number;
 };
 
+// 32-Bit Root level Page Table Entry (PTE) 
+struct pte_32
+{
+   unsigned int present;
+   unsigned int *address;
+};
 
 
 #endif
