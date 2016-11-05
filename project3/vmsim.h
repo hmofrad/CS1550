@@ -12,7 +12,6 @@
  *
 */
 
-
 #ifndef _VMSIM_INCLUDED_H
 #define _VMSIM_INCLUDED_H
 
@@ -25,7 +24,6 @@
 #define ALL
 #define DEBUG
 #define INFO
-
 
 // 32-Bit page table constants
 #define PAGE_SIZE_4KB   4096
