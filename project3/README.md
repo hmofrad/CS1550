@@ -14,9 +14,13 @@ make
 ##Uninstall
 make clean
 
+##Log level
+<p>The <b>All</b> log level will show the file I/O while reading the trace file</p>
 
 
 ##Files
 <p>vmsim.c: Source file for Virtual Memory implementation in c</p>
 <p>vmsim.h: Header file for Virtual Memory implementation in c</p>
 <p>Makefile: Makefile for building the vmsim binary</p>
+
+###Don't forget to report bugs to moh18@pitt.edu.
