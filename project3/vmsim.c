@@ -249,7 +249,7 @@ int main(int argc, char *argv[])
       else
       {
          #ifdef DEBUG
-            printf("%5d: page fault – no eviction(0x%08x)\n", i, fault_address);
+            printf("%5d: page hit   – no eviction(0x%08x)\n", i, fault_address);
             printf("%5d: page hit   - keep page  (0x%08x)accessed(0x%08x)\n", i, new_pte->physical_address, curr->virtual_address);
          #endif         
       }
