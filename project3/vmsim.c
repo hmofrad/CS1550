@@ -160,7 +160,7 @@ int main(int argc, char *argv[])
       new_pte = (struct pte_32 *) handle_page_fault(fault_address);
       
       /*
-       * Traverse the frame linked list    
+       * Traverse the frames linked list    
        * to see if the requested page is present in
        * the frames linked list.
        */
