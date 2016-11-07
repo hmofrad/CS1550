@@ -8,7 +8,7 @@
  
 #include "vmsim.h"
 
-// Comment below to see logs
+// Comment below to see more logs
 #undef ALL
 //undef DEBUG
 #undef INFO
