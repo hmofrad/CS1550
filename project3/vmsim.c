@@ -10,7 +10,7 @@
 
 // Comment below to see more logs
 #undef ALL
-//undef DEBUG
+#undef DEBUG
 #undef INFO
 
 int numframes;
