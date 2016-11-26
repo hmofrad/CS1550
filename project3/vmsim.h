@@ -1,6 +1,7 @@
 /*
  * CS 1550: Header file for Virtual Memory skeleton code
- * with a single level 32-Bit page table
+ * with a single level 32-Bit page table and
+ * fifo page replacement algorithm
  * (c) Mohammad H. Mofrad, 2016
  * (e) hasanzadeh@cs.pitt.edu
  *
@@ -28,7 +29,6 @@
 // 32-Bit page table constants
 #define PAGE_SIZE_4KB   4096
 #define PT_SIZE_1MB     1048576
-
 #define PAGE_SIZE_BYTES 4
 #define PTE_SIZE_BYTES  4
 

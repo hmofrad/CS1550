@@ -1,15 +1,16 @@
 /*
  * CS 1550: Source file for Virtual Memory skeleton code
- * with a single level 32-Bit page table
+ * with a single level 32-Bit page table and
+ * fifo page replacement algorithm
  * (c) Mohammad H. Mofrad, 2016
  * (e) hasanzadeh@cs.pitt.edu
  */
  
 #include "vmsim.h"
 
-// Comment below to see logs
+// Comment below to see more logs
 #undef ALL
-//undef DEBUG
+#undef DEBUG
 #undef INFO
 
 int numframes;
@@ -159,7 +160,7 @@ int main(int argc, char *argv[])
       new_pte = (struct pte_32 *) handle_page_fault(fault_address);
       
       /*
-       * Traverse the frame linked list    
+       * Traverse the frames linked list    
        * to see if the requested page is present in
        * the frames linked list.
        */
@@ -248,7 +249,7 @@ int main(int argc, char *argv[])
       else
       {
          #ifdef DEBUG
-            printf("%5d: page fault – no eviction(0x%08x)\n", i, fault_address);
+            printf("%5d: page hit   – no eviction(0x%08x)\n", i, fault_address);
             printf("%5d: page hit   - keep page  (0x%08x)accessed(0x%08x)\n", i, new_pte->physical_address, curr->virtual_address);
          #endif         
       }
