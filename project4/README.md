@@ -16,5 +16,5 @@
 </ul>
 <p>Run the script:</p>
 <ul>
-  <li>./build.sh</li>
+  <li>./build.sh &lt;hello|cs1550&gt;</li>
 </ul>
