@@ -88,4 +88,27 @@ then
 elif [ $EXAMPLE = "cs1550" ];
 then
    echo "Running $1 example";
+   cd $PWD/$FUSE_DIR/example/;
+   if [ ! -d "$TEST_MOUNT" ]; 
+   then
+       echo "Creating $TEST_MOUNT";
+       mkdir $TEST_MOUNT
+   fi
+   if [ ! -f ".disk" ]; then
+       echo
+       echo "Creating disk image at \".disk\"";
+       dd bs=1K count=5K if=/dev/zero of=.disk
+   fi   
+   echo
+   echo "Unmounting the previous $TEST_MOUNT";
+   fusermount -u $TEST_MOUNT
+   echo
+   echo "Cleaning the previous build";
+   make clean
+   echo
+   echo "Making the new build";
+   make
+   echo
+   echo "Launching FUSE daemon for \"$EXAMPLE\"";
+   ./$EXAMPLE -d $TEST_MOUNT
 fi
