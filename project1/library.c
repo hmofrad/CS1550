@@ -55,7 +55,7 @@ void draw_line(color_t c)
 
 void sleep_s(unsigned seconds)
 {
-   sleep(seconds); /*This is seconds and not milliseconds */
+   sleep(seconds); /* This is in seconds and not milliseconds */
 }
 
 void clear_screen() 
