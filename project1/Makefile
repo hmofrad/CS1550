@@ -2,9 +2,9 @@
 # Graphics Library Makefile
 # (c) Mohammad H. Mofrad, 2017
 
-LIB=library
-MAIN=square
-GCC=gcc
+LIB = library
+MAIN = square
+GCC = gcc
 
 install:
         $(GCC) -o $(LIB).o -c $(LIB).c
