@@ -1,5 +1,6 @@
 # Graphics Library skeleton code
-This skeleton code will clear the screen, draw a single line on top of that, waits for 5 seconds, and then agian clear the screen. Compile the code on Qemu VM.
+This skeleton code will clear the screen, draw a single line on top of that, wait for 5 seconds, and then agian clear the screen.
+<p>ALERT: Compile and run the code only on Qemu VM.<p>
 <ul>
 <li><b>library.c</b> contains the Graphics Library implementation.</li>
 <li><b>library.h</b> includes the function signatures  and macros definitions alongside with global variable declaration</li>
