@@ -6,7 +6,6 @@
  *          for this project will contain ~300 lines or more.
  * (c) Mohammad H. Mofrad, 2017
  */
-    ///WEWE
 
 #include "library.h"
 
