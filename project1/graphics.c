@@ -6,7 +6,7 @@
  *          for this project will contain ~300 lines or more.
  * Compile: gcc -o graphics graphics.c
  * Execute: ./graphics
- * (C) Mohammad H. Mofrad, 2016
+ * (C) Mohammad H. Mofrad, 2017
  */
 
 #include <stdio.h>
