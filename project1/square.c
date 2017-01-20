@@ -10,12 +10,8 @@ int main(int argc, char** argv)
    int i;
 
    init_graphics();
-
-   char key;
-   int x = (640-20)/2;
-   int y = (480-20)/2;
-   
    clear_screen();
+
    draw_line(0xFFFF);
    sleep_s(5);
    
