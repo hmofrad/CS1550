@@ -9,7 +9,7 @@ This skeleton code will clear the screen, draw a single line on top of that, wai
 </ul>
 
 ## Prerequisites
-<p>After running devtools, run "tce-load -wi make-locale.tcz" command to install make</p>
+<p>After running devtools.sh, run "tce-load -wi make-locale.tcz" command to install make</p>
 
 
 ## Copy to Qemu VM
