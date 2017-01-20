@@ -3,7 +3,7 @@
  * (c) Mohammad H. Mofrad, 2017
  */
  
-#include "graphics.h"
+#include "library.h"
 
 int main(int argc, char** argv)
 {
