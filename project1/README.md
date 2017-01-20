@@ -4,6 +4,7 @@ This skeleton code will clear the screen, draw a single line on top of that, wai
 ## Copy to Qemu VM
   Login to Qemu VM and then run scp:
   <p>scp PITT_ID@thoth.cs.pitt.edu:WORKING_DIR/\\{library.c,library.h,square.c,Makefile\\} .</p>
+  <p>\\{...\} will copy multiple files from a same directory.</p>
 
 ## Install on Qemu VM
   make install
