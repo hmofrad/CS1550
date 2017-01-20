@@ -8,6 +8,10 @@ This skeleton code will clear the screen, draw a single line on top of that, wai
   <li><b>Makefile</b> is the Makefile for compiling the project using gcc</li>
 </ul>
 
+## Prerequisites
+<p>After running devtools, run "tce-load -wi make-locale.tcz" command to install make</p>
+
+
 ## Copy to Qemu VM
   Login to Qemu VM and then run scp:
   <p>scp PITT_ID@thoth.cs.pitt.edu:WORKING_DIR/\\{library.c,library.h,square.c,Makefile\\} .</p>
