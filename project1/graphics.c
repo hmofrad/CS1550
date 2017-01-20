@@ -4,7 +4,7 @@
  *          It is not intended to serve as a reference implementation.
  *          Following project guidelines, a complete implementation
  *          for this project will contain ~300 lines or more.
- * Compile: gcc -o graphics graphics.c
+ * Compile: gcc -o graphics graphics.c # On Qemu VM
  * Execute: ./graphics # On Qemu VM
  * (C) Mohammad H. Mofrad, 2017
  */
