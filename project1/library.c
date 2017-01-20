@@ -38,7 +38,7 @@ void init_graphics()
         fprintf(stderr, "Error mapping memory\n");
         exit(1);
     }
-    /* Skipping ioctls for teminal settings on fid1 */
+    /* Skipping ioctls for teminal settings for fid1 */
 }
 
 void draw_line(color_t c)
