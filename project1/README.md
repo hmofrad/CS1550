@@ -1,5 +1,5 @@
 # Graphics Library skeleton code
-This program will clear the screen, draw a line on top of that, waits for 5', and then agian clear the screen.
+This skeleton code will clear the screen, draw a line on top of that, waits for 5', and then agian clear the screen.
 
 ## Copy to Qemu VM
   Login to Qemu VM and then run scp:
