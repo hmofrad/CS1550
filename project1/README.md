@@ -11,3 +11,5 @@ This skeleton code will clear the screen, draw a single line on top of that, wai
   ./square
 ## Uninstall on Qemu VM
   make clean
+  
+###Don't forget to report bugs to moh18@pitt.edu.
