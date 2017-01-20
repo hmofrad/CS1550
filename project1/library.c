@@ -48,8 +48,10 @@ void draw_line(color_t c)
     for(off_p =0; off_p < size; off_p++)
     {
         *(address + off_p) = RMASK(c) | GMASK(c) | BMASK(c);
-        printf("Address(0x%08x), Color(0x%04x) B(0x%04x), G(0x%04x), R(0x%04x) \n",
-              (address + off_p), *(address + off_p), BMASK(c), GMASK(c), RMASK(c));
+        /* 
+          printf("Address(0x%08x), Color(0x%04x) B(0x%04x), G(0x%04x), R(0x%04x) \n",
+                (address + off_p), *(address + off_p), BMASK(c), GMASK(c), RMASK(c));
+        */      
     }
 }
 
