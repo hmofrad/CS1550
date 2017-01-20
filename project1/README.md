@@ -1,10 +1,10 @@
 # Graphics Library skeleton code
 This skeleton code will clear the screen, draw a single line on top of that, waits for 5 seconds, and then agian clear the screen. Compile the code on Qemu VM.
 <ul>
-<li>library.c contains the Graphics Library implementation.</li>
-<li>library.h includes the function signatures  and macros definitions alongside with global variable declaration</li>
-<li>square.c is the driver program for the project.</li>
-<li>Makefile is the Makefile for compiling the project using gcc</li>
+<li><b>library.c</b> contains the Graphics Library implementation.</li>
+<li><b>library.h</b> includes the function signatures  and macros definitions alongside with global variable declaration</li>
+<li><b>square.c</b> is the driver program for the project.</li>
+<li><b>Makefile</b> is the Makefile for compiling the project using gcc</li>
 </ul>
 
 ## Copy to Qemu VM
