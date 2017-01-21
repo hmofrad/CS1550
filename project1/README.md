@@ -9,11 +9,11 @@ This skeleton code will clear the screen, draw a single line on top of that, wai
 </ul>
 
 ## Prerequisites
-<p>After running devtools.sh, run "tce-load -wi make-locale.tcz" command to install make</p>
+<p>After running devtools.sh, execute "tce-load -wi make-locale.tcz" command to install "make"</p>
 
 
 ## Copy to Qemu VM
-  Login to Qemu VM and then run scp:
+  Login to Qemu VM and then scp:
   <p>scp PITT_ID@thoth.cs.pitt.edu:WORKING_DIR/\\{library.c,library.h,square.c,Makefile\\} .</p>
   <p>Using \\{...\\} trick, we can copy multiple files from a same directory.</p>
 
