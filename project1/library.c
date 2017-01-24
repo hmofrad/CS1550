@@ -35,7 +35,7 @@ void init_graphics()
     address = mmap(0, size, PROT_READ | PROT_WRITE, MAP_SHARED, fid, 0);
     if(address == (void *) -1)
     {
-        fprintf(stderr, "Error mapping memory\n");
+        perror("Error mapping memory");
         exit(1);
     }
     /* Skipping ioctls for teminal settings for fid1 */
@@ -75,7 +75,7 @@ void exit_graphics()
 
     if(munmap(address, size) == -1)
     {
-        fprintf(stderr, "Error unmapping memory\n");
+        perror("Error unmapping memory");
         exit(1);
     }
 
@@ -85,7 +85,7 @@ void exit_graphics()
     }
     else
     {
-        fprintf(stderr, "Error closing /dev/fb0\n");
+        perror("Error closing /dev/fb0");
         exit(1);
     }
 }
