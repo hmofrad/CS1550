@@ -3,8 +3,8 @@
  * (c) Mohammad H. Mofrad, 2017
  */
 
-#ifndef _GRAPHICS_INCLUDED_H
-#define _GRAPHICS_INCLUDED_H
+#ifndef _LIBRARY_INCLUDED_H
+#define _LIBRARY_INCLUDED_H
 
 #include <stdlib.h>
 #include <stdio.h>
