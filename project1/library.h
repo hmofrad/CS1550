@@ -12,6 +12,8 @@
 #include <linux/fb.h>
 #include <fcntl.h>
 #include <sys/mman.h>
+#include <sys/ioctl.h>
+#include <termios.h>
 
 typedef unsigned short color_t;    // |15 11|10  5|4  0|
                                    // |red  |green|blue|

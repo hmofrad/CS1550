@@ -11,8 +11,13 @@
 
 int fid;
 int fid1 = 1;
-size_t size;
 color_t *address;
+
+/* Screen size vars */
+struct fb_var_screeninfo screen_info;
+struct fb_fix_screeninfo fixed_info;
+struct termios terminal_info;
+size_t size;
 
 void init_graphics()
 {
@@ -24,21 +29,30 @@ void init_graphics()
         exit(1);
     }
 
-    /* 
-     * Horizontal resolution (1 row)
-     * Do not hardcode size in your implementation
-     * We skip some ioctls here
-     * Then add the memory mapping using
-     * "address" which is the pointer to the shared memory space with frame buffer (fb)
-     */
-    size = 640 * 1; 
-    address = mmap(0, size, PROT_READ | PROT_WRITE, MAP_SHARED, fid, 0);
-    if(address == (void *) -1)
+    /* Get screen size and bits per pixel using iotcl */
+    if (!iotcl(fid, FBIOGET_VSCREENINFO, &screen_info) &&
+    		!iotcl(fid, FBIOGET_FSCREENINFO, &fixed_info))
     {
-        perror("Error mapping memory");
-        exit(1);
+		size = screen_info.yres_virtual * fixed_info.line_length;
+
+		address = mmap(0, size, PROT_READ | PROT_WRITE, MAP_SHARED, fid, 0);
+		if(address == (void *) -1)
+		{
+			perror("Error mapping memory");
+			exit(1);
+		}
+
+		/* Turn off ICANON and ECHO bits */
+		iotcl(fid, TCGETS, &terminal_info);
+		terminal_info &= ~ICANON;
+		terminal_info &= ~ECHO;
+		iotcl(fid, TCSETS, &terminal_info);
     }
-    /* Skipping ioctls for teminal settings for fid1 */
+    else
+    {
+    	perror("Error retrieving screen size");
+    	exit(1);
+    }
 }
 
 void draw_line(color_t c)
@@ -67,18 +81,20 @@ void clear_screen()
 
 void exit_graphics() 
 {
-    /* 
-     * Skipping ioctl for reseting the terminal setting for fid1
-     * Remove the memory mapping
-     * Finally, close fb file desriptor
-     */
+	/* Turn off ICANON and ECHO bits */
+	iotcl(fid, TCGETS, &terminal_info);
+	terminal_info &= ICANON;
+	terminal_info &= ECHO;
+	iotcl(fid, TCSETS, &terminal_info);
 
+	/* Remove the memory mapping */
     if(munmap(address, size) == -1)
     {
         perror("Error unmapping memory");
         exit(1);
     }
 
+    /* Close the fb file descriptor */
     if(!close(fid))
     {
         exit(0);
