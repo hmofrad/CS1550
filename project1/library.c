@@ -16,6 +16,7 @@ color_t *address;
 /* Screen size vars */
 struct fb_var_screeninfo screen_info;
 struct fb_fix_screeninfo fixed_info;
+struct termios terminal_info;
 size_t size;
 
 void init_graphics()
@@ -40,7 +41,12 @@ void init_graphics()
 			perror("Error mapping memory");
 			exit(1);
 		}
-		/* Skipping ioctls for teminal settings for fid1 */
+
+		/* Turn off ICANON and ECHO bits */
+		iotcl(fid, TCGETS, &terminal_info);
+		terminal_info &= ~ICANON;
+		terminal_info &= ~ECHO;
+		iotcl(fid, TCSETS, &terminal_info);
     }
     else
     {
@@ -75,18 +81,20 @@ void clear_screen()
 
 void exit_graphics() 
 {
-    /* 
-     * Skipping ioctl for reseting the terminal setting for fid1
-     * Remove the memory mapping
-     * Finally, close fb file desriptor
-     */
+	/* Turn off ICANON and ECHO bits */
+	iotcl(fid, TCGETS, &terminal_info);
+	terminal_info &= ICANON;
+	terminal_info &= ECHO;
+	iotcl(fid, TCSETS, &terminal_info);
 
+	/* Remove the memory mapping */
     if(munmap(address, size) == -1)
     {
         perror("Error unmapping memory");
         exit(1);
     }
 
+    /* Close the fb file descriptor */
     if(!close(fid))
     {
         exit(0);
