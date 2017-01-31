@@ -11,8 +11,12 @@
 
 int fid;
 int fid1 = 1;
-size_t size;
 color_t *address;
+
+/* Screen size vars */
+struct fb_var_screeninfo screen_info;
+struct fb_fix_screeninfo fixed_info;
+size_t size;
 
 void init_graphics()
 {
@@ -24,21 +28,25 @@ void init_graphics()
         exit(1);
     }
 
-    /* 
-     * Horizontal resolution (1 row)
-     * Do not hardcode size in your implementation
-     * We skip some ioctls here
-     * Then add the memory mapping using
-     * "address" which is the pointer to the shared memory space with frame buffer (fb)
-     */
-    size = 640 * 1; 
-    address = mmap(0, size, PROT_READ | PROT_WRITE, MAP_SHARED, fid, 0);
-    if(address == (void *) -1)
+    /* Get screen size and bits per pixel using iotcl */
+    if (!iotcl(fid, FBIOGET_VSCREENINFO, &screen_info) &&
+    		!iotcl(fid, FBIOGET_FSCREENINFO, &fixed_info))
     {
-        perror("Error mapping memory");
-        exit(1);
+		size = screen_info.yres_virtual * fixed_info.line_length;
+
+		address = mmap(0, size, PROT_READ | PROT_WRITE, MAP_SHARED, fid, 0);
+		if(address == (void *) -1)
+		{
+			perror("Error mapping memory");
+			exit(1);
+		}
+		/* Skipping ioctls for teminal settings for fid1 */
     }
-    /* Skipping ioctls for teminal settings for fid1 */
+    else
+    {
+    	perror("Error retrieving screen size");
+    	exit(1);
+    }
 }
 
 void draw_line(color_t c)
