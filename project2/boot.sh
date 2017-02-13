@@ -23,7 +23,7 @@ if [ -f "prodcons" ]; then
 fi
 
 # Change the directory based on your working directory on thoth
-scp $1@thoth.cs.pitt.edu:/u/OSLab/$1/project2/demo/\{bzImage,System.map,prodcons\} ./
+scp $1@thoth.cs.pitt.edu:/u/OSLab/$1/CS1550/project2/\{bzImage,System.map,prodcons\} ./
 # Copy kernel files
 /bin/cp -rf bzImage /boot/bzImage-devel
 /bin/cp -rf System.map /boot/System.map-devel
