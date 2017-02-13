@@ -3,11 +3,11 @@
 <p>See project details at http://people.cs.pitt.edu/~jmisurda/teaching/cs1550/2174/cs1550-2174-project2.htm</p>
 <p>Login to thoth:</p>
 <ul>
-  <li>ssh PITT_ID@thoth.cs.pitt.edu</li>
+  <li>ssh username@thoth.cs.pitt.edu</li>
 </ul>
 <p>Navigate to your working directory:</p>
 <ul>
-  <li>cd /u/OSLab/PITT_ID/WORK_DIR</li>
+  <li>cd /u/OSLab/username/WORKING_DIR</li>
 </ul>
 <p>Give execute permission to the script:</p>
 <ul>
