@@ -28,11 +28,11 @@
 </ul>
 <p>Copy fast boot script:</p>
 <ul>
-  <li>scp PITT_ID@thoth.cs.pitt.edu:/u/OSLab/PITT_ID/WORK_DIR/boot.sh .</li>
+  <li>scp PITT_ID@thoth.cs.pitt.edu:/u/OSLab/username/WORKING_DIR/boot.sh .</li>
 </ul>
 <p>Within boot.sh change the scp target directory based on your working directory on thoth:</p>
 <ul>
-  <li>scp $1@thoth.cs.pitt.edu:/u/OSLab/$1/{CHANGE_WORK_DIR}/...</li>
+  <li>scp $1@thoth.cs.pitt.edu:/u/OSLab/$1/{CHANGE_ACCORDINGLY}/...</li>
 </ul>
 <p>Give execute permission to the script:</p>
 <ul>
@@ -40,7 +40,7 @@
 </ul>
 <p>Run the script:</p>
 <ul>
-  <li>./boot.sh PITT_ID (e.g. ./boot.sh moh18)</li>
+  <li>./boot.sh username (e.g. ./boot.sh moh18)</li>
 </ul>
 <p>Reboot Qemu VM</p>
 <ul>
