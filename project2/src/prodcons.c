@@ -12,7 +12,7 @@
 
 void *BASE_PTR;
 
-void main(int aegc, char *argv[])
+void main(int argc, char *argv[])
 {
 
      BASE_PTR = (void *) mmap(NULL, MAP_SIZE, PROT_READ|PROT_WRITE, MAP_SHARED|MAP_ANONYMOUS, 0, 0);
