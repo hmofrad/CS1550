@@ -3,7 +3,7 @@
 # (C) Mohammad H. Mofrad, 2017
 
 if [ $# -ne 1 ]; then
-    echo "Usage: ./test.sh PITT_ID"
+    echo "Usage: ./test.sh username"
     exit 1
 fi
 
