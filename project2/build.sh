@@ -3,7 +3,7 @@
 # login to thoth:
 #     ssh username@thoth.cs.pitt.edu
 # Navigate to your working directory:
-#      cd /u/OSLab/PITT_ID/WORKING_DIR
+#      cd /u/OSLab/username/WORKING_DIR
 # Give execute permission to the script:
 #      chmod +x build.sh 
 # Run the script:
@@ -14,7 +14,7 @@ BASE=$PWD # Current working directory
 KERNEL_SRC="linux-2.6.23.1.tar.bz2"; # Kernel source file
 KERNEL_DIR="linux-2.6.23.1" # Kernel source directory
 
-# Check if you are at /u/OSLab/PITT_ID
+# Check if you are at /u/OSLab/username
 # If yes, continue
 # If not,  exit
 if [[ "$BASE" =~ ^/u/OSLab/[a-zA-Z]{3}[0-9]{1,3}/.*$ ]];
@@ -22,8 +22,8 @@ then
      echo "$BASE OK.";
      if [[ "$BASE" =~ (/u/OSLab/)([a-zA-Z]{3}[0-9]{2,4}) ]];
      then 
-          PITT_ID=${BASH_REMATCH[2]}
-          echo "Your PITT_ID $PITT_ID";
+          username=${BASH_REMATCH[2]}
+          echo "Your username $username";
      fi
 else
      echo "Must change $BASE to /u/OSLab/";
