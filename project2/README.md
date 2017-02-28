@@ -28,7 +28,7 @@
 </ul>
 <p>Copy fast boot script:</p>
 <ul>
-  <li>scp PITT_ID@thoth.cs.pitt.edu:/u/OSLab/username/WORKING_DIR/boot.sh .</li>
+  <li>scp username@thoth.cs.pitt.edu:/u/OSLab/username/WORKING_DIR/boot.sh .</li>
 </ul>
 <p>Within boot.sh change the scp target directory based on your working directory on thoth (line #26):</p>
 <ul>
