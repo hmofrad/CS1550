@@ -1,9 +1,11 @@
 # Vitrual memory implementation with a single level 32-Bit page table and FIFO page replacement algorithm
 
 ##Install
+
 make
 
 ##Run
+
 ./vimsim -n &lt;numframes&gt; -a &lt;fifo&gt; &lt;tracefile&gt;
 
 ##Trace files
@@ -12,6 +14,7 @@ make
 * cp /u/OSLab/original/gcc.trace.gz  ./ && gunzip gcc.trace.gz
 
 ##Uninstall
+
 make clean
 
 ##Log levels
