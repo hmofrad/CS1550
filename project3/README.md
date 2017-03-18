@@ -26,4 +26,5 @@ make clean
 * vmsim.h: Header file for Virtual Memory implementation in c
 * Makefile: Makefile for building the vmsim binary
 
-### Don't forget to report bugs to moh18@pitt.edu.
+## Report bugs
+* Report your bugs to moh18@pitt.edu.
