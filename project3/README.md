@@ -1,4 +1,4 @@
-# 32-Bit Vitrual memory implementation
+# 32-Bit Vitrual Memory Implementation
 Vitrual memory implementation with a single level 32-Bit page table and FIFO page replacement algorithm. See project details [here](http://people.cs.pitt.edu/~jmisurda/teaching/cs1550/2174/cs1550-2174-project3.htm).
 
 ## Install
