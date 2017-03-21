@@ -1,5 +1,5 @@
 ## 1. Fast Build Script (build.sh)
-A script for adding syscalls to Linux (compatible with linux-2.6.23.1). See project details at http://people.cs.pitt.edu/~jmisurda/teaching/cs1550/2174/cs1550-2174-project2.htm
+A script for adding syscalls to Linux (compatible with linux-2.6.23.1). See project details [here](http://people.cs.pitt.edu/~jmisurda/teaching/cs1550/2174/cs1550-2174-project2.htm).
 
 Login to thoth:
 
