@@ -46,7 +46,7 @@ Reboot Qemu VM
 
 Select Linux (devel) from boot loader menu
 
-* Hit <Enter>
+* Hit Enter
 
 Run prodcons binary:
 
