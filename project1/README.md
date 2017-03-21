@@ -13,7 +13,7 @@ After running devtools.sh, execute "tce-load -wi make-locale.tcz" command to ins
 
 ## Copy to Qemu VM
 Login to Qemu VM and then scp:
-* scp PITT_ID@thoth.cs.pitt.edu:WORKING_DIR/\\{library.c,library.h,square.c,Makefile\\} .
+* scp username@thoth.cs.pitt.edu:WORKING_DIR/\\{library.c,library.h,square.c,Makefile\\} .
 * Using \\{...\\} trick, we can copy multiple files from a same directory.
 
 ## Install on Qemu VM
@@ -23,4 +23,5 @@ make install
 ## Uninstall on Qemu VM
 make clean
   
-###Don't forget to report bugs to moh18@pitt.edu.
+### Report bugs
+Report your bugs to moh18@pitt.edu.
