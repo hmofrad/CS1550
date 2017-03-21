@@ -1,8 +1,8 @@
-#Directory information
+## Directory information
 
-<p><b>prodcons.c</b> is the skeleton source code for prodcons problem.</p>
-<p><b>prodcons.h</b> is the skeleton source linrary for prodcons problem.</p>
-<p><b>sys.c</b> contains syscall implementations.</p>
-<p><b>syscalls.h</b> is the Linux syscall interface.</p>
-<p><b>syscall_table.S</b> contains syscall names and numbers.</p>
-<p><b>unistd.h</b> contains syscall numbers.</p>
+** prodcons.c** is the skeleton source code for prodcons problem.
+** prodcons.h** is the skeleton source linrary for prodcons problem.
+*  sys.c** contains syscall implementations.
+** syscalls.h** is the Linux syscall interface.
+** syscall_table.S** contains syscall names and numbers.
+** unistd.h** contains syscall numbers.
