@@ -1,24 +1,18 @@
 # 1. Fast Build Script (build.sh)
-<p>A script for adding syscalls to Linux (compatible with linux-2.6.23.1).</p>
-<p>See project details at http://people.cs.pitt.edu/~jmisurda/teaching/cs1550/2174/cs1550-2174-project2.htm</p>
-<p>Login to thoth:</p>
-<ul>
-  <li>ssh username@thoth.cs.pitt.edu</li>
-</ul>
-<p>Navigate to your working directory:</p>
-<ul>
-  <li>cd /u/OSLab/username/WORKING_DIR</li>
-</ul>
-<p>Give execute permission to the script:</p>
-<ul>
-  <li>chmod +x build.sh</li>
-</ul>
-<p>Run the script:</p>
-<ul>
-  <li>./build.sh</li>
-</ul>
+A script for adding syscalls to Linux (compatible with linux-2.6.23.1).
+See project details at http://people.cs.pitt.edu/~jmisurda/teaching/cs1550/2174/cs1550-2174-project2.htm
 
+Login to thoth:
+ssh username@thoth.cs.pitt.edu
 
+Navigate to your working directory:
+  cd /u/OSLab/username/WORKING_DIR
+
+Give execute permission to the script:
+chmod +x build.sh
+
+Run the script:
+./build.sh
 
 # 2. Fast Boot Script (boot.sh)
 <p>Login to Qemu VM:</p>
