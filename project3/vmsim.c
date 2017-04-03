@@ -173,6 +173,10 @@ int main(int argc, char *argv[])
             if(new_pte->present)
             {
                curr->virtual_address = fault_address;
+               if(mode_type=='W')
+               {
+                  curr->pte_pointer->dirty=1;
+               }
                hit = 1;
             }
             break;
