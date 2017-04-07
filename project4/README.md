@@ -17,4 +17,4 @@ Give execute permission to the _build.sh_ script:
   * chmod +x build.sh
 
 Run the _build.sh_ script for hello world example or cs1550 code skeleton:
-  * ./build.sh &lt;hello|cs1550&gt;
+  * ./build.sh &lt;hello | cs1550&gt;
