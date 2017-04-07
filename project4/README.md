@@ -17,4 +17,4 @@ Run _build.sh_ script to build FUSE
  * ./build.sh
   
 Run _build.sh_ script to test hello world example or cs1550 code skeleton
- * ./build.sh &lt;hello | cs1550&gt;
+ * ./build.sh &lt;hello|cs1550&gt;
