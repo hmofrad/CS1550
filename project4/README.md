@@ -1,7 +1,7 @@
 # FUSE: Filesystem in Userspace
 
 ## Fast Build Script (build.sh)
-A script for building FUSE on thoth. For more information see project details at [here](http://people.cs.pitt.edu/~jmisurda/teaching/cs1550/2174/cs1550-2174-project4.htm).
+A script for building and testing FUSE only on thoth. For more information see project details at [here](http://people.cs.pitt.edu/~jmisurda/teaching/cs1550/2174/cs1550-2174-project4.htm).
 
 Login to thoth
  * ssh username@thoth.cs.pitt.edu
