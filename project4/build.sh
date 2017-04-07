@@ -22,9 +22,9 @@ EXAMPLE=$1
 
 # Check if you are at /u/OSLab/PITT_ID
 # If yes, continue
-# If not,  exit
+# If no,  exit
 # Comment this part if the regular expression is not 
-# compatible with your PITT_ID but you are working under
+# compatible with your username but you are working under
 # /u/OSLab/PITT_ID directory
 if [[ "$BASE" =~ ^/u/OSLab/[a-zA-Z]{3}[0-9]{1,3}/.*$ ]];
 then
@@ -40,8 +40,9 @@ else
 fi;
 
 # Check if you have the FUSE directory in your working directory
-# If not, extract fuse directory
 # If yes, do nothing
+# If no, extract fuse directory
+
 if [ -f "$FUSE_SRC" ];
 then
      echo "$FUSE_SRC found.";
