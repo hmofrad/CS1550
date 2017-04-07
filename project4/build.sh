@@ -6,8 +6,11 @@
 #      git clone https://github.com/hmofrad/CS1550 /u/OSLab/username/CS1550
 # Give execute permission to the build.sh script
 #      chmod +x build.sh 
-# Run the build.sh script for hello world example or cs1550 code skeleton
-#      ./build.sh <hello | cs1550>
+# Run build.sh script to build FUSE 
+#      ./build.sh
+# Run build.sh script with example arguments to test
+# hello world example or cs1550 code skeleton
+#      ./build.sh <hello|cs1550>
 # (c) Mohammad H. Mofrad, 2017
 # (e) mohammad.hmofrad@pitt.edu
 
@@ -58,7 +61,7 @@ fi
 
 if [ $# -eq 0 ];
   then
-    echo "To run FUSE examples use \"$0 example\"";
+    echo "To run FUSE examples use \"$0 hello | cs1550\"";
     echo "USAGE: \"$0 <hello|cs1550>\"";
     exit;
 fi
