@@ -13,8 +13,8 @@ Clone the repository and navigate to project 4 directory
 Give execute permission to _build.sh_ script
  * chmod +x build.sh
 
-Run _build.sh_ script to install FUSE
+Run _build.sh_ script to build FUSE
  * ./build.sh
   
-Run _build.sh_ script to test the hello world example or cs1550 code skeleton
+Run _build.sh_ script to test hello world example or cs1550 code skeleton
  * ./build.sh &lt;hello | cs1550&gt;
