@@ -10,8 +10,11 @@ Clone the repository and navigate to project 4 directory
  * git clone https://github.com/hmofrad/CS1550 /u/OSLab/username/CS1550
  * cd /u/OSLab/username/CS1550/project4
  
-Give execute permission to the _build.sh_ script
-  * chmod +x build.sh
+Give execute permission to _build.sh_ script
+ * chmod +x build.sh
 
-Run the _build.sh_ script for hello world example or cs1550 code skeleton
-  * ./build.sh &lt;hello | cs1550&gt;
+Run _build.sh_ script to install FUSE or test the hello world example or cs1550 code skeleton
+ * ./build.sh &lt;hello | cs1550&gt;
+  
+Run _build.sh_ script to test the hello world example or cs1550 code skeleton
+ * ./build.sh &lt;hello | cs1550&gt;
