@@ -4,7 +4,7 @@ This skeleton code will clear the screen, draw a single line on top of the scree
 **ALERT** : Compile and run this code only on Qemu VM.
 
 * **library.c** contains the Graphics Library implementation.
-* **library.h** includes the function signatures  and macros definitions alongside with global variable declaration.
+* **library.h** includes the function signatures  and macros definitions alongside global variable declaration.
 * **square.c** is the driver program for the project.
 * **Makefile** is the Makefile for compiling the project using gcc.
 
