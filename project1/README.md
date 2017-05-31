@@ -1,5 +1,5 @@
 # Graphics library skeleton code
-This skeleton code will clear the screen, draw a single line on top of that, wait for 5 seconds, and then agian clear the screen.
+This skeleton code will clear the screen, draw a single line on top of the screen, wait for 5 seconds, and then agian clear the screen.
 
 **ALERT** : Compile and run this code only on Qemu VM.
 
