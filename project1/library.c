@@ -33,7 +33,7 @@ void init_graphics()
         exit(1);
     }
     
-    if(ioctl(fid, FBIOGET_VSCREENINFO, &fixed_info) == -1)
+    if(ioctl(fid, FBIOGET_FSCREENINFO, &fixed_info) == -1)
     {
         perror("Error using ioctl");
         exit(1);
