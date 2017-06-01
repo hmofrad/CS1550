@@ -40,7 +40,7 @@ void init_graphics()
     }
     
     size = var_info.yres_virtual * fixed_info.line_length;
-    printf("%d\n", size);
+    printf("%d %d %d\n", size, var_info.yres_virtual, fixed_info.line_length);
     
     address = mmap(0, size, PROT_READ | PROT_WRITE, MAP_SHARED, fid, 0);
     if(address == (void *) -1)
