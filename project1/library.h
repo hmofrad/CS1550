@@ -27,6 +27,6 @@ typedef unsigned short color_t;    // |15 11|10  5|4  0|
 void clear_screen();
 void init_graphics();
 void exit_graphics();
-void draw_line(color_t c);
+void draw_pixel(color_t color);
 
 #endif
