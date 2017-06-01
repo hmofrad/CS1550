@@ -62,7 +62,8 @@ void sleep_s(unsigned seconds)
 
 void clear_screen() 
 {
-    write(STDOUT_FILENO, "\033[2J", 4);  /* This will do the trick for fid1*/
+    const char cmd[] = "\033[2J";
+    write(STDOUT_FILENO, cmd, sizeof(cmd));  /* This will do the trick for fid1*/
 }
 
 void exit_graphics() 
