@@ -68,10 +68,10 @@ void draw_pixel(int x, int y, color_t color) {
 	
 	int coordinate = (y * var_info.xres_virtual) + x;
 	printf("%d %p\n", coordinate, *(address + coordinate));
-	exit(0);
+	exit(1);
 	//int coordinate = (y * fixed_info.line_length / sizeof(color_t)) + x;
 	
-	*(address + coordinate) = color;
+	//*(address + coordinate) = color;
 }
 
 //void draw_line(color_t color)
