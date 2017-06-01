@@ -11,7 +11,6 @@
 #include "library.h"
 
 int fid;
-int fid1 = 1;
 size_t size;
 color_t *address;
 
@@ -63,7 +62,7 @@ void sleep_s(unsigned seconds)
 
 void clear_screen() 
 {
-    write(fid1, "\033[2J", 4);  /* This will do the trick for fid1*/
+    write(STDIN_FILENO, "\033[2J", 4);  /* This will do the trick for fid1*/
 }
 
 void exit_graphics() 
