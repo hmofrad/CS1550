@@ -13,7 +13,7 @@ int main(int argc, char** argv)
    init_graphics();
    clear_screen();
 
-   draw_line(0xFFFF);
+   draw_pixel(255);
    sleep_s(5);
    
    clear_screen();
