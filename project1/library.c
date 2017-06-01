@@ -39,7 +39,7 @@ void init_graphics()
         exit(1);
     }
     
-    size = var_info.yres_virtual * fixed_info.line_length;
+    size = var_info.yres_virtual * fixed_info.xres_virtual * sizeof(color_t); // 640 * 480 * 2 = 614400
     printf("%d %d %d %d\n", size, var_info.yres_virtual, fixed_info.line_length, fixed_info.smem_len);
     
     address = mmap(0, size, PROT_READ | PROT_WRITE, MAP_SHARED, fid, 0);
