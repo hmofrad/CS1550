@@ -13,7 +13,7 @@ int main(int argc, char** argv)
    init_graphics();
    clear_screen();
    for(i = 0; i < 640; i++)
-       draw_pixel(i, 100, 255);
+       draw_pixel(i, 100, 65535); // White color
    sleep_s(5);
    
    clear_screen();
