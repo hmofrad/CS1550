@@ -4,11 +4,12 @@
  * (e) mohammad.hmofrad@pitt.edu
  */
 
-#ifndef _LIBRARY_INCLUDED_H
-#define _LIBRARY_INCLUDED_H
+#ifndef _LIBRARY_INCLUDED
+#define _LIBRARY_INCLUDED
 
 #include <stdlib.h>
 #include <stdio.h>
+#include <unistd.h>
 
 #include <linux/fb.h>
 #include <fcntl.h>
