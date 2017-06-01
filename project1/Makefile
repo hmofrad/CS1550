@@ -4,7 +4,7 @@
 # (e) mohammad.hmofrad@pitt.com
 
 LIB = library
-MAIN = square
+MAIN = driver
 GCC = gcc
 
 install:
