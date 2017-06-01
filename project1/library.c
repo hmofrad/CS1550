@@ -65,7 +65,12 @@ void init_graphics()
 
 void draw_pixel(int x, int y, color_t color) {
 	if (y >= 480) return; // invalid coordinate
-	int coordinate = (y * fixed_info.line_length / sizeof(color_t)) + x;
+	
+	int coordinate = (y * var_info.xres_virtual) + x;
+	printf("%d %p\n", coordinate, *(address + coordinate));
+	exit(0);
+	//int coordinate = (y * fixed_info.line_length / sizeof(color_t)) + x;
+	
 	*(address + coordinate) = color;
 }
 
