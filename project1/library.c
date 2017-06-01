@@ -62,7 +62,7 @@ void sleep_s(unsigned seconds)
 
 void clear_screen() 
 {
-    write(STDIN_FILENO, "\033[2J", 4);  /* This will do the trick for fid1*/
+    write(STDOUT_FILENO, "\033[2J", 4);  /* This will do the trick for fid1*/
 }
 
 void exit_graphics() 
