@@ -24,7 +24,7 @@ void init_graphics()
     if(fid == -1)
     {
         perror("Error opening /dev/fb0");
-        exit(1);
+        exit(1);	    
     }
 
     if(ioctl(fid, FBIOGET_VSCREENINFO, &var_info) == -1)
@@ -63,30 +63,15 @@ void init_graphics()
     }
 }
 
-void draw_pixel(int x, int y, color_t color) {
-	if (y >= 480) return; // invalid coordinate
-	
-	int coordinate = (y * var_info.xres_virtual) + x;
-	printf("%d %p\n", coordinate, *(address + coordinate));
-	exit(1);
-	//int coordinate = (y * fixed_info.line_length / sizeof(color_t)) + x;
-	
-	//*(address + coordinate) = color;
+void draw_pixel(int x, int y, color_t color)
+{
+    if (y >= 480)  // Invalid coordinate
+    {
+        return;
+    }
+    int coordinate = (y * var_info.xres_virtual) + x;
+    *(address + coordinate) = color;
 }
-
-//void draw_line(color_t color)
-//{
-    /* Print a single line */
-//    color_t off_p = 0;
-//    for(off_p =0; off_p < size; off_p++)
-//    {
-//        *(address + off_p) = RMASK(c) | GMASK(c) | BMASK(c);
-        /* 
-          printf("Address(0x%08x), Color(0x%04x) B(0x%04x), G(0x%04x), R(0x%04x) \n",
-                (address + off_p), *(address + off_p), BMASK(c), GMASK(c), RMASK(c));
-        */      
-//    }
-//}
 
 void sleep_s(unsigned seconds)
 {
