@@ -1,4 +1,2 @@
 # CS1550 - Introduction to Operating Systems
-This is the repository for [CS1550](http://people.cs.pitt.edu/~jmisurda/teaching/cs1550.htm) at the Computer Science Department of the University of Pittsburgh
-
-[comment]: <> (For more information about the recitations please visit http://people.cs.pitt.edu/~hasanzadeh/pages/cs1550_2174.html.)
+This is the repository for [CS1550 recitation](http://cs.pitt.edu/~moh18/pages/cs1550.htmls1550.htm) at the Computer Science Department of the University of Pittsburgh
