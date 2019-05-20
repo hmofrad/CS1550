@@ -2357,16 +2357,16 @@ int orderly_poweroff(bool force)
 	return ret;
 }
 
-/* BEGIN */
-//#include <linux/sem.h>
-//struct cs1550_sem;
+/* Added by Mohammd H. Mofrad */
+/* START */
 asmlinkage long sys_cs1550_down(struct cs1550_sem *sem) 
 {
-     printk(KERN_WARNING "semaphore value (current)         %d\n", (int) sem->value);
+     printk(KERN_WARNING "semaphore value (current)         %d\n", sem->value);
      sem->value--;
      printk(KERN_WARNING "Semaphore value (after decrement) %d\n", sem->value);
      return 0;
 }
+
 
 asmlinkage long sys_cs1550_up(struct cs1550_sem *sem) 
 {
