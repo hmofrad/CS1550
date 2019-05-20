@@ -8,11 +8,12 @@
 #      Then run the script by
 #      ./bott.sh
 
-if [ $# -ne 1 ]; then
-    echo "Usage: ./boot.sh PITT_ID"
-    exit 1
+if [ -z $1 ]; then
+    echo "WARN: PITT_ID is not set!" 
+else
+    PITT_ID=$1
+    echo "INFO: Your PITT_ID is $PITT_ID"
 fi
-
 
 FILES="test /boot/bzImage-devel /boot/System.map-devel"
 echo "INFO: Cleaning ${FILES}"
@@ -26,7 +27,15 @@ do
 done
 
 # Change the directory based on your working directory on thoth
-scp $1@thoth.cs.pitt.edu:/u/OSLab/$1/project2/demo/\{bzImage,System.map,test\} ./
+if [ -z "$PITT_ID" ]
+then
+    echo "ERROR: Edit the following line" 
+    WORKING_DIR=""
+    PITT_ID=""
+    scp $PITT_ID@thoth.cs.pitt.edu:/$WORKING_DIR/\{bzImage,System.map,test\} ./ 
+else
+    scp $PITT_ID@thoth.cs.pitt.edu:/WORKING_DIR_AUTO/\{bzImage,System.map,test\} ./ 
+fi
 # Copy kernel files
 /bin/cp -rf bzImage /boot/bzImage-devel
 /bin/cp -rf System.map /boot/System.map-devel
