@@ -58,7 +58,7 @@
 </ul>
 <p>Run the script:</p>
 <ul>
-  <li>./boot.sh PITT_ID WORKING_DIR(e.g. ./boot.sh moh18 /u/OSLab/moh18/cs1550/project1)</li>
+  <li>./boot.sh PITT_ID WORKING_DIR (e.g. ./boot.sh moh18 /u/OSLab/moh18/cs1550/project1)</li>
 </ul>
 <p>Reboot Qemu VM</p>
 <ul>
