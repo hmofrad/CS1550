@@ -92,7 +92,7 @@ then
      cp $KERNEL_DIR/System.map .;
 
      # Compile prodcons program statistically using kernel source directory
-     gcc -m32 -o prodcons -I $KERNEL_DIR/include/ ./src/prodcons.c;
+     gcc -m32 -o test -I $KERNEL_DIR/include/ ./src/test.c;
 else
      echo "Error: Kernel compilation error"
 fi
