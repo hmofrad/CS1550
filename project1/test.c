@@ -10,11 +10,11 @@
 #include "sem.h"
 
 
-void cs1550_down(struct cs1550_sem *sem) {
+void down(struct cs1550_sem *sem) {
   syscall(__NR_cs1550_down, sem);
 }
 
-void cs1550_up(struct cs1550_sem *sem) {
+void up(struct cs1550_sem *sem) {
   syscall(__NR_cs1550_up, sem);
 }
 
@@ -26,10 +26,10 @@ int main(int argc, char** argv) {
     sem->value = 0;
     printf("Initial     semaphore value = %d\n", sem->value);
     sleep(5);
-    cs1550_down(sem);
+    down(sem);
     printf("Decremented semaphore value = %d\n", sem->value);
     sleep(5);
-    cs1550_up(sem);
+    up(sem);
     printf("Incremented semaphore value = %d\n", sem->value);
     return(0);
 }
