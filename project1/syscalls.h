@@ -617,8 +617,8 @@ int kernel_execve(const char *filename, char *const argv[], char *const envp[]);
 /* BEGIN */
 #include <linux/prodcons.h>
 struct cs1550_sem;
-asmlinkage long sys_cs1550_down(struct cs1550_sem *sem);
-asmlinkage long sys_cs1550_up  (struct cs1550_sem *sem);
+asmlinkage long cs1550_down(struct cs1550_sem *sem);
+asmlinkage long cs1550_up  (struct cs1550_sem *sem);
 /* END */
 
 #endif
