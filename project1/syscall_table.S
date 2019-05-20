@@ -325,6 +325,6 @@ ENTRY(sys_call_table)
 	.long sys_eventfd
 	.long sys_fallocate
     /* BEGIN */
-	.long sys_cs1550_down           /* 325 */ /* Added by Mohammd H. Mofrad */
-	.long sys_cs1550_up             /* 326 */ /* Added by Mohammd H. Mofrad */
+	.long cs1550_down           /* 325 */
+	.long cs1550_up             /* 326 */
     /* END */
