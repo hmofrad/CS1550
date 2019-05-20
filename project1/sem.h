@@ -6,12 +6,18 @@
 
 #ifndef SEM_H_INCLUDED
 #define SEM_H_INCLUDED
-//#include <linux/unistd.h>
+
+#include <asm/errno.h>
+#include <asm/unistd.h>
 // Your implementation goes here ...
 struct cs1550_sem {
    int value;
    //Some process queue of your devising
 };
+
+void  cs1550_down(struct cs1550_sem *);
+void  cs1550_up  (struct cs1550_sem *);
+
 /*
 void down(struct cs1550_sem *sem) {
   syscall(__NR_cs1550_down, sem);
