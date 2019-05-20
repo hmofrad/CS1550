@@ -333,7 +333,7 @@
 
 /* BEGIN */
 #define __NR_sys_cs1550_down	325
-#define __NR_sys_cs1550_up	326
+#define __NR_sys_cs1550_up	    326
 
 #ifdef __KERNEL__
 
