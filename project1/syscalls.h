@@ -615,10 +615,10 @@ asmlinkage long sys_fallocate(int fd, int mode, loff_t offset, loff_t len);
 int kernel_execve(const char *filename, char *const argv[], char *const envp[]);
 
 /* BEGIN */
-#include <linux/prodcons.h>
-struct cs1550_sem;
-asmlinkage long cs1550_down(struct cs1550_sem *sem);
-asmlinkage long cs1550_up  (struct cs1550_sem *sem);
+//#include <linux/prodcons.h>
+//struct cs1550_sem;
+//asmlinkage long cs1550_down(struct cs1550_sem *sem);
+//asmlinkage long cs1550_up  (struct cs1550_sem *sem);
 /* END */
 
 #endif
