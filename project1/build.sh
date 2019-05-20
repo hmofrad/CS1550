@@ -48,21 +48,22 @@ if [ -f "$KERNEL_DIR" ]; then
     exit
 fi
 
+echo "INFO: Coppying sys.c, syscall_table.S, unistd.h,  ..." 
 # Project 1 (Please upload sys.c, syscall_table.S, unitstd.h, and sem.h)
 # This file contains sys_cs1550_up and sys_cs1550_down implementations
-cp ./src/sys.c           $KERNEL_DIR/kernel/sys.c;             
+cp sys.c           $KERNEL_DIR/kernel/sys.c;             
 # This file contains sys_cs1550_up and sys_cs1550_down signatures 
 #                            && #include <linux/prodcons.h>
 #                            && struct cs1550_sem;
 #cp ./src/syscalls.h      $KERNEL_DIR/include/linux/syscalls.h;
 # You should put syscall names along with syscall number here
-cp ./src/syscall_table.S $KERNEL_DIR/arch/i386/kernel/syscall_table.S
+cp syscall_table.S $KERNEL_DIR/arch/i386/kernel/syscall_table.S
 # Define your syscall names and number here
-cp ./src/unistd.h        $KERNEL_DIR/include/asm/unistd.h
+cp unistd.h        $KERNEL_DIR/include/asm/unistd.h
 # prodcons library
 #cp ./src/prodcons.h      $KERNEL_DIR/include/linux/prodcons.h;
 
-
+exit;
 # If exists, clear previous build
 FILES="System.map bzImage $KERNEL_DIR/System.map $KERNEL_DIR/arch/i386/boot/bzImage"
 echo "${P}"
