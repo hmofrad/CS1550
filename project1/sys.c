@@ -2358,7 +2358,7 @@ int orderly_poweroff(bool force)
 }
 
 /* BEGIN */
-struct cs1550_sem;
+#include "sem.h"
 //struct cs1550_sem {
   // int value;
    //Some process queue of your devising
