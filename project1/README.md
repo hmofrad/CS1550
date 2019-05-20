@@ -1,97 +1,66 @@
-#!/bin/bash
-# build.sh: Build script for Linux kernel
-# (c) Mohammad Hasanzadeh Mofrad, 2019
-# (e) moh18@pitt.edu
-# Run: First give execute permission to the script by
-#      chmod +x build.sh 
-#      Then run the script by
-#      ./build.sh
+# 1. build.sh
+<p>Script for adding cs1550 syscalls to Linux (compatible with linux-2.6.23.1).</p>
 
-BASE=$PWD # Current working directory 
-KERNEL_SRC="linux-2.6.23.1.tar.bz2"; # Kernel source file
-KERNEL_DIR="linux-2.6.23.1" # Kernel source directory
+<p>Login to thoth:</p>
+<ul>
+  <li>ssh PITT_ID@thoth.cs.pitt.edu</li>
+</ul>
+<p>Navigate to your dedicated directory:</p>
+<ul>
+  <li>cd /u/OSLab/PITT_ID</li>
+</ul>
+<p>Clone the cs1550 repo:</p>
+<ul>
+  <li>git clone https://github.com/hmofrad/CS1550</li>
+</ul>
+<p>Navigate to project 1 dir:</p>
+<ul>
+  <li>cd CS1550/project1</li>
+</ul>
+<p>Give execute permission to the build.sh script:</p>
+<ul>
+  <li>chmod +x build.sh</li>
+</ul>
+<p>Run the script:</p>
+<ul>
+  <li>./build.sh</li>
+</ul>
 
+# 2. boot.sh
+<p> Script for booting Qemu VM. Should be executed inisde the Qemu.</p>
+<p>Download the qemu emulator from courseweb and launch it</p>
+<p>Login to Qemu VM:</p>
+<ul>
+  <li>Username: root</li>
+  <li>Password: root</li>
+</ul>
+<p>While logging in on the Qemu, copy boot.sh script from thoth to Qemu:</p>
+<ul>
+  <li>scp PITT_ID@thoth.cs.pitt.edu:/u/OSLab/PITT_ID/cs1550/project1/boot.sh .</li>
+</ul>
+<p>In Qemu, change the scp target directory of boot.sh based on your working directory on thoth:</p>
+<ul>
+  <li>scp $1@thoth.cs.pitt.edu:/u/OSLab/$1/{CHANGE_WORK_DIR}/...</li>
+</ul>
+<p>Give execute permission to the script:</p>
+<ul>
+  <li>chmod +x boot.sh</li>
+</ul>
+<p>Run the script:</p>
+<ul>
+  <li>./boot.sh PITT_ID (e.g. ./boot.sh moh18)</li>
+</ul>
+<p>Reboot Qemu VM</p>
+<ul>
+  <li>reboot</li>
+</ul>
+<p>Select Linux (devel) from boot loader menu</p>
+<ul>
+  <li>Hit enter</li>
+</ul>
+<p>Run prodcons binary:</p>
 
-if [ -z $1 ]; then
-    PITT_ID="PITT_ID"
-    echo "WARN: PITT_ID is not set!"; 
-else
-    PITT_ID=$1
-    echo "INFO: Your PITT_ID is $PITT_ID";
-fi
-
-if [[ "$BASE" =~ ^/u/OSLab/.*$ ]];
-then
-     echo "INFO: $BASE is oaky.";
-else
-     echo "WARN: For proper use, navigate to /u/OSLab/$PITT_ID and then clone the repo.";
-fi;
-
-# Check if you have the kernel directory in your working directory
-# If not, extract kernel directory
-# If yes, do nothing
-if [ -f "$KERNEL_SRC" ]; then
-     echo "INFO: $KERNEL_SRC found."
-else
-    echo "INFO: $KERNEL_SRC not found."
-    if [ -f "/u/OSLab/original/$KERNEL_SRC" ]; then
-        cp /u/OSLab/original/$KERNEL_SRC .
-    else
-        wget http://cs.pitt.edu/~moh18/files/pages/$KERNEL_SRC
-    fi;
-    echo "INFO: Extracting $KERNEL_SRC ..." 
-    tar xjvf $KERNEL_SRC
-fi
-  
-if [ -f "$KERNEL_DIR" ]; then
-    echo "ERROR: Something went wrong! $KERNEL_DIR not found."
-    exit
-fi
-
-echo "INFO: Coppying sys.c, syscall_table.S, unistd.h,  ..." 
-# Project 1 (Please upload sys.c, syscall_table.S, unitstd.h, and sem.h)
-# This file contains sys_cs1550_up and sys_cs1550_down implementations
-cp sys.c           $KERNEL_DIR/kernel/sys.c;             
-# This file contains sys_cs1550_up and sys_cs1550_down signatures 
-#                            && #include <linux/prodcons.h>
-#                            && struct cs1550_sem;
-#cp ./src/syscalls.h      $KERNEL_DIR/include/linux/syscalls.h;
-# You should put syscall names along with syscall number here
-cp syscall_table.S $KERNEL_DIR/arch/i386/kernel/syscall_table.S
-# Define your syscall names and number here
-cp unistd.h        $KERNEL_DIR/include/asm/unistd.h
-# prodcons library
-#cp ./src/prodcons.h      $KERNEL_DIR/include/linux/prodcons.h;
-
-exit;
-# If exists, clear previous build
-FILES="System.map bzImage $KERNEL_DIR/System.map $KERNEL_DIR/arch/i386/boot/bzImage"
-echo "${P}"
-for FILE in ${FILES};
-do
-if [ -a "$FILE" ];
-then
-     echo $FILE
-     rm -rf $FILE;
-fi
-done
-
-# Compile kernel
-cd $KERNEL_DIR;
-make ARCH=i386 bzImage; 
-cd ..; 
-
-if [ -a "$KERNEL_DIR/System.map" ] && [ -a "$KERNEL_DIR/arch/i386/boot/bzImage" ];
-then
-     # Copy kernel image to your working directory
-     cp $KERNEL_DIR/arch/i386/boot/bzImage .; 
-     # Copy kernel symbole table
-     cp $KERNEL_DIR/System.map .;
-
-     # Compile prodcons program statistically using kernel source directory
-     gcc -m32 -o prodcons -I $KERNEL_DIR/include/ ./src/prodcons.c;
-else
-     echo "Error: Kernel compilation error"
-fi
-
-exit
+<ul>
+  <li>./prodcons</li>
+  <li>And you will see a semaphore increment followed by a decrement</li>
+</ul>
