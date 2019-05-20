@@ -15,7 +15,7 @@
 </ul>
 <p>Navigate to project 1 dir:</p>
 <ul>
-  <li>cd project1</li>
+  <li>cd CS1550/project1</li>
 </ul>
 <p>Give execute permission to the build.sh script:</p>
 <ul>
