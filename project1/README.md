@@ -1,4 +1,14 @@
-# 1. build.sh
+# 1. Files
+
+* **sys.c** contains syscall implementations.
+* **syscall_table.S** contains syscall names and numbers.
+* **unistd.h** contains syscall numbers for user.
+* **sem.h** has cs1550 semaphore implementation
+* **test.c** is the test driver.
+* **config** is the Linux config file.
+
+
+# 2. build.sh
 <p>Script for adding cs1550 syscalls to Linux (compatible with linux-2.6.23.1).</p>
 
 <p>Login to thoth:</p>
@@ -26,7 +36,7 @@
   <li>./build.sh</li>
 </ul>
 
-# 2. boot.sh
+# 3. boot.sh
 <p> Script for booting Qemu VM. Should be executed inisde the Qemu.</p>
 <p>Download the qemu emulator from courseweb and launch it</p>
 <p>Login to Qemu VM:</p>
