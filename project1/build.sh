@@ -46,26 +46,23 @@ if [ ! -d "$KERNEL_DIR" ]; then
     tar xjf $KERNEL_SRC
 fi
 
-echo "INFO: Coppying sys.c, syscall_table.S, unistd.h,  ..." 
+echo "INFO: Copying files ..." 
 # Project 1 (Please upload sys.c, syscall_table.S, unitstd.h, and sem.h)
 
 # This file is the kernel config file
 cp config $KERNEL_DIR/.config
+
 # This file contains sys_cs1550_up and sys_cs1550_down implementations
 cp sys.c           $KERNEL_DIR/kernel/sys.c;             
-# This file contains sys_cs1550_up and sys_cs1550_down signatures 
-#                            && #include <linux/prodcons.h>
-#                            && struct cs1550_sem;
-#cp syscalls.h      $KERNEL_DIR/include/linux/syscalls.h;
-# You should put syscall names along with syscall number here
+
+# System call table
 cp syscall_table.S $KERNEL_DIR/arch/i386/kernel/syscall_table.S
-# Define your syscall names and number here
+
+# This file contains syscall names along with syscall number
 cp unistd.h        $KERNEL_DIR/include/asm/unistd.h
-# prodcons library
-#cp sem.h      $KERNEL_DIR/include/linux/sem.h;
 
 
-# If exists, clear previous build
+# If exists, clear the old build
 FILES="System.map bzImage $KERNEL_DIR/System.map $KERNEL_DIR/arch/i386/boot/bzImage"
 echo "INFO: Cleaning ${FILES}"
 for FILE in ${FILES};
@@ -81,7 +78,6 @@ done
 cd $KERNEL_DIR;
 make ARCH=i386 bzImage
 cd ..
-
 
 
 if [ -a "$KERNEL_DIR/System.map" ] && [ -a "$KERNEL_DIR/arch/i386/boot/bzImage" ];
