@@ -2358,16 +2358,14 @@ int orderly_poweroff(bool force)
 }
 
 /* BEGIN */
-asmlinkage long sys_cs1550_down(struct cs1550_sem *sem) 
-{
+asmlinkage long cs1550_down(struct cs1550_sem *sem) {
      printk(KERN_WARNING "semaphore value (current)         %d\n", sem->value);
      sem->value--;
      printk(KERN_WARNING "Semaphore value (after decrement) %d\n", sem->value);
      return 0;
 }
 
-asmlinkage long sys_cs1550_up(struct cs1550_sem *sem) 
-{
+asmlinkage long cs1550_up(struct cs1550_sem *sem) {
      printk(KERN_WARNING "semaphore value (current)         %d\n", sem->value);
      sem->value++;
      printk(KERN_WARNING "Semaphore value (after increment) %d\n", sem->value);
