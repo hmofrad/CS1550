@@ -11,46 +11,57 @@ BASE=$PWD # Current working directory
 KERNEL_SRC="linux-2.6.23.1.tar.bz2"; # Kernel source file
 KERNEL_DIR="linux-2.6.23.1" # Kernel source directory
 
-# Check if you are at /u/OSLab/PITT_ID
-# If yes, continue
-# If not,  exit
-if [[ "$BASE" =~ ^/u/OSLab/[a-zA-Z]{3}[0-9]{1,3}/.*$ ]];
-then
-     echo "$BASE OK.";
-     if [[ "$BASE" =~ (/u/OSLab/)([a-zA-Z]{3}[0-9]{2,4}) ]];
-     then 
-          PITT_ID=${BASH_REMATCH[2]}
-          echo "Your PITT_ID $PITT_ID";
-     fi
+
+if [ -z $1 ]; then
+    PITT_ID="PITT_ID"
+    echo "WARN: PITT_ID is not set!"; 
 else
-     echo "Must change $BASE to /u/OSLab/";
-     exit;
+    PITT_ID=$1
+    echo "INFO: Your PITT_ID is $PITT_ID";
+fi
+
+if [[ "$BASE" =~ ^/u/OSLab/.*$ ]];
+then
+     echo "INFO: $BASE is oaky.";
+else
+     echo "WARN: For proper use, navigate to /u/OSLab/$PITT_ID and then clone the repo.";
 fi;
 
 # Check if you have the kernel directory in your working directory
 # If not, extract kernel directory
 # If yes, do nothing
-if [ -f "$KERNEL_SRC" ];
-then
-     echo "$KERNEL_SRC found.";
+if [ -f "$KERNEL_SRC" ]; then
+     echo "INFO: $KERNEL_SRC found."
 else
-     echo "$KERNEL_SRC not found.";
-     cp /u/OSLab/original/$KERNEL_SRC .;
-     tar xjvf $KERNEL_SRC;
+    echo "INFO: $KERNEL_SRC not found."
+    if [ -f "/u/OSLab/original/$KERNEL_SRC" ]; then
+        cp /u/OSLab/original/$KERNEL_SRC .
+    else
+        wget http://cs.pitt.edu/~moh18/files/pages/$KERNEL_SRC
+    fi;
+    echo "INFO: Extracting $KERNEL_SRC ..." 
+    tar xjvf $KERNEL_SRC
+fi
+  
+if [ -f "$KERNEL_DIR" ]; then
+    echo "ERROR: Something went wrong! $KERNEL_DIR not found."
+    exit
 fi
 
-# prodcons library
-cp ./src/prodcons.h      $KERNEL_DIR/include/linux/prodcons.h;
-# The file that should contain sys_cs1550_up and sys_cs1550_down implementation
+# Project 1 (Please upload sys.c, syscall_table.S, unitstd.h, and sem.h)
+# This file contains sys_cs1550_up and sys_cs1550_down implementations
 cp ./src/sys.c           $KERNEL_DIR/kernel/sys.c;             
-# The file that should contain: sys_cs1550_up and sys_cs1550_down signatures 
+# This file contains sys_cs1550_up and sys_cs1550_down signatures 
 #                            && #include <linux/prodcons.h>
 #                            && struct cs1550_sem;
-cp ./src/syscalls.h      $KERNEL_DIR/include/linux/syscalls.h;
+#cp ./src/syscalls.h      $KERNEL_DIR/include/linux/syscalls.h;
 # You should put syscall names along with syscall number here
 cp ./src/syscall_table.S $KERNEL_DIR/arch/i386/kernel/syscall_table.S
 # Define your syscall names and number here
 cp ./src/unistd.h        $KERNEL_DIR/include/asm/unistd.h
+# prodcons library
+#cp ./src/prodcons.h      $KERNEL_DIR/include/linux/prodcons.h;
+
 
 # If exists, clear previous build
 FILES="System.map bzImage $KERNEL_DIR/System.map $KERNEL_DIR/arch/i386/boot/bzImage"
@@ -82,4 +93,4 @@ else
      echo "Error: Kernel compilation error"
 fi
 
-exit;
+exit
