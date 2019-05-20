@@ -8,11 +8,12 @@
 #      Then run the script by
 #      ./bott.sh
 
-if [ -z $1 ]; then
-    echo "WARN: PITT_ID is not set!" 
-else
+if [ "$#" -eq 2 ]; then
     PITT_ID=$1
-    echo "INFO: Your PITT_ID is $PITT_ID"
+    WORKING_DIR=$2
+    echo "INFO: Your PITT_ID is $PITT_ID and WORKING_DIR is $WORKING_DIR"
+else
+    echo "WARN: PITT_ID and WORKING_DIR are not set!" 
 fi
 
 FILES="test /boot/bzImage-devel /boot/System.map-devel"
@@ -29,12 +30,11 @@ done
 # Change the directory based on your working directory on thoth
 if [ -z "$PITT_ID" ]
 then
-    echo "ERROR: Edit the following line" 
-    WORKING_DIR=""
-    PITT_ID=""
-    scp $PITT_ID@thoth.cs.pitt.edu:/$WORKING_DIR/\{bzImage,System.map,test\} ./ 
+    echo "INFO: Copy using pre-populated information from build.sh."
+    scp PITT_ID_@thoth.cs.pitt.edu:WORKING_DIR_/\{bzImage,System.map,test\} ./ 
 else
-    scp PITT_ID@thoth.cs.pitt.edu:WORKING_DIR/\{bzImage,System.map,test\} ./ 
+    echo "INFO: Copy using the given arguments." 
+    scp $PITT_ID@thoth.cs.pitt.edu:$WORKING_DIR/\{bzImage,System.map,test\} ./ 
 fi
 # Copy kernel files
 /bin/cp -rf bzImage /boot/bzImage-devel
