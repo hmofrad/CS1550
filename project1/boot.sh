@@ -34,7 +34,7 @@ then
     PITT_ID=""
     scp $PITT_ID@thoth.cs.pitt.edu:/$WORKING_DIR/\{bzImage,System.map,test\} ./ 
 else
-    scp $PITT_ID@thoth.cs.pitt.edu:/WORKING_DIR_AUTO/\{bzImage,System.map,test\} ./ 
+    scp PITT_ID@thoth.cs.pitt.edu:WORKING_DIR/\{bzImage,System.map,test\} ./ 
 fi
 # Copy kernel files
 /bin/cp -rf bzImage /boot/bzImage-devel
