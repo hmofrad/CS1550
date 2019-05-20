@@ -9,6 +9,14 @@
 #include <stdio.h>
 #include "sem.h"
 
+void down(struct cs1550_sem *sem) {
+  syscall(__NR_cs1550_down, sem);
+}
+
+void up(struct cs1550_sem *sem) {
+  syscall(__NR_cs1550_up, sem);
+}
+
 int main(int argc, char** argv) {
     //Allocate a shared memory region to store one semaphore
     struct cs1550_sem *sem = mmap(NULL,sizeof(struct cs1550_sem), PROT_READ|PROT_WRITE, MAP_SHARED|MAP_ANONYMOUS, 0, 0);
