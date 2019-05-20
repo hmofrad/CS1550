@@ -98,8 +98,8 @@ then
     echo "WARN: You should update boot.sh manually"
 else
     echo "Updating boot.sh for you"
-    sed -i  "s/PITT_ID/$PITT_ID/g" "boot.sh"
-    sed -i  "s|WORKING_DIR|$BASE|g" "boot.sh"
+    sed -i  "s/PITT_ID_/$PITT_ID/g" "boot.sh"
+    sed -i  "s|WORKING_DIR_|$BASE|g" "boot.sh"
     
 fi
 
