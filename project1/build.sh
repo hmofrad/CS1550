@@ -2,30 +2,30 @@
 # build.sh: Build script for Linux kernel
 # (c) Mohammad Hasanzadeh Mofrad, 2019
 # (e) moh18@pitt.edu
-# Run: First give execute permission to the script by
+# Run: To be executed on thoth
+#      First give execute permission to the script by
 #      chmod +x build.sh 
 #      Then run the script by
 #      ./build.sh
 
 BASE=$PWD # Current working directory 
-KERNEL_SRC="linux-2.6.23.1.tar.bz2"; # Kernel source file
+KERNEL_SRC="linux-2.6.23.1.tar.bz2" # Kernel source file
 KERNEL_DIR="linux-2.6.23.1" # Kernel source directory
-
 
 if [ -z $1 ]; then
     PITT_ID="PITT_ID"
-    echo "WARN: PITT_ID is not set!"; 
+    echo "WARN: PITT_ID is not set!" 
 else
     PITT_ID=$1
-    echo "INFO: Your PITT_ID is $PITT_ID";
+    echo "INFO: Your PITT_ID is $PITT_ID"
 fi
 
 if [[ "$BASE" =~ ^/u/OSLab/.*$ ]];
 then
-     echo "INFO: $BASE is oaky.";
+     echo "INFO: $BASE is oaky."
 else
-     echo "WARN: For proper use, navigate to /u/OSLab/$PITT_ID and then clone the repo.";
-fi;
+     echo "WARN: For proper use, navigate to /u/OSLab/$PITT_ID and then clone the repo."
+fi
 
 # Check if you have the kernel directory in your working directory
 # If not, extract kernel directory
@@ -38,7 +38,7 @@ else
         cp /u/OSLab/original/$KERNEL_SRC .
     else
         wget http://cs.pitt.edu/~moh18/files/pages/$KERNEL_SRC
-    fi;
+    fi
 fi
   
 if [ ! -d "$KERNEL_DIR" ]; then
@@ -52,7 +52,7 @@ echo "INFO: Copying sys.c syscall_table.S unistd.h"
 cp config $KERNEL_DIR/.config
 
 # This file contains sys_cs1550_up and sys_cs1550_down implementations
-cp sys.c           $KERNEL_DIR/kernel/sys.c;             
+cp sys.c           $KERNEL_DIR/kernel/sys.c             
 
 # System call table
 cp syscall_table.S $KERNEL_DIR/arch/i386/kernel/syscall_table.S
@@ -69,12 +69,12 @@ do
     if [ -a "$FILE" ];
     then
          echo $FILE
-         rm -rf $FILE;
+         rm -rf $FILE
     fi
 done
 
 # Compile kernel
-cd $KERNEL_DIR;
+cd $KERNEL_DIR
 make ARCH=i386 bzImage
 cd ..
 
@@ -89,7 +89,6 @@ then
      # Compile prodcons program statistically using kernel source directory
      gcc -m32 -o test -I $KERNEL_DIR/include/ ./test.c
 else
-     echo "Error: Kernel compilation error"
+     echo "ERROR: Kernel compilation error"
+     exit
 fi
-
-exit
