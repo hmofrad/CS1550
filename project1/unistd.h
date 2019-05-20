@@ -331,8 +331,8 @@
 #define __NR_eventfd		323
 #define __NR_fallocate		324
 /* BEGIN */
-#define __NR_sys_cs1550_down		325
-#define __NR_sys_cs1550_up		326
+#define __NR_cs1550_down		325
+#define __NR_cs1550_up		326
 
 #ifdef __KERNEL__
 /* END */
