@@ -13,7 +13,6 @@ KERNEL_SRC="linux-2.6.23.1.tar.bz2" # Kernel source file
 KERNEL_DIR="linux-2.6.23.1" # Kernel source directory
 
 if [ -z $1 ]; then
-    PITT_ID="PITT_ID"
     echo "WARN: PITT_ID is not set!" 
 else
     PITT_ID=$1
@@ -62,7 +61,7 @@ cp unistd.h        $KERNEL_DIR/include/asm/unistd.h
 
 
 # If exists, clear the old build
-FILES="System.map bzImage $KERNEL_DIR/System.map $KERNEL_DIR/arch/i386/boot/bzImage"
+FILES="test System.map bzImage $KERNEL_DIR/System.map $KERNEL_DIR/arch/i386/boot/bzImage"
 echo "INFO: Cleaning ${FILES}"
 for FILE in ${FILES};
 do
@@ -92,3 +91,14 @@ else
      echo "ERROR: Kernel compilation error"
      exit
 fi
+
+#Update boot.sh
+if [ -z "$PITT_ID" ];
+then
+    echo "WARN: You should update boot.sh manually"
+else
+    echo "Updating boot.sh for you"
+    str = "scp $PITT_ID@thoth.cs.pitt.edu:/$BASE/\{bzImage,System.map,test\} ./";
+    sed -i 's/^.*WORKING_DIR_AUTO.*$/$str/' boot.sh    
+fi
+
