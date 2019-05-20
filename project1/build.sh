@@ -62,7 +62,7 @@ cp syscall_table.S $KERNEL_DIR/arch/i386/kernel/syscall_table.S
 # Define your syscall names and number here
 cp unistd.h        $KERNEL_DIR/include/asm/unistd.h
 # prodcons library
-cp prodcons.h      $KERNEL_DIR/include/linux/prodcons.h;
+#cp sem.h      $KERNEL_DIR/include/linux/sem.h;
 
 
 # If exists, clear previous build
