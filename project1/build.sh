@@ -79,20 +79,20 @@ done
 
 # Compile kernel
 cd $KERNEL_DIR;
-make ARCH=i386 bzImage; 
-cd ..; 
+make ARCH=i386 bzImage
+cd ..
 
 
 
 if [ -a "$KERNEL_DIR/System.map" ] && [ -a "$KERNEL_DIR/arch/i386/boot/bzImage" ];
 then
      # Copy kernel image to your working directory
-     cp $KERNEL_DIR/arch/i386/boot/bzImage .; 
+     cp $KERNEL_DIR/arch/i386/boot/bzImage .
      # Copy kernel symbole table
-     cp $KERNEL_DIR/System.map .;
+     cp $KERNEL_DIR/System.map .
 
      # Compile prodcons program statistically using kernel source directory
-     gcc -m32 -o test -I $KERNEL_DIR/include/ ./src/test.c;
+     gcc -m32 -o test -I $KERNEL_DIR/include/ ./test.c
 else
      echo "Error: Kernel compilation error"
 fi
