@@ -62,7 +62,7 @@ cp syscall_table.S $KERNEL_DIR/arch/i386/kernel/syscall_table.S
 # Define your syscall names and number here
 cp unistd.h        $KERNEL_DIR/include/asm/unistd.h
 # prodcons library
-cp sem.h      $KERNEL_DIR/include/linux/sem.h;
+cp prodcons.h      $KERNEL_DIR/include/linux/prodcons.h;
 
 
 # If exists, clear previous build
@@ -82,7 +82,6 @@ cd $KERNEL_DIR;
 make ARCH=i386 bzImage; 
 cd ..; 
 
-exit;
 
 
 if [ -a "$KERNEL_DIR/System.map" ] && [ -a "$KERNEL_DIR/arch/i386/boot/bzImage" ];
