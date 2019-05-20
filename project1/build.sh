@@ -50,6 +50,9 @@ fi
 
 echo "INFO: Coppying sys.c, syscall_table.S, unistd.h,  ..." 
 # Project 1 (Please upload sys.c, syscall_table.S, unitstd.h, and sem.h)
+
+# This file is the kernel config file
+cp config $KERNEL_DIR/.config
 # This file contains sys_cs1550_up and sys_cs1550_down implementations
 cp sys.c           $KERNEL_DIR/kernel/sys.c;             
 # This file contains sys_cs1550_up and sys_cs1550_down signatures 
@@ -61,25 +64,29 @@ cp syscall_table.S $KERNEL_DIR/arch/i386/kernel/syscall_table.S
 # Define your syscall names and number here
 cp unistd.h        $KERNEL_DIR/include/asm/unistd.h
 # prodcons library
-#cp ./src/prodcons.h      $KERNEL_DIR/include/linux/prodcons.h;
+cp sem.h      $KERNEL_DIR/include/linux/sem.h;
 
-exit;
+cp /u/OSLab/original/.config .
+
 # If exists, clear previous build
 FILES="System.map bzImage $KERNEL_DIR/System.map $KERNEL_DIR/arch/i386/boot/bzImage"
-echo "${P}"
+echo "INFO: Cleaning ${FILES}"
 for FILE in ${FILES};
 do
-if [ -a "$FILE" ];
-then
-     echo $FILE
-     rm -rf $FILE;
-fi
+    if [ -a "$FILE" ];
+    then
+         echo $FILE
+         rm -rf $FILE;
+    fi
 done
 
 # Compile kernel
 cd $KERNEL_DIR;
 make ARCH=i386 bzImage; 
 cd ..; 
+
+exit;
+
 
 if [ -a "$KERNEL_DIR/System.map" ] && [ -a "$KERNEL_DIR/arch/i386/boot/bzImage" ];
 then
