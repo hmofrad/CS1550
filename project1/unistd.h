@@ -330,14 +330,15 @@
 #define __NR_timerfd		322
 #define __NR_eventfd		323
 #define __NR_fallocate		324
-/* Added by Mohammad H. Mofrad */
+
+/* BEGIN */
 #define __NR_sys_cs1550_down	325
 #define __NR_sys_cs1550_up	326
 
 #ifdef __KERNEL__
 
-/* Changed by Mohammad H. Mofrad */
 #define NR_syscalls 327
+/* END */
 
 #define __ARCH_WANT_IPC_PARSE_VERSION
 #define __ARCH_WANT_OLD_READDIR
