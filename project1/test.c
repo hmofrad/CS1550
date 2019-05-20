@@ -11,11 +11,11 @@
 
 
 void cs1550_down(struct cs1550_sem *sem) {
-  syscall(__NR_cs1550_down, sem);
+  syscall(__NR_sys_cs1550_down, sem);
 }
 
 void cs1550_up(struct cs1550_sem *sem) {
-  syscall(__NR_cs1550_up, sem);
+  syscall(__NR_sys_cs1550_up, sem);
 }
 
 
