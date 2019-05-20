@@ -10,11 +10,11 @@
 #include "sem.h"
 
 
-void down(struct cs1550_sem *sem) {
+void cs1550_down(struct cs1550_sem *sem) {
   syscall(__NR_cs1550_down, sem);
 }
 
-void up(struct cs1550_sem *sem) {
+void cs1550_up(struct cs1550_sem *sem) {
   syscall(__NR_cs1550_up, sem);
 }
 
