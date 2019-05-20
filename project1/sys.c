@@ -2358,6 +2358,11 @@ int orderly_poweroff(bool force)
 }
 
 /* BEGIN */
+struct cs1550_sem;
+//struct cs1550_sem {
+  // int value;
+   //Some process queue of your devising
+//};
 asmlinkage long cs1550_down(struct cs1550_sem *sem) {
      printk(KERN_WARNING "semaphore value (current)         %d\n", sem->value);
      sem->value--;
