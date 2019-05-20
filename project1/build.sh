@@ -46,9 +46,8 @@ if [ ! -d "$KERNEL_DIR" ]; then
     tar xjf $KERNEL_SRC
 fi
 
-echo "INFO: Copying files ..." 
 # Project 1 (Please upload sys.c, syscall_table.S, unitstd.h, and sem.h)
-
+echo "INFO: Copying sys.c syscall_table.S unistd.h" 
 # This file is the kernel config file
 cp config $KERNEL_DIR/.config
 
