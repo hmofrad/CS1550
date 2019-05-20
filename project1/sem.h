@@ -10,7 +10,4 @@ struct cs1550_sem {
    int value;
    //Some process queue of your devising
 };
-
-void  down(struct cs1550_sem *);
-void  up  (struct cs1550_sem *);
 #endif
