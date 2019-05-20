@@ -98,8 +98,6 @@ then
     echo "WARN: You should update boot.sh manually"
 else
     echo "Updating boot.sh for you"
-    #str="scp $PITT_ID@thoth.cs.pitt.edu:$BASE/\{bzImage,System.map,test\} ./";
-    #sed -i 's/^.*WORKING_DIR_AUTO.*$/$str/' boot.sh    
     sed -i  "s/PITT_ID/$PITT_ID/g" "boot.sh"
     sed -i  "s|WORKING_DIR|$BASE|g" "boot.sh"
     
