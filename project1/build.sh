@@ -31,7 +31,7 @@ fi;
 # If not, extract kernel directory
 # If yes, do nothing
 if [ -f "$KERNEL_SRC" ]; then
-     echo "INFO: $KERNEL_SRC found."
+    echo "INFO: $KERNEL_SRC found."
 else
     echo "INFO: $KERNEL_SRC not found."
     if [ -f "/u/OSLab/original/$KERNEL_SRC" ]; then
@@ -39,13 +39,11 @@ else
     else
         wget http://cs.pitt.edu/~moh18/files/pages/$KERNEL_SRC
     fi;
-    echo "INFO: Extracting $KERNEL_SRC ..." 
-    tar xjvf $KERNEL_SRC
 fi
   
-if [ -f "$KERNEL_DIR" ]; then
-    echo "ERROR: Something went wrong! $KERNEL_DIR not found."
-    exit
+if [ ! -d "$KERNEL_DIR" ]; then
+    echo "INFO: Extracting $KERNEL_SRC ..." 
+    tar xjvf $KERNEL_SRC
 fi
 
 echo "INFO: Coppying sys.c, syscall_table.S, unistd.h,  ..." 
@@ -58,15 +56,14 @@ cp sys.c           $KERNEL_DIR/kernel/sys.c;
 # This file contains sys_cs1550_up and sys_cs1550_down signatures 
 #                            && #include <linux/prodcons.h>
 #                            && struct cs1550_sem;
-#cp ./src/syscalls.h      $KERNEL_DIR/include/linux/syscalls.h;
+cp syscalls.h      $KERNEL_DIR/include/linux/syscalls.h;
 # You should put syscall names along with syscall number here
 cp syscall_table.S $KERNEL_DIR/arch/i386/kernel/syscall_table.S
 # Define your syscall names and number here
 cp unistd.h        $KERNEL_DIR/include/asm/unistd.h
 # prodcons library
-cp sem.h      $KERNEL_DIR/include/linux/sem.h;
+#cp sem.h      $KERNEL_DIR/include/linux/sem.h;
 
-cp /u/OSLab/original/.config .
 
 # If exists, clear previous build
 FILES="System.map bzImage $KERNEL_DIR/System.map $KERNEL_DIR/arch/i386/boot/bzImage"
