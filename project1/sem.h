@@ -15,8 +15,8 @@ struct cs1550_sem {
    //Some process queue of your devising
 };
 
-void  cs1550_down(struct cs1550_sem *);
-void  cs1550_up  (struct cs1550_sem *);
+void  down(struct cs1550_sem *);
+void  up  (struct cs1550_sem *);
 
 /*
 void down(struct cs1550_sem *sem) {
