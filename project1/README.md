@@ -15,9 +15,9 @@
 </ul>
 <p>Navigate to project 1 dir:</p>
 <ul>
-  <li>cd project 1</li>
+  <li>cd project1</li>
 </ul>
-<p>Give execute permission to the script:</p>
+<p>Give execute permission to the build.sh script:</p>
 <ul>
   <li>chmod +x build.sh</li>
 </ul>
@@ -26,19 +26,19 @@
   <li>./build.sh</li>
 </ul>
 
-
-
-# 2. Fast Boot Script (boot.sh)
+# 2. boot.sh
+<p> Script for booting Qemu VM. Should be executed inisde the Qemu.</p>
+<p>Download the qemu emulator from courseweb and launch it</p>
 <p>Login to Qemu VM:</p>
 <ul>
   <li>Username: root</li>
   <li>Password: root</li>
 </ul>
-<p>Copy fast boot script:</p>
+<p>While logging in on the Qemu, copy boot.sh script from thoth to Qemu:</p>
 <ul>
-  <li>scp PITT_ID@thoth.cs.pitt.edu:/u/OSLab/PITT_ID/WORK_DIR/boot.sh .</li>
+  <li>scp PITT_ID@thoth.cs.pitt.edu:/u/OSLab/PITT_ID/cs1550/project1/boot.sh .</li>
 </ul>
-<p>Within boot.sh change the scp target directory based on your working directory on thoth:</p>
+<p>In Qemu, change the scp target directory of boot.sh based on your working directory on thoth:</p>
 <ul>
   <li>scp $1@thoth.cs.pitt.edu:/u/OSLab/$1/{CHANGE_WORK_DIR}/...</li>
 </ul>
