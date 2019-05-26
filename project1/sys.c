@@ -2375,13 +2375,13 @@ asmlinkage long cs1550_down(struct cs1550_sem *sem) {
         //schedule(); // Schedule next 
         printk(KERN_WARNING "cs1550_down: pid=%d exited the critical section.\n",  current->pid);
     }
-	spin_unlock(&sem_lock);
+    spin_unlock(&sem_lock);
     return 0;
 }
 
 asmlinkage long cs1550_up(struct cs1550_sem *sem) {
     DEFINE_SPINLOCK(sem_lock);
-	spin_lock(&sem_lock);
+    spin_lock(&sem_lock);
     sem->value++;
     if (sem->value <= 0) {
         printk(KERN_WARNING "cs1550_up  : pid=%d entered critical secttion\n",  current->pid);
