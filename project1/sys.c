@@ -2360,17 +2360,41 @@ int orderly_poweroff(bool force)
 /* BEGIN */
 #include "../../sem.h"
 asmlinkage long cs1550_down(struct cs1550_sem *sem) {
-     printk(KERN_WARNING "semaphore value (current)         %d\n", sem->value);
-     sem->value--;
-     printk(KERN_WARNING "Semaphore value (after decrement) %d\n", sem->value);
-     return 0;
+    DEFINE_SPINLOCK(sem_lock);
+    spin_lock(&sem_lock); 
+    sem->value--;
+    if (sem->value <= -1) {
+        printk(KERN_WARNING "cs1550_down: pid=%d entered the critical section.\n",  current->pid);
+        if(sem->head == NULL) {
+            ; // Queue is empty; kmalloc *head
+        }
+        else {
+            ; // Queue is not empty; kmalloc *next
+        }
+        set_current_state(TASK_INTERRUPTIBLE); // Put the current process to sleep
+        schedule(); // Schedule next 
+        printk(KERN_WARNING "cs1550_down: pid=%d exited the critical section.\n",  current->pid);
+    }
+	spin_unlock(&sem_lock);
+    return 0;
 }
 
 asmlinkage long cs1550_up(struct cs1550_sem *sem) {
-     printk(KERN_WARNING "semaphore value (current)         %d\n", sem->value);
-     sem->value++;
-     printk(KERN_WARNING "Semaphore value (after increment) %d\n", sem->value);
-     return 0;
+    DEFINE_SPINLOCK(sem_lock);
+	spin_lock(&sem_lock);
+    sem->value++;
+    if (sem->value <= 0) {
+        printk(KERN_WARNING "cs1550_up  : pid=%d entered critical secttion\n",  current->pid);
+        struct task_struct *next_task = NULL;
+        if(sem->head != NULL) {
+            ; // Queue is not empty; kfree *head
+        }
+        struct task_struct *next_task = current; // Remove me!
+        wake_up_process(next_task);
+        printk(KERN_WARNING "cs1550_up  : pid=%d exited critical secttion\n",  current->pid);
+    }
+    spin_unlock(&sem_lock);
+    return 0;
 }
 /* END */
 
