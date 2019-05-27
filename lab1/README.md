@@ -1,4 +1,4 @@
-# Walkthrough for lab 1
+# Walkthrough for lab 1 (Adding getcount syscall to xv6)
 <p>Install Qemu VM on Ubuntu, and download and build XV6 repo:</p>
 <ul>
   <li>sudo apt-get update</li>
@@ -11,7 +11,7 @@
   <li>Use Ctrl + A, and then X to exit</li>
 </ul>
 
-<p>Files you might want to have a look for adding getcount syscall:</p>
+<p>Files you might want to have a look for adding the getcount syscall:</p>
 <ul>
   <li>syscall.h</li>
   <li>syscall.c</li>
