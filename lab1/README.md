@@ -17,8 +17,8 @@
   <li>syscall.c</li>
   <li>user.h</li>
   <li>usys.S</li>
-  <li>sysproc.c</li>
   <li>proc.h</li>
   <li>proc.c</li>
+  <li>sysproc.c</li>
   <li>Makefie</li>
 </ul>
