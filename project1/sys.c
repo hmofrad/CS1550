@@ -2371,11 +2371,11 @@ asmlinkage long cs1550_down(struct cs1550_sem *sem) {
         else {
             ; // Queue is not empty; kmalloc *next
         }
-        //set_current_state(TASK_INTERRUPTIBLE); // Put the current process to sleep
-        //schedule(); // Schedule next 
         printk(KERN_WARNING "cs1550_down: pid=%d exited the critical section.\n",  current->pid);
     }
     spin_unlock(&sem_lock);
+    //set_current_state(TASK_INTERRUPTIBLE); // Put the current process to sleep
+    //schedule(); // Schedule next 
     return 0;
 }
 
@@ -2389,10 +2389,10 @@ asmlinkage long cs1550_up(struct cs1550_sem *sem) {
         if(sem->head != NULL) {
             ; // Queue is not empty; kfree *head
         }
-        //wake_up_process(next_task);
         printk(KERN_WARNING "cs1550_up  : pid=%d exited critical secttion\n",  current->pid);
     }
     spin_unlock(&sem_lock);
+    //wake_up_process(next_task);
     return 0;
 }
 /* END */
