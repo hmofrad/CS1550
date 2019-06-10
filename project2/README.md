@@ -4,7 +4,7 @@
 <p>Navigate to project 2 directory</p>
 <ul>cd /u/OSLab/PITT_ID/CS1550/project2</ul>
 <p>Compile aptsim.c using</p>
-<ul>make</ul>
+<ul>make or alternatively type <bf>gcc -m32 -o aptsim aptsim.c</bf></ul>
 <p>Now fire up your Qemu virtual machine</p>
 
 
