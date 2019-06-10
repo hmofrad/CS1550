@@ -11,7 +11,7 @@
 <ul>/bin/cp -rf bzImage /boot/bzImage-devel</ul>
 <ul>/bin/cp -rf System.map /boot/System.map-devel</ul>
 <ul>lilo</ul>
-<p>5. Reboot your Qemu VM, and then select Linux (devel) from boot loader menu. Note, you only need to perform the above steps to setting up the new kernel only one time</p>
+<p>5. Reboot your Qemu VM, and then select Linux (devel) from boot loader menu. Note, you need to perform the above steps only one time to set up the new kernel</p>
 <p>6. Last, copy aptsim to your Qemu VM and test it</p>
 <ul>scp PITT_ID_@thoth.cs.pitt.edu:/u/OSLab/PITT_ID/CS1550/project2/aptsim .</ul>
 <ul>./aptsim</ul>
