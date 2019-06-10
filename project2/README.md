@@ -3,7 +3,7 @@
 <ul>ssh PITT_ID@thoth.cs.pitt.edu</ul>
 <p>2. Navigate to project 2 directory</p>
 <ul>cd /u/OSLab/PITT_ID/CS1550/project2</ul>
-<p>3. Compile aptsim.c by</p>
+<p>3. Compile aptsim.c</p>
 <ul>gcc -m32 -o aptsim aptsim.c</ul>
 <ul>Alternatively, you can use the Makefile and compile it using make</ul>
 <p>4. Now fire up your Qemu virtual machine and </p>
