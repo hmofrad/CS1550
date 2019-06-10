@@ -5,7 +5,8 @@
 */
 
 #include <sys/mman.h>
-#include "unistd.h"
+//#include <linux/unistd.h> /*Uncomment me for gradescope */
+#include "unistd.h" /*Comment me for gradescope */
 #include <stdio.h>
 #include "sem.h"
 
