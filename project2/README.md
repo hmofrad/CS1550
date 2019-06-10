@@ -4,7 +4,13 @@
 <p>Navigate to project 2 directory</p>
 <ul>cd /u/OSLab/PITT_ID/CS1550/project2</ul>
 <p>Compile aptsim.c using</p>
-<ul>make or alternatively type <bf>gcc -m32 -o aptsim aptsim.c</bf></ul>
-<p>Now fire up your Qemu virtual machine</p>
+<ul>make clean && make</ul>
+<p>Now fire up your Qemu virtual machine and login</p>
+<ul>
+  <li>scp PITT_ID_@thoth.cs.pitt.edu:/u/OSLab/PITT_ID/CS1550/project2/\{bzImage,System.map,aptsim\} ./</li>
+  <li>/bin/cp -rf bzImage /boot/bzImage-devel</li>
+  <li>/bin/cp -rf System.map /boot/System.map-devel</li>
+  <li>lilo</li>
+</ul>
 
 
