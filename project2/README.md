@@ -5,7 +5,7 @@
 <ul>cd /u/OSLab/PITT_ID/CS1550/project2</ul>
 <p>3. Copy and extract the kernel archive</p>
 <ul>cp /u/OSLab/original/linux-2.6.23.1.tar.bz2 . </ul>
-<ul>tar xjf linux-2.6.23.1.tar.bz2 . </ul>
+<ul>tar xjf linux-2.6.23.1.tar.bz2</ul>
 <p>4. Copy <b>unistd.h</b> into include directory of the kernel</p>
 <ul>cp unistd.h linux-2.6.23.1/include/asm/unistd.h</ul>
 <p>5. Compile aptsim.c</p>
