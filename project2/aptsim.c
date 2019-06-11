@@ -89,7 +89,7 @@ int main(int argc, char** argv) {
                 }
             }
                         
-            if(pids[0] == getpid()) {                
+            if(pids[1] == getpid()) {                
                 for(i = 0; i < opt.num_agents; i++) {
                     wait(NULL);
                 }
