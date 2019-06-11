@@ -13,6 +13,8 @@
 <ul>Alternatively, you can use the Makefile and just type <b>make</b></ul>
 <p>6. Now fire up your Qemu virtual machine, then login and use the following commands to copy the kernel image with cs1550 semaphore implementation to Qemu and add it to the Linux boot loader</p>
 <ul>scp PITT_ID_@thoth.cs.pitt.edu:/u/OSLab/PITT_ID/CS1550/project2/\{bzImage,System.map\} .</ul>
+<ul>/bin/cp -rf bzImage /boot/bzImage-devel</ul>
+<ul>/bin/cp -rf System.map /boot/System.map-devel</ul>
 <ul>lilo</ul>
 <p>7. Reboot your Qemu VM, and then select Linux (devel) from boot loader menu. Note, you need to perform the above steps only one time to set up the new kernel</p>
 <p>8. Last, copy aptsim to your Qemu VM and test it</p>
