@@ -1,5 +1,5 @@
 /*
- aptsim.c: Safe apartment inspection problem
+ aptsim.c: Safe apartment inspection problem skeleton code
  (c) Mohammad Hasanzadeh Mofrad, 2019
  (e) moh18@pitt.edu
 */
