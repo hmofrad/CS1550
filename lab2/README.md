@@ -1,8 +1,10 @@
 # Walkthrough for lab 2 (Process Synchronization in xv6)
-<p>Install Qemu VM on Ubuntu, and download and build XV6 repo:</p>
+
+
+<p>Download and build XV6 repo on the Linux cluster:</p>
 <ul>
-  <li>sudo apt-get update</li>
-  <li>sudo apt-get install qemu-kvm qemu virt-manager virt-viewer libvirt-bin</li>
+  <li>ssh PITT_ID@linux.cs.pitt.edu</li>
+  <li>cd private</li>
   <li>mkdir lab2</li>
   <li>cd lab2</li>
   <li>git clone git://github.com/mit-pdos/xv6-public.git</li>
