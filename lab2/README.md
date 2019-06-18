@@ -1,4 +1,4 @@
-# Walkthrough for lab 1 (Adding getcount syscall to xv6)
+# Walkthrough for lab 2 (Process Synchronization in xv6)
 <p>Install Qemu VM on Ubuntu, and download and build XV6 repo:</p>
 <ul>
   <li>sudo apt-get update</li>
