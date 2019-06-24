@@ -13,8 +13,7 @@
 
 <p>Run</p>
 <ul>./vimsim -n &lt;numframes&gt; -a &lt;fifo&gt; &lt;tracefile&gt; </ul>
-
-
+<ul>E.g. ./vimsim -n 4fifo gzip </ul>
 
 <p>Uninstall</p>
 <ul>make clean</ul>
