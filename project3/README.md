@@ -1,6 +1,5 @@
 # Vitrual memory implementation with a single level 32-Bit page table and FIFO page replacement algorithm
 
-
 <p>Connect to thoth.cs.pitt.edu</p>
 <ul>ssh PITT_ID@thoth.cs.pitt.edu</ul>
 <p>Navigate to project3 directory</p>
