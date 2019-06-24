@@ -9,7 +9,7 @@
 <ul>cp /u/OSLab/original/gzip.trace.gz . && gunzip bzip.trace.gz</ul>
 
 <p>Install</p>
-<ul>make (or make DEBUG=-DDEBUG #To enable debug messages)</ul>
+<ul>make (or "make DEBUG=-DDEBUG" to enable debug messages)</ul>
 
 <p>Run</p>
 <ul>./vimsim -n &lt;numframes&gt; -a &lt;fifo&gt; &lt;tracefile&gt; </ul>
