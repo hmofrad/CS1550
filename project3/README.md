@@ -5,7 +5,7 @@
 <p>Navigate to project3 directory</p>
 <ul>cd /u/OSLab/PITT_ID/CS1550/project3</ul>
 <p>Extract a trace file (gcc, gzip, mcf, and swim traces)</p>
-<ul>gunzip gcc.trace.gz</ul>
+<ul>gunzip traces/gcc.trace.gz</ul>
 
 <p>Install</p>
 <ul>make (or "make DEBUG=-DDEBUG" to enable debug messages)</ul>
