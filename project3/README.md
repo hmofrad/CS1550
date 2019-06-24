@@ -1,7 +1,7 @@
 # Vitrual memory implementation with a single level 32-Bit page table and FIFO page replacement algorithm
 
 <p>Install</p>
-<ul>make</ul>
+<ul>make (or make DEBUG=-DDEBUG #To enable debug messages)</ul>
 <ul>make DEBUG=-DDEBUG # With debug messages</ul>
 
 
@@ -9,7 +9,7 @@
 <ul>./vimsim -n &lt;numframes&gt; -a &lt;fifo&gt; &lt;tracefile&gt; </ul>
 
 <p>Trace files</p>
-<ul>cd /u/OSLab/PITT_ID</p>
+<ul>cd /u/OSLab/PITT_ID</ul>
 <ul>cp /u/OSLab/original/gzip.trace.gz . && gunzip bzip.trace.gz</ul>
 <ul>cp /u/OSLab/original/swim.trace.gz . && gunzip swim.trace.gz</ul>
 <ul>cp /u/OSLab/original/gcc.trace.gz  . && gunzip gcc.trace.gz</ul>
