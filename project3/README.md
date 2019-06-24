@@ -6,11 +6,9 @@
 <p>Run</p>
 <ul>./vimsim -n &lt;numframes&gt; -a &lt;fifo&gt; &lt;tracefile&gt; </ul>
 
-<p>Trace files</p>
+<p>Compy a trace file (gzip, gcc, and swim traces)</p>
 <ul>cd /u/OSLab/PITT_ID</ul>
 <ul>cp /u/OSLab/original/gzip.trace.gz . && gunzip bzip.trace.gz</ul>
-<ul>cp /u/OSLab/original/swim.trace.gz . && gunzip swim.trace.gz</ul>
-<ul>cp /u/OSLab/original/gcc.trace.gz  . && gunzip gcc.trace.gz</ul>
 
 <p>Uninstall</p>
 <ul>make clean</ul>
