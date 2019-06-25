@@ -41,7 +41,6 @@ struct frame_struct {
 // 32-Bit Root level Page Table Entry (PTE) 
 struct pte_32 {
    unsigned int present;
-   unsigned int dirty;
    unsigned int *physical_address;
 };
 
