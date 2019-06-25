@@ -174,7 +174,7 @@ int main(int argc, char *argv[]) {
            /* Traverse the frames linked list to
             * find the victim frame and swap it out
             * Set the present bit and collect some statistics
-            * Need to add your dirty bit implementation inside the while
+            * ToDO: Need to add your dirty bit implementation inside the while
             */
             curr = head;
             while(curr->next) {
@@ -195,7 +195,7 @@ int main(int argc, char *argv[]) {
             }
         }
     }
-
+    /* ToDo: Release the memory you allocated for frames and page_table */
     printf("Algorithm:             %s\n", algorithm);
     printf("Number of frames:      %d\n", numframes);
     printf("Total memory accesses: %d\n", i);
@@ -236,3 +236,6 @@ int fifo() {
     current_index = current_index % numframes;            
     return (current_index);
 }
+
+/* ToDO: Implement your opt() and aging() page replacement algorithms */
+
