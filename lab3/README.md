@@ -1,4 +1,4 @@
-# Walkthrough for lab 3 (PRIORITY SCHEDULING FOR XV61 in xv6)
+# Walkthrough for lab 3 (Priority Scheduling XV6)
 
 
 <p>Download and build XV6 repo on the Linux cluster:</p>
