@@ -21,7 +21,7 @@
 </ul>
 
 <p>XV6 priority queue pseudocode</p>
-```    
+
 Scheduler() {
     for(;;){
         j=0;
