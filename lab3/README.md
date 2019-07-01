@@ -21,9 +21,9 @@
 </ul>
 
 <p>XV6 priority queue pseudocode</p>
-Scheduler() {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(;;){
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;j=0;
+    Scheduler() {
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(;;){
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;j=0;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;priority_queue[NPROC];
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;processes_to_be_picked ;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(p_i in NPROC processes) {
