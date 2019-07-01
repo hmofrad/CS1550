@@ -23,10 +23,13 @@
 <p>XV6 priority queue pseudocode</p>
 
     Scheduler() {
+        j = 0;
+        declare priority_queue[NPROC];
+        declare processes_to_be_picked;
         for(;;){
-            j=0;
-            priority_queue[NPROC];
-            processes_to_be_picked ;
+            j = 0;
+            clear priority_queue;
+            clear processes_to_be_picked;
             for(p_i in NPROC processes) {
                 if(p_i state is RUNNABLE) {
                     if(processes_to_be_picked is empty) {
