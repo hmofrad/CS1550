@@ -15,5 +15,7 @@
 
 <p>Files you might want to have a look for this lab:</p>
 <ul>
-  <li>N/A</li>
+  <li>proc.c and proc.h for adding the priority queue scheduling algorithm</li>
+  <li>user.h, usys.S, syscall.c, sysproc.c for adding the sys_setpriority() syscall</li>
+  <li>trap.c, proc.c, proc.h for implementing the bonus part</li>
 </ul>
