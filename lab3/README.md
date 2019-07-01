@@ -55,7 +55,7 @@
                     }
                 }
                 for(k in priority_queue)
-                    schedule the highest priority task
+                    schedule the highest priority task p_k
             }
         }
     }
