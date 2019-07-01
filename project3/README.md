@@ -12,7 +12,7 @@
 
 <p>5. Run</p>
 <ul>./vimsim -n &lt;numframes&gt; -a &lt;fifo&gt; &lt;tracefile&gt;</ul>
-<ul>./vimsim -n 4 fifo gzip </ul>
+<ul>./vimsim -n 4 fifo traces/gcc.trace </ul>
 
 <p>6. Uninstall</p>
 <ul>make clean</ul>
