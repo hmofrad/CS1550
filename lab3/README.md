@@ -22,35 +22,35 @@
 
 <p>XV6 priority queue pseudocode</p>
 
-Scheduler() {
-    for(;;){
-        j=0;
-        priority_queue[NPROC];
-        processes_to_be_picked ;
-        for(p_i in NPROC processes) {
-            if(p_i state is RUNNABLE) {
-                if(processes_to_be_picked is empty) {
-                    process_to_be_picked = p_i;
-                    j = 0;
-                    priority_queue[j] = i;
-                    j++;
-                } 
-                else{
-                    if(p_i priority is equal to process_to_be_picked priority) {
+    Scheduler() {
+        for(;;){
+            j=0;
+            priority_queue[NPROC];
+            processes_to_be_picked ;
+            for(p_i in NPROC processes) {
+                if(p_i state is RUNNABLE) {
+                    if(processes_to_be_picked is empty) {
+                        process_to_be_picked = p_i;
+                        j = 0;
                         priority_queue[j] = i;
                         j++;
-                    }
-                    else if(p_i priority is less than process_to_be_picked priority){
-                        process_to_be_picked = p_i;
-                        for(k in priority_queue)
-                            priority_queue[k] = 0;
-                            j = 0;
+                    } 
+                    else{
+                        if(p_i priority is equal to process_to_be_picked priority) {
                             priority_queue[j] = i;
                             j++;
+                        }
+                        else if(p_i priority is less than process_to_be_picked priority){
+                            process_to_be_picked = p_i;
+                            for(k in priority_queue)
+                                priority_queue[k] = 0;
+                                j = 0;
+                                priority_queue[j] = i;
+                                j++;
+                            }
                         }
                     }
                 }
             }
         }
     }
-}
