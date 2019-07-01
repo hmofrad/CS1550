@@ -45,17 +45,17 @@
                         }
                         else if(p_i priority is less than process_to_be_picked priority){
                             process_to_be_picked = p_i;
-                            for(k in priority_queue)
+                            for(k in priority_queue) {
                                 priority_queue[k] = 0;
-                                j = 0;
-                                priority_queue[j] = i;
-                                j++;
                             }
+                            j = 0;
+                            priority_queue[j] = i;
+                            j++;
                         }
                     }
                 }
-                for(k in priority_queue)
-                    schedule the highest priority task p_k
             }
+            for(k in priority_queue)
+                schedule the highest priority task p_k
         }
     }
