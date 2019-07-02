@@ -11,8 +11,8 @@
 <ul>make (or "make DEBUG=-DDEBUG" to enable debug messages)</ul>
 
 <p>5. Run</p>
-<ul>./vimsim -n &lt;numframes&gt; -a &lt;fifo&gt; &lt;tracefile&gt;</ul>
-<ul>./vimsim -n 4 fifo traces/gcc.trace </ul>
+<ul>./vmsim -n &lt;numframes&gt; -a &lt;fifo&gt; &lt;tracefile&gt;</ul>
+<ul>./vmsim -n 4 -a fifo traces/gcc.trace </ul>
 
 <p>6. Uninstall</p>
 <ul>make clean</ul>
