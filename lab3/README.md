@@ -5,8 +5,8 @@
 <ul>
   <li>ssh PITT_ID@linux.cs.pitt.edu</li>
   <li>cd private</li>
-  <li>mkdir lab2</li>
-  <li>cd lab2</li>
+  <li>mkdir lab3</li>
+  <li>cd lab3</li>
   <li>git clone git://github.com/mit-pdos/xv6-public.git</li>
   <li>cd xv6-public</li>
   <li>make qemu-nox</li>
