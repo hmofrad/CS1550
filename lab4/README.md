@@ -30,8 +30,37 @@
           return addr;
       }
       
-  <li></li>
-  <li></li>
+  <li>trap.c</li>
+    void trap(struct trapframe *tf) {
+        // Some codes are here
+        switch(tf->trapno){
+        // Some code are here
+            default:
+                if(myproc() == 0 || (tf->cs&3) == 0){
+                // In kernel, it must be our mistake.
+                    cprintf("unexpected trap %d from cpu %d eip %x (cr2=0x%x)\n",
+                             tf->trapno, cpuid(), tf->eip, rcr2());
+                    panic("trap");
+                }
+    
+                if(tf->trapno == T_PGFLT) {       
+                    pde_t *pgdir = myproc()->pgdir;       
+                    uint oldsz = myproc()->old_sz;
+                    uint newsz = myproc()->sz;
+                    allocuvm(pgdir, oldsz, newsz);
+                    return;
+                }
+    
+                // In user space, assume process misbehaved.
+                cprintf("pid %d %s: trap %d err %d on cpu %d "
+                        "eip 0x%x addr 0x%x--kill proc\n",
+                        myproc()->pid, myproc()->name, tf->trapno,
+                        tf->err, cpuid(), tf->eip, rcr2());
+                        myproc()->killed = 1;
+        }
+  
+  <p>Notes: </p>
+  <li>trap.c: If you want to use mappages directly, put <b>extern int mappages(pde_t *pgdir, void *va, uint size, uint pa, int perm)</b> (implemented in vm.c) in the beggining of trap.c</li>
   <li></li>
   <li></li>
 </ul>
