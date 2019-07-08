@@ -16,12 +16,14 @@
 <p>What's this lab about? This lab is about lazy page allocation which postpone the allocation of a page until the time a program wants to access that memory. So, we do not allocate memory in advance and wait for a page fault to happen. Later, we intercept the fault address and allocate memory for it. </p>
 
 <p>Interesting methods and macros for this lab: </p>
+<ul>
 <li><b>sys_sbrk()</b> under sysproc.c</li>
 <li><b>allocuvm()</b> under vm.c</li>
 <li><b>mappages()</b> under vm.c</li>
-<li><b>PGROUNDDOWN macro</b> under mmu.h</li>
+<li><b>PGROUNDDOWN</b> under mmu.h</li>
 <li><b>trap()</b> under trap.c</li>
-<li><b>T_PGFLT macro</b> under trap.h</li>
+<li><b>T_PGFLT</b> under trap.h</li>
+</ul>
 
 <p>Files you might want to have a look for this lab:</p>
 <ul>
@@ -70,8 +72,4 @@
                         myproc()->killed = 1;
         }
   
-  <p>Notes: This is a working partial implementation of the lab which shows how to trap the page fault and handle it. In trap.c, you should put your implementation inside the part marked with a <b>start</b> and <b>end</b>. Also, when you want to use <b>mappages</b> directly, put <b>extern int mappages(pde_t *pgdir, void *va, uint size, uint pa, int perm)</b> (implemented in vm.c) in the beginning  of trap.c </p>
-  <li>trap.c: </li>
-  <li></li>
-  <li></li>
-</ul>
+  <p><b>Notes</b>: This is a working partial implementation of the lab which shows how to trap the page fault and handle it. In trap.c, you should put your implementation inside the part marked with a <b>start</b> and <b>end</b>. Also, when you want to use <b>mappages</b> directly, put <b>extern int mappages(pde_t *pgdir, void *va, uint size, uint pa, int perm)</b> (implemented in vm.c) in the beginning of trap.c </p>
