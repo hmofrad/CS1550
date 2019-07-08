@@ -31,6 +31,7 @@
       }
       
   <li>trap.c</li>
+  
     void trap(struct trapframe *tf) {
         // Some codes are here
         switch(tf->trapno){
