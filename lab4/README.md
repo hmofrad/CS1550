@@ -17,6 +17,7 @@
 <ul>
   <li>proc.h: Add memeber "int old_sz;" inside struct proc</li>
   <li>sysproc.c: </li>
+  
       int sys_sbrk(void)
       {
           int addr;
@@ -28,6 +29,7 @@
           myproc()->sz += n;
           return addr;
       }
+      
   <li></li>
   <li></li>
   <li></li>
