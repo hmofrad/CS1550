@@ -15,5 +15,21 @@
 
 <p>Files you might want to have a look for this lab:</p>
 <ul>
-  <li>NA</li>
+  <li>proc.h: Add memeber "int old_sz;" inside struct proc</li>
+  <li>sysproc.c: </li>
+      int sys_sbrk(void)
+      {
+          int addr;
+          int n;
+          if(argint(0, &n) < 0)
+              return -1;
+          myproc()->old_sz = myproc()->sz;
+          addr = myproc()->sz;
+          myproc()->sz += n;
+          return addr;
+      }
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
 </ul>
