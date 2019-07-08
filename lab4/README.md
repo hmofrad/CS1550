@@ -15,7 +15,7 @@
 
 <p>Files you might want to have a look for this lab:</p>
 <ul>
-  <li>proc.h: Add memeber **int old_sz;** inside **struct proc**</li>
+  <li>proc.h: Add memeber <b>int old_sz;</b> inside <b>struct proc</b></li>
   <li>sysproc.c: </li>
   
       int sys_sbrk(void)
