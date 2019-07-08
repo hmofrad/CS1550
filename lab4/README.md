@@ -43,7 +43,7 @@
                              tf->trapno, cpuid(), tf->eip, rcr2());
                     panic("trap");
                 }
-    
+                /* Start of partial implementation */
                 if(tf->trapno == T_PGFLT) {       
                     pde_t *pgdir = myproc()->pgdir;       
                     uint oldsz = myproc()->old_sz;
@@ -51,7 +51,7 @@
                     allocuvm(pgdir, oldsz, newsz);
                     return;
                 }
-    
+                /* End of partial implementation */
                 // In user space, assume process misbehaved.
                 cprintf("pid %d %s: trap %d err %d on cpu %d "
                         "eip 0x%x addr 0x%x--kill proc\n",
@@ -60,8 +60,8 @@
                         myproc()->killed = 1;
         }
   
-  <p>Notes: </p>
-  <li>trap.c: If you want to use mappages directly, put <b>extern int mappages(pde_t *pgdir, void *va, uint size, uint pa, int perm)</b> (implemented in vm.c) in the beggining of trap.c</li>
+  <p>Notes: This is a working partial implementation of the lab which shows how to trap the page fault and handle it. In trap.c, you should put your implementation inside the part makred with a <b>start</b> and <b>end</b>. Also, if you want to use <b>mappages</b> directly, put <b>extern int mappages(pde_t *pgdir, void *va, uint size, uint pa, int perm)</b> (implemented in vm.c) in the beggining of trap.c </p>
+  <li>trap.c: </li>
   <li></li>
   <li></li>
 </ul>
