@@ -31,6 +31,7 @@ else
 fi
 
 # run FUSE cs1550 examples
+EXAMPLE=cs1550
 echo "Running $1 example";
 cd ${PWD}/${FUSE_DIR}/example/;
 if [ ! -d "${TEST_MOUNT}" ]; 
