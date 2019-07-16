@@ -11,7 +11,7 @@
 <p>5. Files info</p>
 <ul>build.sh: Script for building fuse</ul>
 
-<p> A useful snippet code for cs1550_getattr method <p>
+<p>6. A useful snippet code for cs1550_getattr method <p>
 
     printf("cs1550_getattr: path = %s\n", path);
     char directory[MAX_FILENAME + 1];
