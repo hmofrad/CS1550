@@ -10,3 +10,17 @@
 <ul>./build.sh &lt;hello|cs1550&gt;</ul>
 <p>5. Files info</p>
 <ul>build.sh: Script for building fuse</ul>
+
+<p> A useful snippet code for cs1550_getattr method <p>
+
+    printf("cs1550_getattr: path = %s\n", path);
+    char directory[MAX_FILENAME + 1];
+    memset(directory, MAX_FILENAME + 1, 0);
+    char filename[MAX_FILENAME + 1];
+    memset(filename, MAX_FILENAME + 1, 0);
+    char extension[MAX_EXTENSION + 1];
+    memset(extension, MAX_EXTENSION + 1, 0);
+    int n = sscanf(path, "/%[^/]/%[^.].%s", directory, filename, extension);
+    if(n == 1)
+        printf("cs1550_getattr: directory = %s\n", directory);
+    else ;
