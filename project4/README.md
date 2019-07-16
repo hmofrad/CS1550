@@ -10,5 +10,3 @@
 <ul>./build.sh &lt;hello|cs1550&gt;</ul>
 <p>5. Files info</p>
 <ul>build.sh: Script for building fuse</ul>
-<ul>cs1550.c: skeleton code for your project</ul>
-
