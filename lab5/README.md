@@ -13,6 +13,7 @@
   <li>Use Ctrl + A, and then X to exit</li>
 </ul>
 
+<p>After impementing this lab, new inode diagram will look like this:</p>
 
 ![XV6 new inode Diagram](https://raw.githubusercontent.com/hmofrad/CS1550/master/lab5/inodeDiagram.jpg)
 
