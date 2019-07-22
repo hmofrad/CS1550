@@ -16,9 +16,9 @@
 
 <p>Files you might want to have a look for this lab:</p>
 <ul>
-  <li>fs.c: static uint bmap(struct inode *ip, uint bn) (inode content) </li>
-  <li>fs.h: struct dinode (on-disk inode structure) </li>
-  <li>file.h: struct inode definition (in-memory inode structure)</li>
-  <li>big.c:Driver program for big files</li>
+  <li>fs.c: <b>static uint bmap(struct inode *ip, uint bn)</b> (inode content) </li>
+  <li>fs.h: <b>struct dinode</b> (on-disk inode structure) </li>
+  <li>file.h: <b>struct inode</b> definition (in-memory inode structure)</li>
+  <li>big.c: Driver program for big files</li>
   <li>Makefile</li>
 </ul>
