@@ -15,11 +15,11 @@
 
     printf("cs1550_getattr: path = %s\n", path);
     char directory[MAX_FILENAME + 1];
-    memset(directory, MAX_FILENAME + 1, 0);
+    memset(directory, 0, MAX_FILENAME + 1);
     char filename[MAX_FILENAME + 1];
-    memset(filename, MAX_FILENAME + 1, 0);
+    memset(filename, 0, MAX_FILENAME + 1);
     char extension[MAX_EXTENSION + 1];
-    memset(extension, MAX_EXTENSION + 1, 0);
+    memset(extension, 0, MAX_EXTENSION + 1);
     int n = sscanf(path, "/%[^/]/%[^.].%s", directory, filename, extension);
     if(n == 1)
         printf("cs1550_getattr: directory = %s\n", directory);
