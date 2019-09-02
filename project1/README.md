@@ -5,6 +5,7 @@
 * **unistd.h** contains syscall numbers for user.
 * **sem.h** has cs1550 semaphore implementation
 * **test.c** is the test driver.
+* **config** is the Linux config file.
 
 # 2. Adding cs1550 syscalls
 <p>Login to thoth:</p>
@@ -33,7 +34,7 @@
 </ul>
 <p>Copy the .config file</p>
 <ul>
-  <li>cp /u/OSLab/original/.config .</li>
+  <li>cp /u/OSLab/original/.config linux-2.6.23.1/</li>
 </ul>
 <p>Copy sys.c that contains the cs1550_up and cs1550_down implementations</p>
 <ul>
