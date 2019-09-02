@@ -63,12 +63,16 @@
 </ul>
 
 # 3. Testing cs1550 syscalls
-<p>Download the qemu emulator from courseweb and launch it</p>
+<p>Download the Qemu emulator:</p>
 <ul>
   <li>Windows: https://github.com/hmofrad/CS1550/blob/master/project1/qemu_win.zip</li>
   <li>Mac os: https://github.com/hmofrad/CS1550/blob/master/project1/qemu_mac.zip</li>
 </ul>
-
+<p>Extract and launch Qemu VM:</p>
+<ul>
+  <li>Windows: qemu/qemu-win.bat</li>
+  <li>Mac OS: qemu-test/start.sh</li>
+</ul>
 <p>Login to Qemu VM:</p>
 <ul>
   <li>Username: root</li>
@@ -107,7 +111,7 @@
 
 
 <!--
-# 2. build.sh
+# 4. build.sh
 <p>Script for adding cs1550 syscalls to Linux (compatible with linux-2.6.23.1).</p>
 
 <p>Login to thoth:</p>
@@ -135,9 +139,18 @@
   <li>./build.sh</li>
 </ul>
 
-# 3. boot.sh
+# 5. boot.sh
 <p> Script for booting Qemu VM. Should be executed inisde the Qemu.</p>
-<p>Download the qemu emulator from courseweb and launch it</p>
+<p>Download the Qemu emulator:</p>
+<ul>
+  <li>Windows: https://github.com/hmofrad/CS1550/blob/master/project1/qemu_win.zip</li>
+  <li>Mac os: https://github.com/hmofrad/CS1550/blob/master/project1/qemu_mac.zip</li>
+</ul>
+<p>Extract and launch Qemu VM:</p>
+<ul>
+  <li>Windows: qemu/qemu-win.bat</li>
+  <li>Mac OS: qemu-test/start.sh</li>
+</ul>
 <p>Login to Qemu VM:</p>
 <ul>
   <li>Username: root</li>
