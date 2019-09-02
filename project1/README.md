@@ -6,7 +6,7 @@
 * **sem.h** has cs1550 semaphore implementation
 * **test.c** is the test driver.
 
-# 1. Adding cs1550 syscalls
+# 2. Adding cs1550 syscalls
 <p>Login to thoth:</p>
 <ul>
   <li>ssh PITT_ID@thoth.cs.pitt.edu</li>
@@ -31,10 +31,6 @@
 <ul>
   <li>tar xfj linux-2.6.23.1.tar.bz2</li>
 </ul>
-<p>Change into linux-2.6.23.1/ directory</p>
-<ul>
-  <li>cd linux-2.6.23.1</li>
-</ul>
 <p>Copy the .config file</p>
 <ul>
   <li>cp /u/OSLab/original/.config .</li>
@@ -51,6 +47,15 @@
 <ul>
   <li>cp unistd.h linux-2.6.23.1/include/asm/unistd.h</li>
 </ul>
+<p>Change into linux-2.6.23.1/ directory</p>
+<ul>
+  <li>cd linux-2.6.23.1</li>
+</ul>
+<p>Build</p>
+<ul>
+  <li>make ARCH=i386 bzImage</li>
+</ul>
+<p></p>
 <p>Building the test program</p>
 <ul>
   <li>gcc -m32 -o test -I linux-2.6.23.1/include/ test.c</li>
@@ -58,13 +63,6 @@
 
 
 
-
-
-<p>Build</p>
-<ul>
-  <li>make ARCH=i386 bzImage</li>
-</ul>
-<p></p>
 <ul>
   <li></li>
 </ul>
