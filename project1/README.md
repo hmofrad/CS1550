@@ -110,7 +110,7 @@
   <li>./test</li>
 </ul>
 
-<p>Use ctrl + Alt to exit the Qemu window</p>
+<p>Windows users can use Ctrl + Alt to exit the Qemu VM</p>
 
 
 
