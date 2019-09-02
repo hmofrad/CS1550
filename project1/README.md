@@ -81,7 +81,7 @@
 <p>Use scp to download the kernel to a home directory:</p>
 <ul>
   <li>scp PITT_ID@thoth.cs.pitt.edu:/u/OSLab/PITT_ID/CS1550/project1/linux-2.6.23.1/arch/i386/boot/bzImage .</li>
-  <li>scp PITT_ID@thoth.cs.pitt.edu:/u/OSLab/PITT_ID/CS1550/project1/linux-2.6.23.1/arch/i386/boot/System.map .</li>
+  <li>scp PITT_ID@thoth.cs.pitt.edu:/u/OSLab/PITT_ID/CS1550/project1/linux-2.6.23.1/System.map .</li>
 </ul>
 <p>Copy kernel files</p>
 <ul>
@@ -99,13 +99,18 @@
 </ul>
 <p>Select Linux (devel) from boot loader menu</p>
 <ul>
-  <li>Hit enter<:/li>
+  <li>Hit enter</li>
 </ul>
-<p>Run test binary:</p>
+<p>Download the test binary:</p>
+<ul>
+  <li>scp PITT_ID@thoth.cs.pitt.edu:/u/OSLab/PITT_ID/CS1550/project1/test .</li>
+</ul>
+<p>Run the test binary:</p>
 <ul>
   <li>./test</li>
-  <li>And you will see bunch of prints</li>
 </ul>
+
+<p>Use ctrl + Alt to exit the Qemu window</p>
 
 
 
@@ -184,6 +189,5 @@
 
 <ul>
   <li>./test</li>
-  <li>And you will see bunch of prints in the display.</li>
 </ul>
 -->
