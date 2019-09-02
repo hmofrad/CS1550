@@ -62,19 +62,48 @@
   <li>gcc -m32 -o test -I linux-2.6.23.1/include/ test.c</li>
 </ul>
 
+# 3. Testing cs1550 syscalls
+<p>Download the qemu emulator from courseweb and launch it</p>
+<ul>
+  <li>Windows: https://github.com/hmofrad/CS1550/blob/master/project1/qemu_win.zip</li>
+  <li>Mac os: https://github.com/hmofrad/CS1550/blob/master/project1/qemu_mac.zip</li>
+</ul>
+
+<p>Login to Qemu VM:</p>
+<ul>
+  <li>Username: root</li>
+  <li>Password: root</li>
+</ul>
+<p>Use scp to download the kernel to a home directory:</p>
+<ul>
+  <li>scp PITT_ID@thoth.cs.pitt.edu:/u/OSLab/PITT_ID/CS1550/project1/linux-2.6.23.1/arch/i386/boot/bzImage .</li>
+  <li>scp PITT_ID@thoth.cs.pitt.edu:/u/OSLab/PITT_ID/CS1550/project1/linux-2.6.23.1/arch/i386/boot/System.map .</li>
+</ul>
+<p>Copy kernel files</p>
+<ul>
+  <li>cp bzImage /boot/bzImage-devel</li>
+  <li>cp System.map /boot/System.map-devel</li>
+</ul>
+
+<p>Boot from modified kernel</p>
+<ul>
+  <li>lilo</li>
+</ul>
+<p>Reboot Qemu VM:</p>
+<ul>
+  <li>reboot</li>
+</ul>
+<p>Select Linux (devel) from boot loader menu</p>
+<ul>
+  <li>Hit enter<:/li>
+</ul>
+<p>Run test binary:</p>
+<ul>
+  <li>./test</li>
+  <li>And you will see bunch of prints</li>
+</ul>
 
 
-<ul>
-  <li></li>
-</ul>
-<p></p>
-<ul>
-  <li></li>
-</ul>
-<p></p>
-<ul>
-  <li></li>
-</ul>
 
 
 <!--
@@ -130,11 +159,11 @@
 <ul>
   <li>./boot.sh PITT_ID WORKING_DIR (e.g. ./boot.sh moh18 /u/OSLab/moh18/cs1550/project1)</li>
 </ul>
-<p>Reboot Qemu VM</p>
+<p>Reboot Qemu VM:</p>
 <ul>
   <li>reboot</li>
 </ul>
-<p>Select Linux (devel) from boot loader menu</p>
+<p>Select Linux (devel) from boot loader menu:</p>
 <ul>
   <li>Hit enter</li>
 </ul>
@@ -142,6 +171,6 @@
 
 <ul>
   <li>./test</li>
-  <li>And you will see ...</li>
+  <li>And you will see bunch of prints in the display.</li>
 </ul>
 -->
