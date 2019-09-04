@@ -56,7 +56,10 @@
 <ul>
   <li>make ARCH=i386 bzImage</li>
 </ul>
-<p></p>
+<p>Navigate to project1 directory</p>
+<ul>
+  <li>cd ..</li>
+</ul>
 <p>Building the test program</p>
 <ul>
   <li>gcc -m32 -o test -I linux-2.6.23.1/include/ test.c</li>
