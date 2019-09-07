@@ -1,8 +1,9 @@
 # Walkthrough for lab 1 (Adding getcount syscall to xv6)
 <p>Install Qemu VM on Ubuntu, and download and build XV6 repo:</p>
 <ul>
-  <li>sudo apt-get update</li>
+<!--  <li>sudo apt-get update</li>
   <li>sudo apt-get install qemu-kvm qemu virt-manager virt-viewer libvirt-bin</li>
+-->
   <li>mkdir lab1</li>
   <li>cd lab1</li>
   <li>git clone git://github.com/mit-pdos/xv6-public.git</li>
