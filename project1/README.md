@@ -115,10 +115,6 @@
 
 <p>Windows users can use Ctrl + Alt to exit the Qemu VM</p>
 
-
-
-
-<!--
 # 4. build.sh
 <p>Script for adding cs1550 syscalls to Linux (compatible with linux-2.6.23.1).</p>
 
@@ -193,4 +189,3 @@
 <ul>
   <li>./test</li>
 </ul>
--->
