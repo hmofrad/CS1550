@@ -13,12 +13,12 @@
 
 <p>Files you might want to have a look for adding the getcount syscall:</p>
 <ul>
-  <li>syscall.h</li>
-  <li>syscall.c</li>
-  <li>user.h</li>
-  <li>usys.S</li>
-  <li>proc.h</li>
-  <li>proc.c</li>
-  <li>sysproc.c</li>
-  <li>Makefie</li>
+  <li>syscall.h: #define your syscall here.</li>
+  <li>syscall.c: Edit syscall() function</li>
+  <li>user.h: Add your syscall signature.</li>
+  <li>usys.S: Define your syscall signature.</li>
+  <li>proc.h: Edit struct proc</li>
+  <li>proc.c: Edit allocproc() function</li>
+  <li>sysproc.c: Add your syscall implementation here</li>
+  <li>Makefie: Edit UPROGS.</li>
 </ul>
