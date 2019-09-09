@@ -6,6 +6,9 @@
 * **sem.h** has cs1550 semaphore implementation
 * **test.c** is the test driver.
 * **config** is the Linux config file.
+* **build.sh** is the script for adding cs1550 syscalls to Linux.
+* **boot.sh** is the script for booting Qemu VM.
+
 
 # 2. Adding cs1550 syscalls
 <p>Login to thoth:</p>
