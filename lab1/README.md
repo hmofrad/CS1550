@@ -17,8 +17,8 @@
   <li>syscall.c: Edit syscall() function</li>
   <li>user.h: Add your syscall signature.</li>
   <li>usys.S: Define your syscall signature.</li>
-  <li>proc.h: Edit struct proc</li>
-  <li>proc.c: Edit allocproc() function</li>
-  <li>sysproc.c: Add your syscall implementation here</li>
+  <li>proc.h: Edit struct proc.</li>
+  <li>proc.c: Edit allocproc() function.</li>
+  <li>sysproc.c: Add your syscall implementation here.</li>
   <li>Makefie: Edit UPROGS.</li>
 </ul>
