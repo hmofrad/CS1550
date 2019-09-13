@@ -14,7 +14,7 @@
 <p>Files you might want to have a look for adding the getcount syscall:</p>
 <ul>
   <li>syscall.h: #define your syscall here.</li>
-  <li>syscall.c: Edit syscall() function</li>
+  <li>syscall.c: Add syscall signature, update the syscall table, and edit syscall() function</li>
   <li>user.h: Add your syscall signature.</li>
   <li>usys.S: Define your syscall signature.</li>
   <li>proc.h: Edit struct proc.</li>
