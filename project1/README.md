@@ -193,4 +193,4 @@
   <li>./test</li>
 </ul>
 
-<p>Additional test cases can be fount under test_cases folder.</p>
+<p>Note: Additional test cases can be fount under test_cases folder.</p>
