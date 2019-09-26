@@ -69,7 +69,7 @@
 </ul>
 
 # 3. Testing cs1550 syscalls
-<p>Download the Qemu emulator:</p>
+<p>Download the Qemu emulator on your laptop:</p>
 <ul>
   <li>Windows: https://github.com/hmofrad/CS1550/blob/master/project1/qemu_win.zip</li>
   <li>Mac os: https://github.com/hmofrad/CS1550/blob/master/project1/qemu_mac.zip</li>
@@ -148,7 +148,7 @@
 
 # 5. boot.sh
 <p> Script for booting Qemu VM. Should be executed inisde the Qemu.</p>
-<p>Download the Qemu emulator:</p>
+<p>Download the Qemu emulator on your laptop:</p>
 <ul>
   <li>Windows: https://github.com/hmofrad/CS1550/blob/master/project1/qemu_win.zip</li>
   <li>Mac os: https://github.com/hmofrad/CS1550/blob/master/project1/qemu_mac.zip</li>
