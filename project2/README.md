@@ -11,7 +11,7 @@
 <p>5. Compile aptsim.c</p>
 <ul>gcc -m32 -o aptsim -I linux-2.6.23.1/include aptsim.c</ul>
 <ul>Alternatively, you can use the Makefile and just type <b>make</b></ul>
-<p>6. Now fire up your Qemu virtual machine, then login and use the following commands to copy the kernel image with cs1550 semaphore implementation to Qemu and add it to the Linux boot loader</p>
+<p>6. Now fire up your Qemu virtual machine on your laptop, then login and use the following commands to copy the kernel image with cs1550 semaphore implementation to Qemu and add it to the Linux boot loader</p>
 <ul>scp PITT_ID_@thoth.cs.pitt.edu:/u/OSLab/PITT_ID/CS1550/project2/\{bzImage,System.map\} .</ul>
 <ul>/bin/cp -rf bzImage /boot/bzImage-devel</ul>
 <ul>/bin/cp -rf System.map /boot/System.map-devel</ul>
