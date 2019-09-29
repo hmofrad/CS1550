@@ -23,4 +23,4 @@
   <li>Makefie: Edit UPROGS.</li>
 </ul>
 
-<p>Note: Please visit Courseweb for a detailed version of lab instructions PDF file.</p>
+<p><b>Note</b>: Please visit Courseweb for a detailed version of lab instructions PDF file.</p>
