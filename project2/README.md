@@ -21,4 +21,4 @@
 <ul>scp PITT_ID_@thoth.cs.pitt.edu:/u/OSLab/PITT_ID/CS1550/project2/aptsim .</ul>
 <ul>./aptsim</ul>
 <p>Note: You do not have to reboot the Qemu machine anymore. Just edit aptsim.c on thoth and then compile it using make. Next copy and test it on Qemu VM using the above commands </p>
-<p>Note: Please visit Courseweb for a detailed version of project instructions.</p>
+<p>Note: Please visit Courseweb for a detailed version of project instructions PDF file.</p>
