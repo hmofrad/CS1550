@@ -1,5 +1,5 @@
 # Some utility implementations
 
-<ul>time.c: Program for going to sleep for certain number of seconds</ul>
-<ul>rand.c: Program for generating random number and checking against a probability</ul>
-<ul>pointer.c: Some pointer arithmetic examples</ul>
+<p><b>time.c</b>: Program for going to sleep for certain number of seconds</p>
+<p><b>rand.c</b>: Program for generating random number and checking against a probability</p>
+<p><b>pointer.c</b>: Some pointer arithmetic examples</p>
