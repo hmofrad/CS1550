@@ -194,3 +194,4 @@
 </ul>
 
 <p>Note: Additional test cases can be fount under test_cases folder.</p>
+<p>Note: Please visit Courseweb for a detailed version of project instructions.</p>
