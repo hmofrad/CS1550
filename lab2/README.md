@@ -28,3 +28,5 @@
   <li>sysproc.c</li>
   <li>Makefie</li>
 </ul>
+
+<p>Note: Please visit Courseweb for a detailed version of lab instructions.</p>
