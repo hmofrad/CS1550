@@ -22,3 +22,5 @@
   <li>sysproc.c: Add your syscall implementation here.</li>
   <li>Makefie: Edit UPROGS.</li>
 </ul>
+
+<p>Note: Please visit Courseweb for a detailed version of lab instructions.</p>
