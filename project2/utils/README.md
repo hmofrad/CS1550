@@ -1,4 +1,4 @@
-# Some utility implementations
+# Some utility implementations for aptsim project
 
 <p><b>time.c</b>: Program for going to sleep for certain number of seconds</p>
 <p><b>rand.c</b>: Program for generating random number and checking against a probability</p>
