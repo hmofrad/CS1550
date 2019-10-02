@@ -19,7 +19,7 @@
 <ul>lilo</ul>
 <p>7. Reboot your Qemu VM, and then select Linux (devel) from boot loader menu. Note, you need to perform the above steps only one time to set up the new kernel</p>
 <p>8. Last, copy sem_test and condvar_test to your Qemu VM and test it</p>
-<ul>scp PITT_ID_@thoth.cs.pitt.edu:/u/OSLab/PITT_ID/CS1550/project2/sem_test . # aptsim</ul>
+<ul>scp PITT_ID_@thoth.cs.pitt.edu:/u/OSLab/PITT_ID/CS1550/project2/sem_test . # sem_test</ul>
 <ul>./sem_test # sem_test</ul>
 <ul>scp PITT_ID_@thoth.cs.pitt.edu:/u/OSLab/PITT_ID/CS1550/project2/condvar_test . # condvar_test</ul>
 <ul>./condvar_test # condvar_test</ul>
