@@ -25,6 +25,16 @@ struct options {
 	int num_agents;
 };
 
+/*
+Add your function signatures for
+    tenantArrives();
+    agentArrives();
+    tenantLeaves();
+    agentLeaves();
+    viewApt();
+    openApt();
+*/
+
 int main(int argc, char** argv) {
     
     if(argc != 5) {
