@@ -25,3 +25,5 @@
 <ul>./condvar_test # condvar_test</ul>
 <p><b>Note</b>: You do not have to reboot the Qemu machine anymore. Just edit aptsim.c on thoth and then compile it using make. Next copy and test it on Qemu VM using the above commands </p>
 <p><b>Note</b>: Please visit Courseweb for a detailed version of project instructions PDF file.</p>
+
+# 2. Have a look at utils folder for some utility implementations
