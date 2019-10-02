@@ -1,5 +1,5 @@
 /*
- aptsim.c: Safe apartment inspection problem skeleton code with up() and down()
+ sem_test.c: Safe apartment inspection problem skeleton code with up() and down()
  ToDO: Write your own code using lock and condition varible
  (c) Mohammad Hasanzadeh Mofrad, 2019
  (e) moh18@pitt.edu
