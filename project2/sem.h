@@ -1,5 +1,5 @@
-#ifndef _SEM_H
-#define _SEM_H
+#ifndef _SEM_H_
+#define _SEM_H_
 
 struct cs1550_sem {
   int value;
