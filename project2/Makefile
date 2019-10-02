@@ -6,7 +6,7 @@
 CC=gcc
 CC_FLAGS=-m32
 SYSLIB=-I linux-2.6.23.1/include/
-APP1=aptsim
+APP1=sem_test
 APP2=condvar_test
 LIB=condvar.c
 
