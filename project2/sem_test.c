@@ -85,7 +85,7 @@ int main(int argc, char** argv) {
     else {
         pid = fork(); // Create a second child process
         if(pid == 0) {
-            sleep(5);
+            //sleep(5);
             down(sem);
             printf("Parent agent: I am the second child process with pid=%d.\n", getpid());
             pids[1] = getpid();
@@ -108,7 +108,7 @@ int main(int argc, char** argv) {
         } 
         else
         {
-            sleep(5);
+            //sleep(5);
             up(sem);
             sleep(1);
             up(sem);
