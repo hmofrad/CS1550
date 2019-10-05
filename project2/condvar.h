@@ -1,5 +1,5 @@
-#ifndef _CONDVAR_H_
-#define _CONDVAR_H_
+#ifndef CONDVAR_H
+#define CONDVAR_H
 
 #include "sem.h"
 
