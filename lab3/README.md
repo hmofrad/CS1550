@@ -13,19 +13,11 @@
   <li>Use Ctrl + A, and then X to exit</li>
 </ul>
 
-<p>Files you might want to have a look for this lab:</p>
+<p>Files you need to change to implement the priority scheduling algorithm:</p>
 <ul>
   <li>proc.h: Add priority filed under struct proc</li>
   <li>proc.c - allocproc(): Initialize the priority filed to 50</li>
   <li>proc.c - scheduler(): Add the priority queue scheduling algorithm</li>
-  <li>syscall.h, user.h, usys.S, syscall.c, sysproc.c for adding the SYS_setpriority() syscall</li>
-  <li>syscall.h: Add syscall definition "#define SYS_setpriority 22"</li>
-  <li>user.h: Add user-space syscall interface "int setpriority(int);"</li>
-  <li>usys.S: Add "SYSCALL(setpriority)"</li>
-  <li>syscall.c: Syscall declaration using "extern int sys_setpriority(void);"</li>
-  <li>syscall.c: Update syscall table using "[SYS_setpriority] sys_setpriority,"</li>
-  <li>sysproc.c: Add syscall implementation "int sys_setpriority(void){return 0; \\ Your code for syscall goes here }"</li>
-  <li>(Optional) priority.c: Driver program to test the setpriority() syscall. Make sure to add _priority\ under UPROGS in the Makefile.</li>
 </ul>
 
 <p>XV6 priority queue pseudocode</p>
@@ -67,5 +59,17 @@
                 schedule the highest priority task p_k
         }
     }
+
+
+<p>Files you need to change to add the SYS_setpriority() syscall</p>
+<ul>
+  <li>syscall.h: Add syscall definition "#define SYS_setpriority 22"</li>
+  <li>user.h: Add user-space syscall interface "int setpriority(int);"</li>
+  <li>usys.S: Add "SYSCALL(setpriority)"</li>
+  <li>syscall.c: Syscall declaration using "extern int sys_setpriority(void);"</li>
+  <li>syscall.c: Update syscall table using "[SYS_setpriority] sys_setpriority,"</li>
+  <li>sysproc.c: Add syscall implementation "int sys_setpriority(void){return 0; \\ Your code for syscall goes here }"</li>
+  <li>(Optional) priority.c: Driver program to test the setpriority() syscall. Make sure to add _priority\ under UPROGS in the Makefile.</li>
+</ul>    
     
 <p><b>Note</b>: Please visit Courseweb for a detailed version of lab instructions PDF file.</p>    
