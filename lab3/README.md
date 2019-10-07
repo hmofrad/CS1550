@@ -18,8 +18,14 @@
   <li>proc.h: Add priority filed under struct proc</li>
   <li>proc.c - allocproc(): Initialize the priority filed to 50</li>
   <li>proc.c - scheduler(): Add the priority queue scheduling algorithm</li>
-  <li>syscall.h, user.h, usys.S, syscall.c, sysproc.c for adding the setpriority() syscall</li>
-  <li>(Optional) priority.c: Driver program to test the setpriority() syscall. Make sure to update the Makefile and add _priority\ under UPROGS.</li>
+  <li>syscall.h, user.h, usys.S, syscall.c, sysproc.c for adding the SYS_setpriority() syscall</li>
+  <li>syscall.h: Add syscall definition "#define SYS_setpriority 22"</li>
+  <li>user.h: Add user-space syscall interface "int setpriority(int);"</li>
+  <li>usys.S: Add "SYSCALL(setpriority)"</li>
+  <li>syscall.c: Syscall declaration using "extern int sys_setpriority(void);"</li>
+  <li>syscall.c: Update syscall table using "[SYS_setpriority] sys_setpriority,"</li>
+  <li>sysproc.c: Add syscall implementation "int sys_setpriority(void){return 0; \\ Your code for syscall goes here }"</li>
+  <li>(Optional) priority.c: Driver program to test the setpriority() syscall. Make sure to add _priority\ under UPROGS in the Makefile.</li>
 </ul>
 
 <p>XV6 priority queue pseudocode</p>
