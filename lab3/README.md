@@ -21,6 +21,7 @@
 </ul>
     
 <p>XV6 priority queue scheduler pseudocode (with O(p) time complexity)</p>    
+
     Scheduler() {
         j = 0;
         declare priority_queue[NPROC];
@@ -60,6 +61,7 @@
     }
 
 <p>XV6 priority scheduler pseudocode (with O(p^2) time complexity)</p>
+
     Scheduler() {
         struct proc* highest_priority_proc_idx;
         struct proc* p1;
