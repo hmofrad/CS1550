@@ -19,9 +19,8 @@
   <li>proc.c - allocproc(): Initialize the priority filed to 50</li>
   <li>proc.c - scheduler(): Add the priority queue scheduling algorithm</li>
 </ul>
-
-<p>XV6 priority queue pseudocode</p>
-
+    
+<p>XV6 priority queue scheduler pseudocode (with O(p) time complexity)</p>    
     Scheduler() {
         j = 0;
         declare priority_queue[NPROC];
@@ -57,6 +56,28 @@
             }
             for(k in priority_queue)
                 schedule the highest priority task p_k
+        }
+    }
+
+<p>XV6 priority scheduler pseudocode (with O(p^2) time complexity)</p>
+    Scheduler() {
+        struct proc* highest_priority_proc_idx;
+        struct proc* p1;
+        for(;;){
+            highest_priority_proc_idx = 0;
+            for(p_i in NPROC processes) {
+                if(p_i state is RUNNABLE) {
+                    highest_priority_proc_idx = p_i;
+                    for(p_j in NPROC processes) {
+                        if(p_j state is RUNNABLE) {
+                            if(highest_priority_proc_idx->priority > p_j->priority) {
+                                highest_priority_proc_idx = p_j;
+                            }
+                        }
+                    }
+                    schedule highest_priority_proc_idx
+                }
+            }
         }
     }
 
