@@ -20,7 +20,7 @@
   <li>proc.c - scheduler(): Add the priority queue scheduling algorithm</li>
 </ul>
     
-<p>XV6 priority scheduler pseudocode (with O(p^2) time complexity)</p>
+<p>XV6 priority scheduler pseudocode (with O(p^2) time complexity):</p>
 
     Scheduler() {
         struct proc* highest_priority_proc_idx;
@@ -43,7 +43,7 @@
         }
     }
 
-<p>XV6 priority scheduler pseudocode (with O(p) time complexity)</p>    
+<p>Another XV6 priority scheduler (with O(p) time complexity):</p>    
 
     Scheduler() {
         j = 0;
