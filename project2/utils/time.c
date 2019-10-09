@@ -24,8 +24,8 @@ int main(int argc, char** argv) {
     gettimeofday(&t0, 0);
     sleep(sleep_time);
     gettimeofday(&t1, 0);
-    long elapsed = (t1.tv_sec-t0.tv_sec);
-    printf("The program sleeped for %lu seconds!!!\n", elapsed);
+    long int elapsed = (t1.tv_sec-t0.tv_sec);
+    printf("The program sleeped for %ld seconds!!!\n", elapsed);
     
     return(0);
 }
