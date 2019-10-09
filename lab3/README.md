@@ -92,7 +92,7 @@
   <li>usys.S: Add "SYSCALL(setpriority)"</li>
   <li>syscall.c: Syscall declaration using "extern int sys_setpriority(void);"</li>
   <li>syscall.c: Update syscall table using "[SYS_setpriority] sys_setpriority,"</li>
-  <li>sysproc.c: Add syscall implementation "int sys_setpriority(void){return 0; \\ Your code for syscall goes here }"</li>
+  <li>sysproc.c: Add syscall implementation "int sys_setpriority(void){return 0; // Your code for syscall goes here }"</li>
   <li>(Optional) priority.c: Driver program to test the setpriority() syscall. Make sure to add "_priority\" under UPROGS in the Makefile.</li>
 </ul>    
     
