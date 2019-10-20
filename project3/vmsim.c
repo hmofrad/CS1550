@@ -200,11 +200,6 @@ struct frame_struct * handle_page_fault(unsigned int fault_address) {
     pte = (struct pte_32*) page_table[PTE32_INDEX(fault_address)];
     if(!pte) {
         pte = allocate(sizeof(struct pte_32));
-        if(!pte) {
-            fprintf(stderr, "Error on mallocing memory\n");
-            exit(1);
-        }
-        memset(pte, 0, sizeof(struct pte_32));
         pte->present = 0;
         pte->physical_address = NULL;
         page_table[PTE32_INDEX(fault_address)] = (struct pte_32*) pte;
