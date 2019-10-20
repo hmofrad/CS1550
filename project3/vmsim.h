@@ -66,7 +66,6 @@ int current_index = -1;
 
 // Allocate dynamic memory
 void* allocate(unsigned long int size);
-
 // Deallocate dynamic memory
 void* deallocate(void** ptr, unsigned long int size);
 
