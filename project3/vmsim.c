@@ -107,7 +107,7 @@ int main(int argc, char* argv[]) {
 
     // Initialize page table
     long page_table_size = PT_SIZE_1MB * PTE_SIZE_BYTES;
-    page_table = (struct pte_32**) allocate(page_table_size * sizeof(struct pte_32*));
+    page_table = (struct pte_32**) allocate(page_table_size);
     
     struct pte_32* new_pte = NULL;
     unsigned char mode_type = '\0';
