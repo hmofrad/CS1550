@@ -180,6 +180,8 @@ int main(int argc, char* argv[]) {
                     new_pte->physical_address = curr->physical_address;
                     new_pte->present = 1;
                     curr->virtual_address = fault_address; 
+		    
+		    break;
                 }
                 curr = curr->next; 
             }
