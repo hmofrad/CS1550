@@ -83,7 +83,7 @@ int main(int argc, char* argv[]) {
     }
 
     // Initialize the physical memory address space
-    long frame_size = PAGE_SIZE_4KB / PAGE_SIZE_UNITS;
+    long frame_size = PAGE_SIZE_4KB;// / PAGE_SIZE_UNITS;
     long memory_size = frame_size * numframes;
     physical_frames = (unsigned int*) allocate(memory_size);
     
@@ -198,7 +198,7 @@ int main(int argc, char* argv[]) {
     return(0);
 }
 
-struct frame_struct * handle_page_fault(unsigned int fault_address) {
+struct pte_32* handle_page_fault(unsigned int fault_address) {
     pte = (struct pte_32*) page_table[PTE32_INDEX(fault_address)];
     if(!pte) {
         pte = allocate(sizeof(struct pte_32));
@@ -219,7 +219,7 @@ struct frame_struct * handle_page_fault(unsigned int fault_address) {
     printf("Frame physical address:  %010u (0x%08x)\n", (unsigned int) ((uintptr_t) pte->physical_address + FRAME_INDEX(fault_address)), *((unsigned int*) &pte->physical_address + FRAME_INDEX(fault_address)));
     #endif
     
-    return ((struct frame_struct *) pte);
+    return ((struct pte_32*) pte);
 }
 
 int fifo() {
