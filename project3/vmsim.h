@@ -32,7 +32,7 @@ struct pte_32 {
 // 4KB (2^12) page size
 #define PAGE_SIZE_4KB   4096    
 // Smallest addressable unit in a page
-#define PAGE_SIZE_UNITS 4       
+//#define PAGE_SIZE_UNITS 8
 // Page table size = Maximum size of the 32-bit memory (4GB)
 // divided by page size (4kB): 2^32 / 2^12 = 2^20 (1MB)
 #define PT_SIZE_1MB     1048576 
@@ -46,6 +46,7 @@ struct frame_struct {
    unsigned int virtual_address;
    struct pte_32* pte_pointer;
    struct frame_struct* next;
+   // Add you dirty bit and reference counter here
 };
 
 // Number of physical frames
@@ -57,7 +58,7 @@ struct pte_32** page_table = NULL;
 // Page Table Entry
 struct pte_32* pte = NULL;
 // Handle page fault function
-struct frame_struct* handle_page_fault(unsigned int);
+struct pte_32* handle_page_fault(unsigned int);
 
 // Fifo page replacement algorithm
 int fifo();
