@@ -18,11 +18,15 @@
 #include <stdio.h>
 #include <stdint.h>
 #include <string.h>
+#include <ctype.h>
+
 
 // 32-Bit Root level Page Table Entry (PTE) 
 struct pte_32 {
-   char present;
-   unsigned int* physical_address;
+    unsigned int* physical_address;
+    char present;
+    char dirty;
+    // Add your reference counter here
 };
 
 // Macros to extract pte/frame index
@@ -46,7 +50,6 @@ struct frame_struct {
    unsigned int virtual_address;
    struct pte_32* pte_pointer;
    struct frame_struct* next;
-   // Add you dirty bit and reference counter here
 };
 
 // Number of physical frames
@@ -70,4 +73,6 @@ void* allocate(unsigned long int size);
 // Deallocate dynamic memory
 void* deallocate(void** ptr, unsigned long int size);
 
+// Auxiliary method for converting a string to uppercase
+void toupper_str(char* str);
 #endif
