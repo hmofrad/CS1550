@@ -5,6 +5,6 @@
 
 OBJ=vmsim
 install:
-	gcc -o $(OBJ) $(DEBUG) $(OBJ).c 
+	gcc -o $(OBJ) -Wall -Werror -lm *.c
 clean:
 	rm -rf $(OBJ)
