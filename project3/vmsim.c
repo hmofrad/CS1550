@@ -24,6 +24,14 @@ void* allocate(unsigned long int size) {
     return(ptr);
 }
 
+void toupper_str(char* str) {
+    char* c = str;
+    while(*c) {
+      *c = toupper(*c);
+      c++;
+    }   
+}
+
 int main(int argc, char* argv[]) {
    /*
     * Add sanity check for input arguments
@@ -31,19 +39,30 @@ int main(int argc, char* argv[]) {
     * and store it in an array
     */
     
-    if(argc != 6) {
+    if((argc != 6) && (argc != 8)) {
         fprintf(stderr, "USAGE: %s -n <numframes> -a <fifo> <tracefile>\n", argv[0]);
         exit(1);         
     }
     
     numframes = atoi(argv[2]);
     char* algorithm = argv[4];
-    char* filename = argv[5];
+    toupper_str(algorithm);
+    
+    char* filename;
+    
+    if(argc == 6) {
+        filename = argv[5];
+    }
+    else {
+        filename = argv[7];
+    }
+    
     FILE* file = fopen(filename,"rb");
     if(!file) {
         fprintf(stderr, "Error on opening %s\n", filename);
         exit(1); 
     }
+
 
     /* 
      * Calculate the trace file's length
@@ -112,11 +131,11 @@ int main(int argc, char* argv[]) {
     struct pte_32* new_pte = NULL;
     unsigned char mode_type = '\0';
     unsigned int fault_address = 0;
-    unsigned int cpu_elapsed_cycles = 0;
-    unsigned int previous_fault_address = 0;
+
     int hit = 0;
     int page2evict = 0;
     int numfaults = 0;
+    int numwrites = 0;
 
     // Main loop to process memory accesses
     for(i = 0; i < numaccesses; i++) {
@@ -125,7 +144,10 @@ int main(int argc, char* argv[]) {
         hit = 0;
         // Perform page walk for the fault address
         new_pte = (struct pte_32*) handle_page_fault(fault_address);
-      
+        
+        if(mode_type == 's') {
+            new_pte->dirty = 1;
+        }	
         /*
          * Traverse the frames linked list    
          * to see if the requested page is present in
@@ -156,7 +178,7 @@ int main(int argc, char* argv[]) {
          */  
         if(!hit) {
             // Fifo page replacement algorithm
-            if(!strcmp(algorithm, "fifo")) {
+            if(!strcmp(algorithm, "FIFO")) {
                 page2evict = fifo();
             }
 
@@ -169,12 +191,18 @@ int main(int argc, char* argv[]) {
             curr = head;
             while(curr) {
                 if(curr->frame_number == page2evict) {
-                    previous_fault_address = curr->virtual_address;
                     numfaults++;
                     
                     if(curr->pte_pointer) {
                         curr->pte_pointer->present = 0;
+                        
+                        if(curr->pte_pointer->dirty) {
+                            numwrites++;
+                            curr->pte_pointer->dirty = 0;
+                        }
                     }
+                    
+
                    
                     curr->pte_pointer = (struct pte_32*) new_pte;
                     new_pte->physical_address = curr->physical_address;
@@ -190,10 +218,11 @@ int main(int argc, char* argv[]) {
     
     /* ToDo: Release the memory you allocated for frames and page_table */
     
-    printf("Algorithm:             %s\n", algorithm);
-    printf("Number of frames:      %d\n", numframes);
+    printf("Algorithm: %s\n", algorithm);
+    printf("Number of frames: %d\n", numframes);
     printf("Total memory accesses: %d\n", i);
-    printf("Total page faults:     %d\n", numfaults);
+    printf("Total page faults: %d\n", numfaults);
+    printf("Total writes to disk: %d\n", numwrites);
     
     return(0);
 }
@@ -223,5 +252,7 @@ struct pte_32* handle_page_fault(unsigned int fault_address) {
 }
 
 int fifo() {
-    return (current_index = ++current_index % numframes);
+    ++current_index;
+    current_index = current_index % numframes;
+    return (current_index);
 }
