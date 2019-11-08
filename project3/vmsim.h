@@ -64,9 +64,9 @@ struct pte_32* pte = NULL;
 struct pte_32* handle_page_fault(unsigned int);
 
 // Fifo page replacement algorithm
-int fifo();
+unsigned int fifo();
 // Fifo page replacement current index
-int current_index = -1;
+unsigned int current_index = -1;
 
 // Allocate dynamic memory
 void* allocate(unsigned long int size);
