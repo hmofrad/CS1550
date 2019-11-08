@@ -230,7 +230,7 @@ int main(int argc, char* argv[]) {
 struct pte_32* handle_page_fault(unsigned int fault_address) {
     pte = (struct pte_32*) page_table[PTE32_INDEX(fault_address)];
     if(!pte) {
-        pte = allocate(sizeof(struct pte_32));
+        pte = (struct pte_32*) allocate(sizeof(struct pte_32));
         pte->present = 0;
         pte->physical_address = NULL;
         page_table[PTE32_INDEX(fault_address)] = (struct pte_32*) pte;
@@ -251,7 +251,7 @@ struct pte_32* handle_page_fault(unsigned int fault_address) {
     return ((struct pte_32*) pte);
 }
 
-int fifo() {
+unsigned int fifo() {
     ++current_index;
     current_index = current_index % numframes;
     return (current_index);
