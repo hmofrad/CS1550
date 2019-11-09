@@ -11,6 +11,8 @@
  
 #include "vmsim.h"
 
+#include "hashmap.h"
+
 void* allocate(unsigned long int size) {
     void* ptr = NULL;
     if(size) {        
@@ -128,6 +130,31 @@ int main(int argc, char* argv[]) {
     long page_table_size = PT_SIZE_1MB * PTE_SIZE_BYTES;
     page_table = (struct pte_32**) allocate(page_table_size);
     
+    
+    // Initialize hashmap for opt
+    vm = (struct hashmapbase*) hashmap_initialize((unsigned int) PT_SIZE_1MB);
+    
+    for(i = 0; i < numaccesses; i++) {
+        unsigned int key = PTE32_INDEX(address_array[i]);
+        unsigned int value = i;
+        hashmap_insert(vm, key, value);
+    }
+    
+    hashmap_print(vm);
+    /*
+    // Use cases;
+    unsigned int key = PTE32_INDEX(address_array[0]);
+    struct value_object* peek = hashmap_peek(vm, key);
+    if(peek)
+        printf("peek = %d\n", peek->value); // remove and return the first value
+    
+    struct value_object* top = hashmap_peek(vm, key);
+    if(top)
+        printf("top = %d\n", peek->value); // return the first value
+    
+    hashmap_print(vm);
+    */
+    
     struct pte_32* new_pte = NULL;
     unsigned char mode_type = '\0';
     unsigned int fault_address = 0;
@@ -180,6 +207,9 @@ int main(int argc, char* argv[]) {
             // Fifo page replacement algorithm
             if(!strcmp(algorithm, "FIFO")) {
                 page2evict = fifo();
+            }
+            else if(!strcmp(algorithm, "OPT")) {
+                page2evict = opt(head, fault_address, i);
             }
 
            /* Traverse the frames linked list to
@@ -255,4 +285,9 @@ unsigned int fifo() {
     ++current_index;
     current_index = current_index % numframes;
     return (current_index);
+}
+
+unsigned int opt(struct frame_struct* head, unsigned int fault_address, unsigned int access_number) {
+    printf("Not implemented\n");
+    exit(1);
 }
