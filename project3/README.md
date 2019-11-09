@@ -3,6 +3,8 @@
 # 1. Files
 <ul>vmsim.c: Source file for Virtual Memory implementation</ul>
 <ul>vmsim.h: Header file for Virtual Memory implementation</ul>
+<ul>hashmap.c: Source file for simple hashmap implementation</ul>
+<ul>hashmap.h: Header file for simple hashmap implementation </ul>
 <ul>Makefile: Makefile for building the vmsim program</ul>
 
 # 2. Compilation and run
