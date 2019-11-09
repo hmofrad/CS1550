@@ -75,4 +75,10 @@ void* deallocate(void** ptr, unsigned long int size);
 
 // Auxiliary method for converting a string to uppercase
 void toupper_str(char* str);
+
+// Address array hashmap
+struct hashmapbase* vm;
+// Opt page replacement
+unsigned int opt(struct frame_struct* head, unsigned int fault_address, unsigned int access_number);
+
 #endif
