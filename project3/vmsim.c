@@ -209,7 +209,7 @@ int main(int argc, char* argv[]) {
                 page2evict = fifo();
             }
             else if(!strcmp(algorithm, "OPT")) {
-                page2evict = opt(head, fault_address, i);
+                page2evict = opt(head, i);
             }
 
            /* Traverse the frames linked list to
@@ -287,7 +287,7 @@ unsigned int fifo() {
     return (current_index);
 }
 
-unsigned int opt(struct frame_struct* head, unsigned int fault_address, unsigned int access_number) {
+unsigned int opt(struct frame_struct* head, unsigned int access_number) {
     printf("Not implemented\n");
     exit(1);
 }
