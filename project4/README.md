@@ -6,7 +6,7 @@
 <p>3. Clone the repo</p>
 <ul>git clone https://github.com/hmofrad/CS1550</ul>
 <p>4. Copy fuse archive</p>
-<ul> cp /u/OSLab/original/fuse-2.7.0.tar.gz</ul>
+<ul> cp /u/OSLab/original/fuse-2.7.0.tar.gz .</ul>
 <p>5. Extract fuse</p>
 <ul>tar xzvf fuse-2.7.0.tar.gz</ul>
 <p>6. Navigate to fuse directory</p>
@@ -24,9 +24,12 @@
 <p>12. Compile fuse examples</p>
 <ul>make clean && make</ul>
 <p>13. Run hello world example </p>
-<ul>./hello </ul>
-<p>14. Run cs1550 world example </p>
-<ul>./cs1550 </ul>
+<ul>./hello testmount</ul>
+<p>13. Test hello example</p>
+<ul>ls -la testmount</ul>
+<ul>cat testmount/hello</ul>
+<p>13. Terminate hello example</p>
+<ul>fusermount -u testmount</ul>
  
 ## build.sh: Build script for compiling FUSE on thoth
 <p>1. Connect to thoth.cs.pitt.edu</p>
