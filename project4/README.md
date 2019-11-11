@@ -41,4 +41,4 @@
 <p>4. Give execute permission to the script</p>
 <ul> chmod +x build.sh</ul>
 <p>5. Run the script</p>
-<ul>./build.sh &lt;hello|cs1550&gt;</ul>
+<ul>./build.sh hello</ul>
