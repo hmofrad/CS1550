@@ -1,7 +1,7 @@
 /*
  * bitmap.c: Bitmap implementation for disk
- * Compile: gcc -o bitmap -Wall -Werror bitmap.c
- * Run: ./bitmap /dir/test.txt
+ * Compile: gcc -o bitmap -Wall -Werror bitmap.c -fsanitize=address 
+ * Run: ./bitmap 
  *
  * Byte map (MSB <-- LSB)
  * 1536            1280 1279                0
