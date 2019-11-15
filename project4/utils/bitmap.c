@@ -36,7 +36,7 @@
 
 char* bitmap;
 
-unsigned int get_bit(unsigned int block) {
+unsigned char get_bit(unsigned int block) {
     unsigned int byte  =  block / BITS_PER_BYTE;
     unsigned int bit   =  block % BITS_PER_BYTE;
     unsigned char mask = 1 << bit;
@@ -93,7 +93,7 @@ int main(int argc, char** argv) {
     printf("%d %d\n", b, get_bit(b));
     toggle_bit(b);
     printf("%d %d\n", b, get_bit(b));
-    print_bits();
+    //print_bits();
     */
     
     free(bitmap);
