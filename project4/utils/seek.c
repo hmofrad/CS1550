@@ -17,7 +17,6 @@ int main(int argc, char** argv) {
     
     if(argc != 2) {
         fprintf(stderr, "USAGE: %s DISK\n",argv[0]);
-        
         exit(1);
     }
     
@@ -25,9 +24,9 @@ int main(int argc, char** argv) {
     FILE *fid = fopen(disk, "rb"); // Open with read pemission 
     
     if(!fid){
-		fprintf(stderr,"Error opening %s\n", disk);
+        fprintf(stderr,"Error opening %s\n", disk);
         fprintf(stderr,"Create the %s using: dd bs=1K count=5K if=/dev/zero of=.disk\n", disk);
-		exit(1);
+        exit(1);
 	}
      
      
@@ -51,7 +50,7 @@ int main(int argc, char** argv) {
     
     
     
-	ret = fseek(fid, -offset, SEEK_END); // Move to an offset from the end of disk
+    ret = fseek(fid, -offset, SEEK_END); // Move to an offset from the end of disk
     if(ret) {
         fprintf(stderr, "Error seeking %s\n", disk);
         exit(1);
