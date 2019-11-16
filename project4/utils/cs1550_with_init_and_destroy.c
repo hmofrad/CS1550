@@ -309,19 +309,19 @@ static void cs1550_destroy(void* args)
 
 //register our new functions as the implementations of the syscalls
 static struct fuse_operations hello_oper = {
-    .getattr	= cs1550_getattr,
-    .readdir	= cs1550_readdir,
-    .mkdir	= cs1550_mkdir,
-	.rmdir = cs1550_rmdir,
-    .read	= cs1550_read,
-    .write	= cs1550_write,
-	.mknod	= cs1550_mknod,
-	.unlink = cs1550_unlink,
-	.truncate = cs1550_truncate,
-	.flush = cs1550_flush,
-	.open	= cs1550_open,
-    .init 		= cs1550_init,
-    .destroy 	= cs1550_destroy,
+    .getattr    = cs1550_getattr,
+    .readdir    = cs1550_readdir,
+    .mkdir      = cs1550_mkdir,
+    .rmdir      = cs1550_rmdir,
+    .read       = cs1550_read,
+    .write      = cs1550_write,
+    .mknod      = cs1550_mknod,
+    .unlink     = cs1550_unlink,
+    .truncate   = cs1550_truncate,
+    .flush      = cs1550_flush,
+    .open       = cs1550_open,
+    .init       = cs1550_init,
+    .destroy    = cs1550_destroy,
 };
 
 //Don't change this.
