@@ -21,7 +21,6 @@ int main(int argc, char** argv) {
     
     if(argc != 2) {
         fprintf(stderr, "USAGE: %s DISK\n",argv[0]);
-        
         exit(1);
     }
     
@@ -29,9 +28,9 @@ int main(int argc, char** argv) {
     FILE *fid = fopen(disk, "rb"); // Open with read pemission 
     
     if(!fid){
-		fprintf(stderr,"Error opening %s\n", disk);
+        fprintf(stderr,"Error opening %s\n", disk);
         fprintf(stderr,"Create the %s using: dd bs=1K count=5K if=/dev/zero of=.disk\n", disk);
-		exit(1);
+        exit(1);
 	}
     
     /* Read first block */
@@ -56,12 +55,12 @@ int main(int argc, char** argv) {
         block.data[i] = 'a' + (i % 27);
     }
     
-    /* Write int first block */
+    /* Write in first block */
     fid = fopen(disk, "rb+"); // Open with read/write permission
     if(!fid){
-		fprintf(stderr,"Error opening %s\n", disk);
+        fprintf(stderr,"Error opening %s\n", disk);
         fprintf(stderr,"Create the %s using: dd bs=1K count=5K if=/dev/zero of=.disk\n", disk);
-		exit(1);
+        exit(1);
 	}   
     
     int num_write_blocks = fwrite(&block.data, block_size, 1, fid);
