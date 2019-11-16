@@ -15,10 +15,7 @@
 
 <p>This lab is about adding a doubly-indirect block. After implementing this lab, new inode diagram will look like this:</p>
 
-<!--![XV6 new inode Diagram](https://github.com/hmofrad/CS1550/blob/master/lab5/inodeDiagram.jpg) -->
-
-
-
+![XV6 new inode Diagram](https://github.com/hmofrad/CS1550/blob/master/lab5/inodeDiagram.jpg) 
 
 <p>Files you might want to have a look for this lab:</p>
 <ul>
