@@ -63,7 +63,7 @@ int main(int argc, char** argv) {
         exit(1);
 	}   
     
-    int num_write_blocks = fwrite(&block.data, block_size, 1, fid);
+    int num_write_blocks = fwrite(&block.data, block_size, num_blocks, fid);
     if(num_blocks != num_write_blocks) {
         fprintf(stderr, "Error writing %s\n", disk);
         exit(1);
