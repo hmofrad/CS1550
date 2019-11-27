@@ -41,6 +41,6 @@
 <p>4. Give execute permission to the script</p>
 <ul> chmod +x build.sh</ul>
 <p>5. Run the script</p>
-<ul>./build.sh hello</ul>
+<ul>./build.sh</ul>
 
 <p><b>Note</b>: Please visit Courseweb for a detailed version of lab instructions PDF file.</p>    
